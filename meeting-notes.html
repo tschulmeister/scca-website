@@ -46,49 +46,7 @@
   </div>
 
   <script>
-    // Hardcoded Meeting Data Archive
-    const meetingArchive = [
-      {
-        id: "2026-06-04",
-        dateLabel: "June 4, 2026",
-        participants: "Tyler Schulmeister, Mary Kuhn, Jen Edwards, Ike Eichenlaub, Rebecca Blashack",
-        content: `Three SCCA households brought dead trees to Jim and Ike’s attention. Jim and Ike are scheduled to assess the trees with a tree removal company on Tuesday, June 9.
-
-A member of the SCCA community requested SCCA budget information and meeting minutes. The group agreed it’s in the community’s interest to make this information available. Ike will send meeting minutes to Tyler to post on the SCCA website. Budget information is already available in the annual newsletter.
-
-Ike provided an update on SCCA’s efforts to establish a Special Taxing District for purposes of collecting dues. Ike last heard from Lori Blair, Deputy County Attorney, on the matter on April 21, at which time she indicated she was reviewing our request and would get back to Ike. She has not provided further information. Ike called Ms. Blair on Tuesday, June 2, and left a message; she has not responded. Ike will contact Council Member Fiedler on Monday, June 8, to ask for her support and intervention.
-
-Rebecca informed the group she does not intend to serve as SCCA treasurer beyond her current term. The Board thanks Rebecca and is VERY sorry to see her leave the Board.`
-      },
-      {
-        id: "2026-04-30",
-        dateLabel: "April 30, 2026",
-        participants: "Dan Giles, Tyler Schulmeister, Mary Kuhn, Jen Edwards, Ed Maddox, Ike Eichenlaub",
-        content: `The Board agreed to send a letter to a SCCA community member, thanking him for his efforts on common area maintenance and stating he must contact the Board prior to making any changes on SCCA property.
-
-The Board agreed to pay annual dues for membership in the Growth Action Network. The Board agreed not to pursue Pete Foley’s proposal to install cameras at the entrances to the neighborhood to monitor cars for crime prevention.`
-      },
-      {
-        id: "2026-02-19",
-        dateLabel: "February 19, 2026",
-        participants: "Dan Giles, Neda Newnam, Tyler Schulmeister, Mary Kuhn, Jen Edwards, Ed Maddox, Ike Eichenlaub, Rebecca Blashack, Jim Guilfoyle",
-        content: `Ike updated the group on the special taxing district initiative. He informed them he submitted documents to the County’s STD coordinator who in turn submitted our request to the County’s Law Office for review.
-
-The Board voted in favor of regularly scheduled meetings to occur the first Thursday of every other month at 7:00 p.m., and agreed to schedule ad hoc meetings more frequently as needed.
-
-There were no problems signing in to Google Meet for SCCA Board meeting purposes.
-
-Mary and Jen mentioned the community has inquired about when the new traffic light will be activated and whether or not the crossing guard will remain after the light is activated. Ike has been posting information from the County’s project manager on SCCA’s website and Shipley’s Choice Facebook page.`
-      },
-      {
-        id: "2025-12-11",
-        dateLabel: "December 11, 2025",
-        participants: "Jim Guilfoyle, Dan Giles, Neda Newnam, John Norville, Tyler Schulmeister, Mary Kuhn, Jen Edwards, Ed Maddox, Ike Eichenlaub, Rebecca Blashack",
-        content: `The Board voted 9 to 1 in favor of pursuing a Special Community Benefits District for purposes of dues collection. Ike, Jim, Rebecca and Jen will serve on a committee to coordinate the application to the County.
-
-Mary continues to submit paperwork for a playground grant from the County.`
-      }
-    ];
+    let meetingArchive = [];
 
     const dateListContainer = document.getElementById('date-list');
     const notesContentContainer = document.getElementById('notes-content');
@@ -124,23 +82,37 @@ Mary continues to submit paperwork for a playground grant from the County.`
       });
     }
 
-    function initializeDashboard() {
-      meetingArchive.forEach((meeting) => {
-        const button = document.createElement('button');
-        button.id = `btn-${meeting.id}`;
-        button.innerText = meeting.dateLabel;
+    async function initializeDashboard() {
+      try {
+        const response = await fetch('./meetingNotes.json');
+        if (!response.ok) throw new Error('Failed to load meeting notes.');
+        meetingArchive = await response.json();
 
-        button.addEventListener('click', () => {
-          displayNotes(meeting);
-          updateActiveButtonStyle(meeting.id);
+        meetingArchive.forEach((meeting) => {
+          const button = document.createElement('button');
+          button.id = `btn-${meeting.id}`;
+          button.innerText = meeting.dateLabel;
+
+          button.addEventListener('click', () => {
+            displayNotes(meeting);
+            updateActiveButtonStyle(meeting.id);
+          });
+
+          dateListContainer.appendChild(button);
         });
 
-        dateListContainer.appendChild(button);
-      });
-
-      if (meetingArchive.length > 0) {
-        displayNotes(meetingArchive[0]);
-        updateActiveButtonStyle(meetingArchive[0].id);
+        if (meetingArchive.length > 0) {
+          displayNotes(meetingArchive[0]);
+          updateActiveButtonStyle(meetingArchive[0].id);
+        }
+      } catch (error) {
+        console.error('Error initializing dashboard:', error);
+        notesContentContainer.innerHTML = `
+          <div class="p-4 text-red-600 bg-red-50 rounded-lg border border-red-100">
+            <p class="font-semibold">Unable to load meeting minutes.</p>
+            <p class="text-sm">Please ensure meetingNotes.json is available in the same directory.</p>
+          </div>
+        `;
       }
     }
 
