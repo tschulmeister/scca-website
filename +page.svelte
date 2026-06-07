@@ -2,7 +2,7 @@
   <title>Shipley's Choice Community Association</title>
 </svelte:head>
 
-<section class="relative bg-slate-900 text-white py-24 px-6 text-center">
+<section class="page-header py-24 px-6 text-center">
   <div class="max-w-3xl mx-auto">
     <h1 class="text-5xl font-extrabold tracking-tight mb-4">Welcome to Shipley's Choice</h1>
     <p class="text-xl text-slate-300 leading-relaxed">

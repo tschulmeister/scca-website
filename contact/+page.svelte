@@ -2,7 +2,7 @@
   <title>Contact | Shipley's Choice</title>
 </svelte:head>
 
-<section class="bg-slate-900 text-white py-20">
+<section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">
     <p class="text-sm uppercase tracking-[0.24em] text-blue-300">Contact</p>
     <h1 class="mt-4 text-4xl font-extrabold tracking-tight">Get in touch with the SCCA Board</h1>
