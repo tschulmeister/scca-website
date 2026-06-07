@@ -23,19 +23,7 @@
       Download latest newsletter (PDF)
     </a>
   </div>
-
-  <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">Archived newsletter files</h2>
-    <p class="text-slate-700 mb-6">We are migrating older newsletter content from the legacy site into this archive.</p>
-    <ul class="list-disc list-inside space-y-3 text-slate-700">
-      <li>
-        <a href="https://www.shipleyschoice.org/uploads/5/5/3/9/55393771/scca_newsletter._final____10_2016__4_edited_for_web_site...docx" target="_blank" rel="noreferrer" class="text-blue-600 hover:text-blue-700 underline">
-          SCCA Newsletter (2016) - DOCX download
-        </a>
-      </li>
-    </ul>
-  </div>
-
+  
   <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">Recent meeting minutes</h2>
     <p class="text-slate-700 mb-6">This section includes recent meeting notes from the Shipley's Choice Community Association board.</p>
