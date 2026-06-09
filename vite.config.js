@@ -2,5 +2,6 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [sveltekit()], 
+	// SvelteKit hooks into Vite entirely through this plugin
+	plugins: [sveltekit()]
 });

@@ -1,5 +1,5 @@
 <script>
-  import meetingNotes from '../data/meetingNotes.json';
+  import meetingNotes from '../../data/meetingNotes.json';
   const latestMeetingNotes = meetingNotes.slice(0, 5);
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-  import meetingNotes from '../data/meetingNotes.json';
+  import meetingNotes from '../../data/meetingNotes.json';
 
   let selectedId = meetingNotes?.[0]?.id;
   $: selectedMeeting = meetingNotes.find((meeting) => meeting.id === selectedId);

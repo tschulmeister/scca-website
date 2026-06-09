@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
-  import "./app.css";
+  import "../app.css";
   import { page } from "$app/stores";
-  import communitySign from "./data/community-sign.jpg";
+  import communitySign from "../data/community-sign.jpg";
 
   let navOpen = false;
   let moreOpen = false;
