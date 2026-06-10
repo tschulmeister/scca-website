@@ -15,16 +15,22 @@
       class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
     >
       <a
-        href="/meeting-notes"
+        href="/news-records"
         class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold shadow-lg transition-colors"
       >
-        View Meeting Minutes
+        News
       </a>
       <a
-        href="/documents"
-        class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-colors"
+        href="/register"
+        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-lg font-semibold transition-colors"
       >
-        Community Documents
+        Register
+      </a>
+      <a
+        href="/contact"
+        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-lg font-semibold transition-colors"
+      >
+        Contact
       </a>
     </div>
   </div>
@@ -58,7 +64,7 @@
           <p class="mt-3">
             For a list of streets and addresses in the SCCA, please refer to the <a
               href="http://weebly-link/305159282220921052"
-              class="text-blue-600 hover:text-blue-700 underline">Information</a
+              class="app-link">Information</a
             > tab.
           </p>
         </div>
@@ -73,8 +79,7 @@
           <p class="mt-3">
             Please refer to the <a
               href="https://www.shipleyschoice.com/"
-              class="text-blue-600 hover:text-blue-700 underline"
-              >SCHOA website</a
+              class="app-link">SCHOA website</a
             > for information regarding the HOA organization.
           </p>
         </div>
@@ -87,39 +92,32 @@
       </h3>
       <p class="text-slate-600">
         Shipley’s Choice is ideally located in Anne Arundel County, MD; about 10
-        miles north of <a
-          href="http://www.ci.annapolis.md.us/"
-          class="text-blue-600 hover:text-blue-700 underline">Annapolis</a
+        miles north of <a href="http://www.ci.annapolis.md.us/" class="app-link"
+          >Annapolis</a
         >, the
         <a
           href="http://www.annapolis.gov/visitors/gateway-to-discovery/americas-sailing-capital"
-          class="text-blue-600 hover:text-blue-700 underline"
-          >sailing boat capital</a
+          class="app-link">sailing boat capital</a
         >
         of the United States and the seat of Maryland state
-        <a
-          href="http://www.maryland.gov/Pages/default.aspx"
-          class="text-blue-600 hover:text-blue-700 underline">government</a
+        <a href="http://www.maryland.gov/Pages/default.aspx" class="app-link"
+          >government</a
         >.
       </p>
       <p class="text-slate-600 mt-3">
         Annapolis is also home to the <a
           href="http://www.usna.edu/homepage.php"
-          class="text-blue-600 hover:text-blue-700 underline"
-          >United States Naval Academy</a
+          class="app-link">United States Naval Academy</a
         >
         and
-        <a
-          href="http://www.sjc.edu/"
-          class="text-blue-600 hover:text-blue-700 underline"
-          >St. John’s College</a
-        >, and preserves its naval heritage and colonial architecture.
+        <a href="http://www.sjc.edu/" class="app-link">St. John’s College</a>,
+        and preserves its naval heritage and colonial architecture.
       </p>
       <p class="text-slate-600 mt-3">
         The land on which Shipley's Choice was established was originally
         acquired by <a
           href="http://www.geni.com/people/Adam-Shipley/6000000001192363964"
-          class="text-blue-600 hover:text-blue-700 underline">Adam Shipley</a
+          class="app-link">Adam Shipley</a
         > in 1668, and he patented 200 acres on the south side of the Severn River
         in 1681.
       </p>
@@ -145,21 +143,16 @@
         <li>
           <a
             href="http://www.aacps.org/html/schol/elementary/shipches.asp"
-            class="text-blue-600 hover:text-blue-700 underline"
-            >Shipley’s Choice Elementary School</a
+            class="app-link">Shipley’s Choice Elementary School</a
           >
         </li>
         <li>
-          <a
-            href="http://www.severnaparkmiddle.org/"
-            class="text-blue-600 hover:text-blue-700 underline"
+          <a href="http://www.severnaparkmiddle.org/" class="app-link"
             >Severna Park Middle School</a
           >
         </li>
         <li>
-          <a
-            href="http://www.severnaparkhigh.org/"
-            class="text-blue-600 hover:text-blue-700 underline"
+          <a href="http://www.severnaparkhigh.org/" class="app-link"
             >Severna Park High School</a
           >
         </li>
@@ -168,19 +161,18 @@
         Shipley’s Choice is 1½ miles from Exit 10 of Interstate 97, 17 miles
         from Baltimore, 34 miles from Washington, D.C., and 8 miles from the <a
           href="http://www.bwiairport.com/en"
-          class="text-blue-600 hover:text-blue-700 underline">BWI Airport</a
+          class="app-link">BWI Airport</a
         >. The nearby
         <a
           href="http://www.amtrak.com/servlet/ContentServer?pagename=am/am2Station/Station_Page&code=BWI"
-          class="text-blue-600 hover:text-blue-700 underline">Amtrak station</a
+          class="app-link">Amtrak station</a
         > connects to DC via MARC and Baltimore via light rail.
       </p>
       <p class="text-slate-600 mt-3">
         The community features a walkable location for Shipley’s Choice
         Elementary School and the privately managed <a
           href="http://www.shipleyspool.com/"
-          class="text-blue-600 hover:text-blue-700 underline"
-          >Shipley’s Choice Swim & Tennis Club</a
+          class="app-link">Shipley’s Choice Swim & Tennis Club</a
         >, with a clubhouse, two pools, a children’s pool, and four tennis
         courts.
       </p>
@@ -194,7 +186,7 @@
         Many residents commute across the Washington–Baltimore–Annapolis
         triangle, including to Columbia and <a
           href="http://www.ftmeade.army.mil/"
-          class="text-blue-600 hover:text-blue-700 underline">Fort Meade</a
+          class="app-link">Fort Meade</a
         >.
       </p>
 
@@ -237,7 +229,7 @@
         </li>
       </ul>
 
-            <!-- svelte-ignore a11y_img_redundant_alt -->
+      <!-- svelte-ignore a11y_img_redundant_alt -->
       <img
         src="data/revolving/9319905_orig.jpg"
         alt="Photo of flowers"

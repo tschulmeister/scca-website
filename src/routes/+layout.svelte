@@ -133,7 +133,7 @@
               Shipley's Choice
             </span>
             <p class="text-sm text-slate-300 whitespace-nowrap">
-              Community Association website
+              Community Association
             </p>
           </div>
         </div>

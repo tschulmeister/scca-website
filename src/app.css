@@ -99,3 +99,11 @@
   height: 100%;
   border: 0;
 }
+
+
+
+@layer utilities {
+  .app-link {
+    @apply text-blue-600 hover:text-blue-700 underline;
+  }
+}
