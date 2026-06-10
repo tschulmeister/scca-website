@@ -118,9 +118,7 @@
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       bind:clientWidth={containerWidth}
     >
-      <div
-        class="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between md:flex-nowrap"
-      >
+      <div class="flex flex-row items-center justify-between py-4 gap-4">
         <div bind:this={brandWrapper} class="flex items-center gap-3 shrink-0">
           <img
             src="/shipleys-logo.png"
@@ -140,8 +138,7 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-between gap-4 md:hidden shrink-0">
-          <div></div>
+        <div class="flex items-center md:hidden shrink-0">
           <button
             type="button"
             on:click={() => (navOpen = !navOpen)}
