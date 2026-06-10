@@ -7,15 +7,18 @@
   let navOpen = false;
   let moreOpen = false;
   let navWrapper;
+  let brandWrapper;
   let measureContainer;
   let moreButton;
   let measureRefs = {};
   let visibleLinks = [];
   let overflowLinks = [];
 
+  // Tracks the inner bounding container width reactively
+  let containerWidth = 0;
+
   function trackMeasure(el, link) {
     measureRefs[link.path] = el;
-
     return {
       destroy() {
         if (measureRefs[link.path] === el) {
@@ -41,7 +44,16 @@
   function updateNav() {
     if (!navWrapper || !measureContainer || !moreButton) return;
 
-    const available = navWrapper.clientWidth - 12;
+    // Get the exact width of the parent flex row
+    const parentRow = navWrapper.parentElement;
+    if (!parentRow) return;
+
+    const parentAvailable = parentRow.clientWidth;
+    const brandWidth = brandWrapper ? brandWrapper.offsetWidth : 0;
+
+    // Remaining horizontal space for desktop layout
+    const available = parentAvailable - brandWidth - 64; // Increased safety margin for desktop spacing
+
     const moreWidth = moreButton.offsetWidth;
     let used = 0;
     const visible = [];
@@ -72,6 +84,11 @@
     overflowLinks = overflow;
   }
 
+  // Svelte reactivity: Re-run calculations immediately whenever the container dimension updates
+  $: if (containerWidth || navWrapper || brandWrapper) {
+    updateNav();
+  }
+
   onMount(() => {
     visibleLinks = navLinks;
     updateNav();
@@ -97,74 +114,79 @@
   <header
     class="relative z-30 bg-slate-900/95 text-white shadow-lg shadow-slate-900/10 backdrop-blur-sm border-b border-slate-800"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      bind:clientWidth={containerWidth}
+    >
       <div
-        class="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between"
+        class="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between md:flex-nowrap"
       >
-        <div class="flex items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <img
-              src="/shipleys-logo.png"
-              style="height: 40px; width: 40px;"
-              alt="Shipley's Choice Logo"
-            />
-
-            <div class="flex flex-col">
-              <span class="text-xl font-bold tracking-tight leading-tight"
-                >Shipley's Choice</span
-              >
-              <p class="text-sm text-slate-300">
-                Community Association
-              </p>
-            </div>
-          </div>
-          <div class="md:hidden">
-            <button
-              type="button"
-              on:click={() => (navOpen = !navOpen)}
-              aria-expanded={navOpen}
-              aria-label="Toggle navigation"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        <div bind:this={brandWrapper} class="flex items-center gap-3 shrink-0">
+          <img
+            src="/shipleys-logo.png"
+            style="height: 40px; width: 40px;"
+            alt="Shipley's Choice Logo"
+            class="object-contain shrink-0"
+          />
+          <div class="flex flex-col select-none shrink-0">
+            <span
+              class="text-xl font-bold tracking-tight leading-tight whitespace-nowrap"
             >
-              {#if navOpen}
-                <svg
-                  class="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              {:else}
-                <svg
-                  class="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              {/if}
-            </button>
+              Shipley's Choice
+            </span>
+            <p class="text-sm text-slate-300 whitespace-nowrap">
+              Community Association website
+            </p>
           </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 md:hidden shrink-0">
+          <div></div>
+          <button
+            type="button"
+            on:click={() => (navOpen = !navOpen)}
+            aria-expanded={navOpen}
+            aria-label="Toggle navigation"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            {#if navOpen}
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            {:else}
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            {/if}
+          </button>
         </div>
 
         <nav
           bind:this={navWrapper}
-          class="hidden flex-wrap items-center gap-2 md:flex md:justify-end"
+          class="hidden flex-nowrap items-center gap-2 md:flex md:justify-end min-w-0 md:overflow-visible"
           aria-label="Primary navigation"
         >
           {#each visibleLinks as link}
             <a
               href={link.path}
-              class="inline-flex items-center px-3 py-2 text-sm transition-colors duration-150 {$page
+              class="inline-flex items-center px-3 py-2 text-sm transition-colors duration-150 shrink-0 whitespace-nowrap {$page
                 .url.pathname === link.path
                 ? 'border-b-2 border-blue-400 text-white font-semibold'
                 : 'border-b-2 border-transparent text-slate-200 hover:text-white hover:border-slate-500'}"
@@ -174,11 +196,11 @@
           {/each}
 
           {#if overflowLinks.length}
-            <div class="relative">
+            <div class="relative shrink-0">
               <button
                 type="button"
                 on:click={() => (moreOpen = !moreOpen)}
-                class="inline-flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium border-slate-700/70 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors"
+                class="inline-flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium border-slate-700/70 text-slate-200 hover:bg-slate-700 hover:text-white transition-colors whitespace-nowrap"
               >
                 More..
                 <svg
