@@ -102,13 +102,22 @@
         class="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between"
       >
         <div class="flex items-center justify-between gap-4">
-          <div>
-            <span class="text-xl font-bold tracking-tight"
-              >Shipley's Choice</span
-            >
-            <p class="text-sm text-slate-300">Community Association website</p>
-          </div>
+          <div class="flex items-center gap-3">
+            <img
+              src="/shipleys-logo.png"
+              style="height: 40px; width: 40px;"
+              alt="Shipley's Choice Logo"
+            />
 
+            <div class="flex flex-col">
+              <span class="text-xl font-bold tracking-tight leading-tight"
+                >Shipley's Choice</span
+              >
+              <p class="text-sm text-slate-300">
+                Community Association
+              </p>
+            </div>
+          </div>
           <div class="md:hidden">
             <button
               type="button"
