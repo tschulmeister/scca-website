@@ -148,8 +148,7 @@
 
         <div>
           <iframe
-            width="560"
-            height="315"
+            class="responsive-video"
             src="https://www.youtube.com/embed/Pj82m4gIRbw?si=lGGHeTlsvg_GV24K"
             title="YouTube video player"
             frameborder="0"

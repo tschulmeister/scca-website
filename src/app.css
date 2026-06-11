@@ -107,3 +107,9 @@
     @apply text-blue-600 hover:text-blue-700 underline;
   }
 }
+
+.responsive-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
