@@ -30,9 +30,9 @@
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "News & Records", path: "/news-records" },
     { name: "Information", path: "/information" },
     { name: "Documents", path: "/documents" },
-    { name: "News & Records", path: "/news-records" },
     { name: "Meeting Notes", path: "/meeting-notes" },
     { name: "Register", path: "/register" },
     { name: "Architecture Requests", path: "/architecture-requests" },
