@@ -124,6 +124,19 @@
   <title>Community Documents | Shipley's Choice</title>
 </svelte:head>
 
+<section class="page-header py-20">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <p class="text-sm uppercase tracking-[0.24em] text-blue-300">Documents</p>
+    <h1 class="mt-4 text-4xl font-extrabold tracking-tight">
+      Important SCCA Resources
+    </h1>
+    <p class="mt-4 max-w-2xl mx-auto text-slate-300">
+      Access governance documents, property guidelines, and neighborhood layouts
+      for Shipley's Choice residents.
+    </p>
+  </div>
+</section>
+
 <div
   class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 h-[calc(100vh-140px)] flex flex-col"
 >
@@ -133,11 +146,11 @@
   >
     <div>
       <h1 class="text-2xl font-bold tracking-tight text-slate-900">
-        Important SCCA Resources
+        Click a document title to view
       </h1>
       <p class="text-sm text-slate-500">
-        Access governance documents, property guidelines, and neighborhood
-        layouts for Shipley's Choice residents.
+        Switch between documents and neighorhood plats images by using the
+        toggle switch
       </p>
     </div>
 
