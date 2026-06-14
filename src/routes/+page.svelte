@@ -1,9 +1,37 @@
+<script>
+  let showMessage = false;
+</script>
+
 <svelte:head>
   <title>Shipley's Choice Community Association</title>
 </svelte:head>
 
 <section class="page-header py-24 px-6 text-center">
   <div class="max-w-3xl mx-auto">
+    <div class="inline-flex flex-col items-center mb-4 relative">
+      <button
+        on:click={() => (showMessage = !showMessage)}
+        class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold rounded-full hover:bg-blue-500/30 transition-all"
+      >
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+        New website is live! • Click to read note
+      </button>
+
+      {#if showMessage}
+        <div
+          class="absolute top-8 mt-2 w-72 bg-slate-900 text-left border border-slate-700 p-4 rounded-xl shadow-xl text-xs text-slate-300 z-10"
+        >
+          <p class="font-semibold text-white mb-1">
+            Hello Shipley's Choice neighbors!
+          </p>
+          <p>
+            The SCCA website just got a BIG upgrade! We are now better equipped
+            than ever to support, inform, and serve our community.
+          </p>
+        </div>
+      {/if}
+    </div>
+
     <h1 class="text-5xl font-extrabold tracking-tight mb-4">
       Welcome to Shipley's Choice
     </h1>
