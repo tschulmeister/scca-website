@@ -1,5 +1,15 @@
 <script>
   let showMessage = false;
+
+  function clickOutside(node) {
+    const handleClick = (event) => {
+      if (node && !node.contains(event.target) && !event.defaultPrevented) {
+        node.dispatchEvent(new CustomEvent("click_outside", node));
+      }
+    };
+    document.addEventListener("click", handleClick, true);
+    return { destroy: () => document.removeEventListener("click", handleClick, true) };
+  }
 </script>
 
 <svelte:head>
@@ -8,7 +18,11 @@
 
 <section class="page-header py-24 px-6 text-center">
   <div class="max-w-3xl mx-auto">
-    <div class="inline-flex flex-col items-center mb-4 relative">
+    <div
+      class="inline-flex flex-col items-center mb-4 relative"
+      use:clickOutside
+      on:click_outside={() => (showMessage = false)}
+    >
       <button
         on:click={() => (showMessage = !showMessage)}
         class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold rounded-full hover:bg-blue-500/30 transition-all"
@@ -44,19 +58,19 @@
     >
       <a
         href="/news-records"
-        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold shadow-lg transition-colors"
+        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-2xl font-semibold shadow-lg transition-colors"
       >
         News
       </a>
       <a
         href="/register"
-        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-lg font-semibold transition-colors"
+        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-2xl font-semibold transition-colors"
       >
         Register
       </a>
       <a
         href="/contact"
-        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-lg font-semibold transition-colors"
+        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-2xl font-semibold transition-colors"
       >
         Contact
       </a>
@@ -91,9 +105,9 @@
           </p>
           <p class="mt-3">
             For a list of streets and addresses in the SCCA, please refer to the <a
-              href="http://weebly-link/305159282220921052"
+              href="/information"
               class="app-link">Information</a
-            > tab.
+            > page.
           </p>
         </div>
         <div
@@ -218,10 +232,9 @@
         >.
       </p>
 
-      <!-- svelte-ignore a11y_img_redundant_alt -->
       <img
         src="data/revolving/4241525_orig.jpg"
-        alt="Photo of Shipley's Choice Elementary School"
+        alt="The brick facade of Shipley's Choice Elementary School on a sunny day"
         class="rounded-3xl mt-4 border border-slate-200 shadow-sm"
       />
     </article>
@@ -257,10 +270,9 @@
         </li>
       </ul>
 
-      <!-- svelte-ignore a11y_img_redundant_alt -->
       <img
         src="data/revolving/9319905_orig.jpg"
-        alt="Photo of flowers"
+        alt="Pink and yellow flowers planted at the Shipley's Choice community entrance sign"
         class="rounded-3xl mt-4 border border-slate-200 shadow-sm"
       />
     </article>
