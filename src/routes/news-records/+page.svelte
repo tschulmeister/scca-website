@@ -44,6 +44,82 @@
         <div
           class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3"
         >
+          <h3 class="text-lg font-bold text-slate-900 leading-snug">
+            A Reminder on Common Ground Maintenance
+          </h3>
+          <time
+            class="text-xs font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap sm:shrink-0"
+          >
+            Summer 2026
+          </time>
+        </div>
+
+        <div
+          class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed"
+        >
+          <p
+            class="font-semibold text-slate-800 bg-slate-50 border-l-4 border-blue-500 p-3 rounded-r-lg"
+          >
+            A friendly reminder: all work on community-owned common grounds must
+            be approved by the SCCA Board before it is undertaken.
+          </p>
+          <p>
+            While we deeply appreciate the spirit of volunteerism, this policy
+            is essential for several reasons. First and foremost is safety and
+            liability; uncoordinated work can create hazards and expose our
+            community to legal and financial risks. Additionally, any
+            modifications to common areas must comply with county zoning laws
+            and align with the community's long-term landscaping and maintenance
+            plans.
+          </p>
+          <p>
+            We encourage residents who wish to contribute their time and skills
+            to contact the Board. We welcome community involvement, but it must
+            be done in a coordinated and approved manner to protect our shared
+            community assets responsibly.
+          </p>
+        </div>
+      </div>
+
+      <div class="py-6 first:pt-0 last:pb-0 group">
+        <div
+          class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3"
+        >
+          <h3
+            class="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors"
+          >
+            A Note on Pedestrian Safety
+          </h3>
+          <time
+            class="text-xs font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap sm:shrink-0"
+          >
+            Summer 2026
+          </time>
+        </div>
+
+        <div
+          class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed"
+        >
+          <p>
+            We've noticed an increase in residents walking in the street,
+            especially during evenings and on weekends. While we love to see our
+            neighbors out and about, this can create hazardous situations for
+            both pedestrians and drivers.
+          </p>
+          <p>
+            For everyone's safety, we strongly urge all residents to use
+            sidewalks whenever they are available. When walking on a street
+            without a sidewalk, please walk facing traffic and stay as far to
+            the side of the road as possible. Let's all do our part to keep
+            Shipley's Choice a safe community for everyone.
+          </p>
+        </div>
+      </div>
+
+      <div class="py-6 first:pt-0 last:pb-0 group">
+        <div
+          class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3"
+        >
           <h3
             class="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors"
           >
