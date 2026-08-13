@@ -1,4 +1,6 @@
 <script>
+  import newsItems from "$data/newsItems.json";
+
   let showMessage = false;
 
   function clickOutside(node) {
@@ -12,6 +14,8 @@
       destroy: () => document.removeEventListener("click", handleClick, true),
     };
   }
+
+  const latestNews = newsItems[0];
 </script>
 
 <svelte:head>
@@ -64,11 +68,16 @@
     <article
       class="rounded-3xl bg-white/10 p-8 shadow-lg border border-white/20 backdrop-blur-sm"
     >
-      <h3
-        class="text-xl font-semibold text-white mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
-      >
-        Community News
-      </h3>
+      <div class="flex flex-col-reverse items-start gap-4 sm:flex-row sm:justify-between sm:items-start mb-3">
+        <h3
+          class="text-xl font-semibold text-white [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
+        >
+          Community News
+        </h3>
+        <div class="text-xs font-semibold uppercase tracking-wider text-slate-300 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap sm:shrink-0">
+          Latest: {latestNews.date}
+        </div>
+      </div>
       <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
         Stay up-to-date with the latest announcements, events, and community
         news.
