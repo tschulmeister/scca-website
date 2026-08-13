@@ -8,7 +8,9 @@
       }
     };
     document.addEventListener("click", handleClick, true);
-    return { destroy: () => document.removeEventListener("click", handleClick, true) };
+    return {
+      destroy: () => document.removeEventListener("click", handleClick, true),
+    };
   }
 </script>
 
@@ -28,7 +30,8 @@
         class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold rounded-full hover:bg-blue-500/30 transition-all"
       >
         <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-        New website is live! • Click to read note
+        Important: Declaring Shipley's Choice a Special Community Benefits District
+        • Click to read note
       </button>
 
       {#if showMessage}
@@ -36,11 +39,14 @@
           class="absolute top-8 mt-2 w-72 bg-slate-900 text-left border border-slate-700 p-4 rounded-xl shadow-xl text-xs text-slate-300 z-10"
         >
           <p class="font-semibold text-white mb-1">
-            Hello Shipley's Choice neighbors!
+            Hello Shipley's Choice neighbors
           </p>
           <p>
-            The SCCA website just got a BIG upgrade! We are now better equipped
-            than ever to support, inform, and serve our community.
+            Please refer to the <a
+              class="app-link"
+              href="/news-records#scbd-update-aug-2026">news post</a
+            > regarding the initiative to declare Shipley's Choice a Special Community
+            Benefits District.
           </p>
         </div>
       {/if}
@@ -53,28 +59,62 @@
       A vibrant community in Anne Arundel County, Maryland. Stay informed on
       board activities, local news, and community documents.
     </p>
-    <div
-      class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+  </div>
+  <div class="max-w-7xl mx-auto px-4 grid gap-6 lg:grid-cols-3 mt-12 text-left">
+    <article
+      class="rounded-3xl bg-white/10 p-8 shadow-lg border border-white/20 backdrop-blur-sm"
     >
+      <h3
+        class="text-xl font-semibold text-white mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
+      >
+        Community News
+      </h3>
+      <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
+        Stay up-to-date with the latest announcements, events, and community
+        news.
+      </p>
       <a
         href="/news-records"
-        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-2xl font-semibold shadow-lg transition-colors"
+        class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+        >View news →</a
       >
-        News
-      </a>
+    </article>
+
+    <article
+      class="rounded-3xl bg-white/10 p-8 shadow-lg border border-white/20 backdrop-blur-sm"
+    >
+      <h3
+        class="text-xl font-semibold text-white mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
+      >
+        Architectural Requests
+      </h3>
+      <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
+        Planning a home improvement? Find the ACR form and fence standards here.
+      </p>
+      <a
+        href="/architecture-requests"
+        class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+        >View requirements →</a
+      >
+    </article>
+
+    <article
+      class="rounded-3xl bg-white/10 p-8 shadow-lg border border-white/20 backdrop-blur-sm"
+    >
+      <h3
+        class="text-xl font-semibold text-white mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
+      >
+        Register with SCCA
+      </h3>
+      <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
+        Register your household to stay informed on community news and updates.
+      </p>
       <a
         href="/register"
-        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-2xl font-semibold transition-colors"
+        class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+        >Register now →</a
       >
-        Register
-      </a>
-      <a
-        href="/contact"
-        class="px-6 py-3 bg-slate-500 hover:bg-slate-600 rounded-2xl font-semibold transition-colors"
-      >
-        Contact
-      </a>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -275,55 +315,6 @@
         alt="Pink and yellow flowers planted at the Shipley's Choice community entrance sign"
         class="rounded-3xl mt-4 border border-slate-200 shadow-sm"
       />
-    </article>
-  </div>
-</section>
-
-<section class="bg-slate-50 border-t border-slate-200 py-16">
-  <div class="max-w-7xl mx-auto px-4 grid gap-6 lg:grid-cols-3">
-    <article class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
-      <h3 class="text-xl font-semibold text-slate-900 mb-3">Meeting Minutes</h3>
-      <p class="text-slate-600 mb-4">
-        Browse the latest board meeting notes and archives to stay up to date
-        with community decisions.
-      </p>
-      <a
-        href="/meeting-notes"
-        class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
-        >Open archive →</a
-      >
-    </article>
-
-    <article class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
-      <h3 class="text-xl font-semibold text-slate-900 mb-3">Documents</h3>
-      <p class="text-slate-600 mb-4">
-        Find community documents, guidelines, and resources for Shipley’s Choice
-        residents.
-      </p>
-      <a
-        href="/documents"
-        class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
-        >View documents →</a
-      >
-    </article>
-
-    <article class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
-      <h3 class="text-xl font-semibold text-slate-900 mb-3">Board & Records</h3>
-      <p class="text-slate-600 mb-4">
-        Learn about the Board, upcoming meetings, and community news records.
-      </p>
-      <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <a
-          href="/board"
-          class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
-          >Board →</a
-        >
-        <a
-          href="/news-records"
-          class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
-          >News & Records →</a
-        >
-      </div>
     </article>
   </div>
 </section>

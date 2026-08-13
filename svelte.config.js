@@ -6,7 +6,10 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		// adapter-auto will seamlessly optimize the build specifically for Vercel
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$data: 'src/data'
+		}
 	}
 };
 
