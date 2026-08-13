@@ -59,6 +59,9 @@
     <h1 class="text-5xl font-extrabold tracking-tight mb-4">
       Welcome to Shipley's Choice
     </h1>
+    <p class="text-xs text-slate-300 leading-relaxed">
+      Mailbox: 315 Arbor Oaks Ct, Millersville, MD 21108
+    </p>
     <p class="text-xl text-slate-300 leading-relaxed">
       A vibrant community in Anne Arundel County, Maryland. Stay informed on
       board activities, local news, and community documents.
@@ -68,13 +71,17 @@
     <article
       class="rounded-3xl bg-white/10 p-8 shadow-lg border border-white/20 backdrop-blur-sm"
     >
-      <div class="flex flex-col-reverse items-start gap-4 sm:flex-row sm:justify-between sm:items-start mb-3">
+      <div
+        class="flex flex-col-reverse items-start gap-4 sm:flex-row sm:justify-between sm:items-start mb-3"
+      >
         <h3
           class="text-xl font-semibold text-white [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
         >
           Community News
         </h3>
-        <div class="text-xs font-semibold uppercase tracking-wider text-slate-300 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap sm:shrink-0">
+        <div
+          class="text-xs font-semibold uppercase tracking-wider text-slate-300 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap sm:shrink-0"
+        >
           Latest: {latestNews.date}
         </div>
       </div>
@@ -113,15 +120,16 @@
       <h3
         class="text-xl font-semibold text-white mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
       >
-        Register with SCCA
+        Share your voice
       </h3>
       <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
-        Register your household to stay informed on community news and updates.
+        Residents can openly discuss community matters with our board of
+        volunteers on Google Groups.
       </p>
       <a
-        href="/register"
+        href="https://groups.google.com/u/1/g/shipleys-choice-community-association"
         class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
-        >Register now →</a
+        >Join today →</a
       >
     </article>
   </div>
