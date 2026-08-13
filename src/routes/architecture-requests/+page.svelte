@@ -36,7 +36,7 @@
         </p>
         <div class="mt-6 grid gap-6 md:grid-cols-2">
             <a
-                href="https://www.shipleyschoice.org/uploads/1/4/6/6/146632212/scca_architectural_request_form.docx"
+                href="/data/docs/scca_architectural_request_form.docx"
                 target="_blank"
                 rel="noreferrer"
                 class="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-slate-800 hover:bg-slate-100 transition-colors"
@@ -45,7 +45,7 @@
                 <p>Download the Architectural Change Request form.</p>
             </a>
             <a
-                href="https://www.shipleyschoice.org/uploads/1/4/6/6/146632212/scca_fence_standards_v4%5B389%5D.pdf"
+                href="/data/docs/scca_fence_standards_v4[389].pdf"
                 target="_blank"
                 rel="noreferrer"
                 class="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-slate-800 hover:bg-slate-100 transition-colors"
