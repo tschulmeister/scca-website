@@ -1,5 +1,15 @@
 [
   {
+    "id": "street-light-upgrade-2027",
+    "title": "Neighborhood Street Light Upgrade",
+    "date": "15 August 2026",
+    "tags": [
+      "Community Improvement",
+      "Safety"
+    ],
+    "content": "<p>The Board of Directors contacted the County's Traffic Engineering Division to request replacement of the original street lights in our neighborhood which are 45 years old and in poor condition. The senior engineer in charge of the County's street lights responded immediately and agreed to replace them. The lights in the SCHOA part of Shipley's were already replaced and our new lights will be like those. The new light fixtures and poles will improve the appearance of the neighborhood.  The fixtures are brighter LED lights which will improve safety.</p><p><img src=\"/data/revolving/streetlights_upgrade.png\" alt=\"New street light model\" class=\"rounded-2xl border border-slate-200 shadow-sm my-4\" /></p><p>We are hopeful the street light replacement project will begin in the Spring of 2027.  The senior engineer explained the funding for this project comes from two different sources and, consequently, the upgrade will take place in stages; the fixtures will be replaced first and then the poles.  Your Board of Directors is working hard to improve the neighborhood!</p>"
+  },
+  {
     "id": "scbd-update-aug-2026",
     "title": "Designating Shipley’s Choice Community Association as a Special Community Benefits District",
     "date": "13 August 2026",
@@ -24,14 +34,19 @@
     "id": "scbd-announcement-dec-2025",
     "title": "Designating Shipley’s Choice Community Association as a Special Community Benefits District",
     "date": "Dec 2025",
-    "tags": ["Official Notice", "Financials"],
+    "tags": [
+      "Official Notice",
+      "Financials"
+    ],
     "content": "<p class=\"font-semibold text-slate-800 bg-slate-50 border-l-4 border-blue-500 p-3 rounded-r-lg\">During our SCCA Board of Directors meeting on December 12, 2025, the Board voted to pursue designating SCCA as a Special Community Benefits District (SCBD).</p><p>Such a designation would result in Anne Arundel County collecting our annual dues through annual county tax collection. We are pursuing this action for one reason: <span class=\"font-bold\">only 70 percent of houses that are part of SCCA pay annual dues</span> and the community’s income doesn’t match our expenses. There are many homeowners’ associations designated as SCBDs in Anne Arundel County, including our neighbors in Chartwell.</p><p>Two-thirds of SCCA homeowners must sign a petition in order for our community to become a SCBD. Establishing a SCBD will likely be a lengthy process; we will be sure to share information regularly and provide an opportunity for members of the community to share their opinions about this initiative.</p>"
   },
   {
     "id": "street-safety-summer-2026",
     "title": "Street Safety",
     "date": "Summer 2026",
-    "tags": ["Community Safety"],
+    "tags": [
+      "Community Safety"
+    ],
     "content": "<p>Riding bikes and scooters can be a lot of fun, but it's also important to teach our children about the potential dangers, especially when riding at night. To help keep our community safe, we encourage all parents to talk to their kids about bike and scooter safety. Here are some important safety tips to share:</p><ul class=\"list-disc list-inside\"><li>Always wear a helmet.</li><li>Ride defensively and be aware of your surroundings.</li><li>Use bike paths and sidewalks when available.</li><li>Avoid riding at night.</li></ul><p>The intersection of Governor Stone and Benfield can be especially perilous, as well as the intersection of Severncrest and W Benfield. It is vitally important for children to learn their safety basics and for drivers to be vigilant.</p><p>For more information regarding children and e-scooters, please visit <a href=\"https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/E-Scooters.aspx\" class=\"app-link\">HealthyChildren.org</a> and watch this short video from MarylandEMS.</p><div class=\"mt-4\"><iframe class=\"responsive-video\" src=\"https://www.youtube.com/embed/Pj82m4gIRbw?si=lGGHeTlsvg_GV24K\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe></div>"
   }
 ]

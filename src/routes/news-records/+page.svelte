@@ -2,6 +2,8 @@
   import { onMount, onDestroy } from "svelte";
   import newsItems from "$data/newsItems.json";
 
+  // The `newsItems` are now imported directly.
+
   let activeId = "";
   let observer;
 

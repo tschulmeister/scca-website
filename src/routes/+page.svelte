@@ -1,6 +1,8 @@
 <script>
   import newsItems from "$data/newsItems.json";
 
+  // The `newsItems` are now imported directly.
+
   let showMessage = false;
 
   function clickOutside(node) {
@@ -15,7 +17,8 @@
     };
   }
 
-  const latestNews = newsItems[0];
+  $: latestNews = newsItems?.[0];
+  $: latestThreeNews = newsItems?.slice(0, 3) ?? [];
 </script>
 
 <svelte:head>
@@ -79,16 +82,21 @@
         >
           Community News
         </h3>
-        <div
-          class="text-xs font-semibold uppercase tracking-wider text-slate-300 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap sm:shrink-0"
-        >
-          Latest: {latestNews.date}
-        </div>
+        {#if latestNews}
+          <div
+            class="text-xs font-semibold uppercase tracking-wider text-slate-300 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap sm:shrink-0"
+          >
+            Latest: {latestNews.date}
+          </div>
+        {/if}
       </div>
-      <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
-        Stay up-to-date with the latest announcements, events, and community
-        news.
-      </p>
+      <ul
+        class="list-disc list-inside space-y-2 text-slate-200 mb-4 text-sm [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]"
+      >
+        {#each latestThreeNews as item}
+          <li>{item.title}</li>
+        {/each}
+      </ul>
       <a
         href="/news-records"
         class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
