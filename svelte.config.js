@@ -8,7 +8,8 @@ const config = {
 		// adapter-auto will seamlessly optimize the build specifically for Vercel
 		adapter: adapter(),
 		alias: {
-			$data: 'src/data'
+			$data: 'src/data',
+			$components: 'src/components'
 		}
 	}
 };

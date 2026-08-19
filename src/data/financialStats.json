@@ -1,0 +1,38 @@
+[
+	{
+		"year": 2020,
+		"paid": 209,
+		"total": 283,
+		"rate": 0.7385
+	},
+	{
+		"year": 2021,
+		"paid": null,
+		"total": null,
+		"rate": null
+	},
+	{
+		"year": 2022,
+		"paid": 215,
+		"total": 284,
+		"rate": 0.757
+	},
+	{
+		"year": 2023,
+		"paid": 210,
+		"total": 284,
+		"rate": 0.7394
+	},
+	{
+		"year": 2024,
+		"paid": 205,
+		"total": 284,
+		"rate": 0.7218
+	},
+	{
+		"year": 2025,
+		"paid": 196,
+		"total": 284,
+		"rate": 0.6901
+	}
+]
