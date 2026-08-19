@@ -21,12 +21,13 @@
 			Be in the Know: Special Community Benefits District
 		</h1>
 		<p class="mt-4 max-w-2xl mx-auto text-slate-300">
-			Why should Shipley's Choice pursue SCBD desgination? Understanding the costs and challenges facing our community. 
+			Why should Shipley's Choice pursue SCBD desgination? Understanding
+			the costs and challenges facing our community.
 		</p>
 	</div>
 </section>
 
-<div class="container mx-auto px-4 ">
+<div class="container mx-auto px-4">
 	<div class="max-w-5xl mx-auto">
 		<!-- Key Arguments Grid -->
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -110,6 +111,11 @@
 						<strong>70% of all collected dues</strong> for that year.
 					</li>
 					<li>
+						<strong>Physical risk to residents and property:</strong
+						> Dead trees can fall unexpectedly, causing severe or deadly
+						harm when they do.
+					</li>
+					<li>
 						<strong>Inability to Plan:</strong> Unpredictable emergencies
 						leave zero room for proactive maintenance or long-term enhancements.
 					</li>
@@ -175,6 +181,124 @@
 					maintained.
 				</li>
 			</ul>
+
+			<h4 class="mt-6 text-2xl font-bold text-center text-slate-900">
+				But what is a Special Community Benefits District?
+			</h4>
+		</div>
+
+		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+			<div
+				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
+			>
+				<h3 class="text-xl font-bold text-slate-900">
+					About Special Taxing Districts
+				</h3>
+				<p class="mt-4 space-y-3 text-slate-700">
+					A community might consider forming a special taxing district
+					to finance a public benefit for the community that it does
+					not have the ability to finance in any other way.
+				</p>
+				<p class="mt-4 space-y-3 text-slate-700">
+					Once the taxing district is formed, the community each year
+					determines a tax rate to produce the revenue necessary to
+					fund the benefit for the following fiscal year. The property
+					owners are taxing themselves to fund the particular
+					benefits.
+				</p>
+			</div>
+
+			<div
+				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
+			>
+				<h3 class="text-xl font-bold text-slate-900">
+					Special Community Benefit Districts
+				</h3>
+				<p class="mt-4 mb-4 space-y-3 text-slate-700">
+					Have been formed for a variety of purposes, including:
+				</p>
+				<ul class="ml-8 list-disc">
+					<li>
+						Maintenance of community property, including
+						community-owned roads
+					</li>
+					<li>Special security or special police protection</li>
+					<li>Improvements to community facilities</li>
+					<li>Insect and pest control</li>
+				</ul>
+			</div>
+
+			<div
+				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
+			>
+				<h3 class="text-xl font-bold text-slate-900">What it is:</h3>
+				<ul class="mt-6 ml-8 list-disc">
+					<li>A taxing district</li>
+					<li>
+						A mechanism to collect taxes from persons that have a
+						common need
+					</li>
+				</ul>
+			</div>
+
+			<div
+				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
+			>
+				<h3 class="text-xl font-bold text-slate-900">
+					What it is NOT:
+				</h3>
+				<ul class="mt-6 ml-8 list-disc">
+					<li>
+						Part of the County Government - the County merely
+						collects and distributes the taxes in a fiduciary role;
+					</li>
+					<li>
+						A legal entity - they cannot borrow funds, buy property,
+						be sued
+					</li>
+					<li>
+						A Home Owners Association - nor do they “replace the
+						Home Owners Association”
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Summary Section -->
+		<div class="mt-16 rounded-xl bg-slate-50 p-8 border border-slate-200">
+			<h3 class="text-2xl font-bold text-center text-slate-900">
+				Where can I get more information?
+			</h3>
+
+			<ul
+				class="mt-8 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-3 text-center"
+			>
+				<li>
+					The <a
+						class="app-link"
+						href="https://www.aacounty.org/budget/special-taxing-districts"
+						>Anne Arundel County Website</a
+					> has a wealth of helpful information about SCBDs and all residents
+					are encouraged to review.
+				</li>
+				<li>
+					As always, the SCCA board is available to field questions
+					through email, in-person, on the phone, or via the <a
+						href="https://groups.google.com/u/1/g/shipleys-choice-community-association"
+						class="app-link">Google Group</a
+					> for SCCA residents.
+				</li>
+				<li>
+					<strong
+						>Note that the Shipley's Choice Facebook page is NOT an
+						authoritative source for community information on SCCA matters.</strong
+					>
+				</li>
+			</ul>
+			<img
+				src="data/img/community_overhead.png"
+				class="rounded-3xl mt-4 border border-slate-200 shadow-sm"
+			/>
 		</div>
 	</div>
 </div>
