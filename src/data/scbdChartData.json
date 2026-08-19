@@ -1,0 +1,19 @@
+{
+	"duesRate": [
+		{ "year": 2022, "value": 0.757 },
+		{ "year": 2023, "value": 0.739 },
+		{ "year": 2024, "value": 0.722 },
+		{ "year": 2025, "value": 0.69 },
+		{ "year": 2026, "value": 0.683 }
+	],
+	"insuranceCosts": [
+		{ "year": 2024, "value": 1850 },
+		{ "year": 2025, "value": 3823 },
+		{ "year": 2026, "value": 4279 }
+	],
+	"cashReserves": [
+		{ "label": "YE 2024", "value": 13166 },
+		{ "label": "YE 2025", "value": 10430 },
+		{ "label": "Mid-2026", "value": 6763 }
+	]
+}
