@@ -119,7 +119,7 @@
 					</li>
 					<li>
 						<strong>Declining Participation Gap:</strong> Nearly
-						<strong>32% of the community (159 homes)</strong> currently
+						<strong>32% of the community (90 homes)</strong> currently
 						does not contribute to essential maintenance (often simply
 						due to the friction of mailing a physical check).
 					</li>

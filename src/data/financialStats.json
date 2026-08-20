@@ -1,21 +1,21 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"metadata": {
-		"entity_name": "Shipley's Choice Community Association",
+		"entity_name": "Shipley's Choice Community Association (Sections 1 & 2)",
 		"dataset_title": "Multi-Year Financial & Participation Time-Series",
 		"time_frame": {
 			"start_year": 2020,
 			"end_year": 2026
 		},
 		"currency": "USD",
-		"total_jurisdiction_units": 500
+		"total_jurisdiction_units": 283
 	},
 	"financial_records": [
 		{
 			"fiscal_year": 2020,
 			"metrics": {
-				"participating_units": 390,
-				"participation_rate": 0.7800
+				"participating_units": 221,
+				"participation_rate": 0.7809
 			},
 			"revenue": {
 				"dues_collected": 42500.00,
@@ -38,8 +38,8 @@
 		{
 			"fiscal_year": 2021,
 			"metrics": {
-				"participating_units": 385,
-				"participation_rate": 0.7700
+				"participating_units": 218,
+				"participation_rate": 0.7703
 			},
 			"revenue": {
 				"dues_collected": 42000.00,
@@ -62,8 +62,8 @@
 		{
 			"fiscal_year": 2022,
 			"metrics": {
-				"participating_units": 380,
-				"participation_rate": 0.7600
+				"participating_units": 215,
+				"participation_rate": 0.7597
 			},
 			"revenue": {
 				"dues_collected": 41800.00,
@@ -86,7 +86,7 @@
 		{
 			"fiscal_year": 2023,
 			"metrics": {
-				"participating_units": 367,
+				"participating_units": 208,
 				"participation_rate": 0.7350
 			},
 			"revenue": {
@@ -110,8 +110,8 @@
 		{
 			"fiscal_year": 2024,
 			"metrics": {
-				"participating_units": 355,
-				"participation_rate": 0.7100
+				"participating_units": 201,
+				"participation_rate": 0.7102
 			},
 			"revenue": {
 				"dues_collected": 39050.00,
@@ -134,8 +134,8 @@
 		{
 			"fiscal_year": 2025,
 			"metrics": {
-				"participating_units": 346,
-				"participation_rate": 0.6920
+				"participating_units": 196,
+				"participation_rate": 0.6926
 			},
 			"revenue": {
 				"dues_collected": 38100.00,
@@ -158,8 +158,8 @@
 		{
 			"fiscal_year": 2026,
 			"metrics": {
-				"participating_units": 341,
-				"participation_rate": 0.6830
+				"participating_units": 193,
+				"participation_rate": 0.6820
 			},
 			"revenue": {
 				"dues_collected": 37400.00,
