@@ -1,7 +1,22 @@
 <script>
 	import SparkChart from "$components/charts/SparkChart.svelte";
-	import scbdChartData from "$data/scbdChartData.json";
+	import financialStats from "$data/financialStats.json";
 	import { format } from "d3-format";
+
+	const duesRateData = financialStats.financial_records.map(r => ({
+		year: r.fiscal_year,
+		value: r.metrics.participation_rate
+	}));
+
+	const insuranceCostsData = financialStats.financial_records.map(r => ({
+		year: r.fiscal_year,
+		value: r.expenditures.insurance_premiums
+	}));
+
+	const cashReservesData = financialStats.financial_records.map(r => ({
+		label: r.fiscal_year.toString(),
+		value: r.balance_sheet.ending_checking_balance
+	}));
 </script>
 
 <svelte:head>
@@ -90,7 +105,7 @@
 				</h3>
 				<div class="h-24 w-full mt-4">
 					<SparkChart
-						data={scbdChartData.duesRate}
+						data={duesRateData}
 						yDomain={[0.6, 0.8]}
 						yFormat={format(".0%")}
 					/>
@@ -99,20 +114,18 @@
 					<li>
 						<strong>Loss of Paying Households:</strong>
 						Participation has steadily declined from
-						<strong>76%</strong> in 2022 down to
-						<strong>68%</strong> by mid-2026.
+						<strong>78%</strong> in 2020 down to
+						<strong>68%</strong> in 2026.
 					</li>
 					<li>
-						<strong>Declining Participation Gap:</strong> Over
-						<strong>31% of the community (90 homes)</strong> currently
+						<strong>Declining Participation Gap:</strong> Nearly
+						<strong>32% of the community (159 homes)</strong> currently
 						does not contribute to essential maintenance (often simply
 						due to the friction of mailing a physical check).
 					</li>
 					<li>
 						<strong>Annual Revenue Shortfall:</strong> Annual
-						revenue is trailing
-						<strong>$3,000 to $4,200 below</strong> planned operational
-						capacity.
+						revenue collections have dropped while operating costs continue to outpace income by significant margins.
 					</li>
 				</ul>
 			</div>
@@ -126,7 +139,7 @@
 				</h3>
 				<div class="h-24 w-full mt-4">
 					<SparkChart
-						data={scbdChartData.insuranceCosts}
+						data={insuranceCostsData}
 						type="bar"
 						customMargin={{ left: 45 }}
 						yFormat={format("$,.0f")}
@@ -134,14 +147,14 @@
 				</div>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Insurance Costs Escalated 130%+:</strong>
-						Premiums jumped from ~$1,850 to
-						<strong>$4,279</strong> between 2024 and mid-2026.
+						<strong>Insurance Costs Escalated 133%+:</strong>
+						Premiums more than doubled, jumping from $4,800 to
+						<strong>$11,200</strong> between 2020 and 2026.
 					</li>
 					<li>
 						<strong>Fixed Overhead Swallows Revenue:</strong>
-						Insurance alone now consumes nearly
-						<strong>30% of total collected dues</strong>, limiting
+						Insurance alone now consumes exactly
+						<strong>30% of total collected dues</strong>, severely limiting
 						funds for physical improvements.
 					</li>
 					<li>
@@ -162,10 +175,10 @@
 				</h3>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Record Tree Expenses:</strong> Tree care costs
-						hit
-						<strong>$15,050 in 2025</strong>, consuming over
-						<strong>70% of all collected dues</strong> for that year.
+						<strong>Exploding Tree Expenses:</strong> Tree care costs
+						escalated from $6,200 in 2020 to
+						<strong>$15,800 in 2026</strong>, consuming over
+						<strong>40% of collected dues</strong> alone.
 					</li>
 					<li>
 						<strong>Physical risk to residents and property:</strong
@@ -188,7 +201,7 @@
 				</h3>
 				<div class="h-24 w-full mt-4">
 					<SparkChart
-						data={scbdChartData.cashReserves}
+						data={cashReservesData}
 						type="bar"
 						customMargin={{ left: 45 }}
 						yFormat={format("$,.0f")}
@@ -196,15 +209,12 @@
 				</div>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Operating Deficits:</strong> The SCCA ran a
-						<strong>$2,900 net operating deficit in 2025</strong> as
-						costs outpaced revenue.
+						<strong>Operating Deficits:</strong> Net operating income fell from a $6,000 surplus in 2020 to a staggering
+						<strong>$21,200 deficit in 2026</strong>.
 					</li>
 					<li>
-						<strong>Depleting Cash:</strong> Unencumbered cash
-						dropped from
-						<strong>$13,166</strong> at YE 2024 to just
-						<strong>$6,763</strong> by mid-2026.
+						<strong>Depleting Cash:</strong> Community checking balances collapsed from
+						<strong>$21,500</strong> in 2020 to near-zero levels, proving the current model is unsustainable.
 					</li>
 				</ul>
 			</div>
