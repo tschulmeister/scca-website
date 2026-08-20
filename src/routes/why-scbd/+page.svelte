@@ -27,8 +27,58 @@
 	</div>
 </section>
 
+<!-- Proposed addition right after the page header -->
+<div
+	class="mt-8 bg-blue-50 py-8 px-4 rounded-xl border border-blue-100 max-w-4xl mx-auto text-center"
+>
+	<h2 class="text-2xl font-bold text-slate-800">
+		The "Invisible" Essentials of Our Community
+	</h2>
+	<p class="mt-3 text-slate-600 max-w-2xl mx-auto">
+		Most of the work the SCCA does operates quietly in the background.
+		Without consistent funding, these essential, everyday benefits are at
+		risk:
+	</p>
+	<div
+		class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-slate-700 font-medium"
+	>
+		<div class="p-4 bg-white rounded-lg shadow-sm">
+			🌳 Maintaining common grounds & trees
+		</div>
+		<div class="p-4 bg-white rounded-lg shadow-sm">
+			🛡️ Securing liability insurance
+		</div>
+		<div class="p-4 bg-white rounded-lg shadow-sm">
+			🚜 Regular mowing & landscaping
+		</div>
+	</div>
+</div>
+
 <div class="container mx-auto px-4">
 	<div class="max-w-5xl mx-auto">
+		<!-- Proposed Perspective Callout Box -->
+		<div
+			class="mt-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white shadow-lg"
+		>
+			<h3 class="text-2xl font-bold text-blue-200">
+				Putting It Into Perspective: A $75 Investment
+			</h3>
+			<p class="mt-4 text-slate-300">
+				Currently, our voluntary collections average just <strong
+					>$52 per household</strong
+				>. By comparison, our neighbors in the larger SHOA (854 homes)
+				utilize a mandatory
+				<strong>$205 annual assessment</strong> with 100% participation.
+			</p>
+			<p class="mt-4 text-slate-300">
+				What does full funding achieve? It allows them to use
+				professional tree services, hire commercial landscapers, mow
+				more frequently, and replace aging playground equipment.
+				Transitioning to a modest $75 SCBD fee ensures SCCA can maintain
+				our standards without asking anyone to break the bank.
+			</p>
+		</div>
+
 		<!-- Key Arguments Grid -->
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
 			<!-- Card 1: Eroding Dues Model -->
@@ -36,7 +86,7 @@
 				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
 			>
 				<h3 class="text-xl font-bold text-slate-900">
-					1. The Voluntary Dues Model Is Eroding
+					1. Challenges with the Voluntary Model
 				</h3>
 				<div class="h-24 w-full mt-4">
 					<SparkChart
@@ -53,9 +103,10 @@
 						<strong>68%</strong> by mid-2026.
 					</li>
 					<li>
-						<strong>Expanding Free-Rider Gap:</strong> Over
+						<strong>Declining Participation Gap:</strong> Over
 						<strong>31% of the community (90 homes)</strong> currently
-						does not contribute to essential maintenance.
+						does not contribute to essential maintenance (often simply
+						due to the friction of mailing a physical check).
 					</li>
 					<li>
 						<strong>Annual Revenue Shortfall:</strong> Annual
@@ -71,7 +122,7 @@
 				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
 			>
 				<h3 class="text-xl font-bold text-slate-900">
-					2. Essential Overhead Costs Are Exploding
+					2. Rising Costs of Essential Services
 				</h3>
 				<div class="h-24 w-full mt-4">
 					<SparkChart
@@ -92,6 +143,12 @@
 						Insurance alone now consumes nearly
 						<strong>30% of total collected dues</strong>, limiting
 						funds for physical improvements.
+					</li>
+					<li>
+						<strong>Living Within Our Means:</strong> To balance the
+						budget, the SCCA has already had to stretch out the time
+						between mowings, reduce mulching, and cut back on community
+						aesthetics.
 					</li>
 				</ul>
 			</div>
@@ -127,7 +184,7 @@
 				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
 			>
 				<h3 class="text-xl font-bold text-slate-900">
-					4. Reserves Are Shrinking to Vulnerable Levels
+					4. The Need for Sustainable Reserves
 				</h3>
 				<div class="h-24 w-full mt-4">
 					<SparkChart
@@ -153,38 +210,49 @@
 			</div>
 		</div>
 
-		<!-- Summary Section -->
-		<div class="mt-16 rounded-xl bg-slate-50 p-8 border border-slate-200">
-			<h3 class="text-2xl font-bold text-center text-slate-900">
-				The SCBD Solution: A Summary
+		<!-- Updated Summary Section -->
+		<div
+			class="mt-16 rounded-xl bg-emerald-50 p-8 border border-emerald-100"
+		>
+			<h3 class="text-2xl font-bold text-center text-emerald-900">
+				The SCBD Solution: Investing in Our Future
 			</h3>
-			<p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto">
-				Establishing a Special Community Benefits District provides a
-				clear path forward to address these challenges directly.
+			<p class="mt-3 text-center text-emerald-700 max-w-2xl mx-auto">
+				An SCBD isn't just about covering costs—it's an upbeat,
+				proactive step toward a beautifully maintained and thriving
+				Shipley's Choice.
 			</p>
 			<ul
 				class="mt-8 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-3 text-center"
 			>
 				<li>
-					<strong class="text-slate-800">Fairness & Equity:</strong> Spreads
-					financial responsibility evenly across all 284 properties.
+					<strong class="text-emerald-900 text-lg"
+						>Shared Pride</strong
+					><br />
+					<span class="text-sm text-emerald-700"
+						>A fair system where everyone chips in a small amount
+						($75) so no one carries an unfair burden.</span
+					>
 				</li>
 				<li>
-					<strong class="text-slate-800">Financial Stability:</strong>
-					Provides guaranteed funding for recurring liabilities like insurance
-					and tree care.
+					<strong class="text-emerald-900 text-lg"
+						>Consistent Beauty</strong
+					><br />
+					<span class="text-sm text-emerald-700"
+						>Guaranteed funding means we can afford regular mowing,
+						fresh mulch, and proactive landscaping.</span
+					>
 				</li>
 				<li>
-					<strong class="text-slate-800"
-						>Protecting Property Values:</strong
-					> Ensures common grounds and neighborhood aesthetics are reliably
-					maintained.
+					<strong class="text-emerald-900 text-lg"
+						>Peace of Mind</strong
+					><br />
+					<span class="text-sm text-emerald-700"
+						>Strong reserves to easily handle unexpected tree
+						removal and comprehensive liability insurance.</span
+					>
 				</li>
 			</ul>
-
-			<h4 class="mt-6 text-2xl font-bold text-center text-slate-900">
-				But what is a Special Community Benefits District?
-			</h4>
 		</div>
 
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -264,6 +332,41 @@
 			</div>
 		</div>
 
+		<!-- Covenant Clarification Section -->
+		<div class="mt-16 rounded-xl bg-blue-50 p-8 border border-blue-100">
+			<h3 class="text-2xl font-bold text-slate-900 text-center">
+				Fact vs. Fiction: The Section 2 Covenants
+			</h3>
+			<p class="mt-4 text-slate-700 max-w-3xl mx-auto text-center">
+				You may have seen recent discussions online regarding the
+				expiration of restrictive covenants in Section 2. We want to be
+				fully transparent and clarify how this relates to the SCBD
+				proposal.
+			</p>
+			<div class="mt-8 space-y-4 text-slate-700 max-w-4xl mx-auto">
+				<p>
+					<strong>The History:</strong> The Declaration of Covenants for
+					Section 2 (which allowed the SCCA to enforce building and land-use
+					restrictions on individual homes) expired in 2012. While this
+					means the SCCA can no longer enforce architectural restrictions
+					in Section 2, it does not change our property ownership.
+				</p>
+				<p>
+					<strong>What Hasn't Changed:</strong> The SCCA still owns the
+					25 acres of common area in Section 2 and is legally responsible
+					for maintaining them. The association must still cut the grass,
+					insure the property, maintain the community signs, and remove
+					dangerous dead trees across the entire community.
+				</p>
+				<p>
+					<strong>The Bottom Line:</strong> The expiration of these restrictive
+					covenants over a decade ago is unrelated to the SCBD proposal.
+					The SCBD is purely a funding mechanism to ensure our shared,
+					ongoing maintenance and insurance obligations can be met responsibly.
+				</p>
+			</div>
+		</div>
+
 		<!-- Summary Section -->
 		<div class="mt-16 rounded-xl bg-slate-50 p-8 border border-slate-200">
 			<h3 class="text-2xl font-bold text-center text-slate-900">
@@ -291,14 +394,18 @@
 				<li>
 					<strong
 						>Note that the Shipley's Choice Facebook page is NOT an
-						authoritative source for community information on SCCA matters.</strong
+						authoritative source for community information on SCCA
+						matters.</strong
 					>
 				</li>
 			</ul>
-			<img
-				src="data/img/community_overhead.png"
-				class="rounded-3xl mt-4 border border-slate-200 shadow-sm"
-			/>
+			<div class="mt-8 flex justify-center">
+				<img
+					src="data/img/community_overhead.png"
+					class="rounded-3xl border border-slate-200 shadow-sm"
+					alt="Community Overhead View"
+				/>
+			</div>
 		</div>
 	</div>
 </div>
