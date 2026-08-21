@@ -171,8 +171,8 @@
 						SCCA residents have already been asked to make an <strong
 							>optional</strong
 						> $75 dues contribution for many years, but a decline in
-						participation has lead to a shrinking pool of funds that the
-						community can use for essential maintenance activities.
+						participation has lead to a shrinking pool of funds that
+						the community can use for essential maintenance activities.
 					</p>
 				</div>
 
@@ -544,6 +544,55 @@
 					ongoing maintenance and insurance obligations can be met responsibly.
 				</p>
 			</div>
+		</div>
+
+		<!-- Community Participation Section -->
+		<div class="mt-16 rounded-xl bg-amber-50 p-8 border border-amber-100">
+			<div class="text-center mb-8">
+				<h3 class="text-2xl font-bold text-amber-900">
+					A Note on Community Participation
+				</h3>
+				<p
+					class="mt-4 text-amber-800 text-lg max-w-3xl mx-auto leading-relaxed"
+				>
+					The SCCA Board holds a public annual meeting every October,
+					and all residents are strongly encouraged to attend. These
+					meetings are crucial for discussing the community's
+					financial health, maintenance needs, and future planning.
+				</p>
+			</div>
+
+			<div
+				class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto"
+			>
+				<div
+					class="bg-white p-6 rounded-lg shadow-sm border border-amber-200 text-center flex-1 w-full"
+				>
+					<div class="text-4xl font-black text-amber-600 mb-2">
+						284
+					</div>
+					<div class="text-amber-900 font-medium">
+						Total Homes in SCCA
+					</div>
+				</div>
+				<div
+					class="bg-white p-6 rounded-lg shadow-sm border border-amber-200 text-center flex-1 w-full"
+				>
+					<div class="text-4xl font-black text-amber-600 mb-2">
+						&le; 6
+					</div>
+					<div class="text-amber-900 font-medium">
+						Max Annual Attendees (Last 5 Yrs)
+					</div>
+				</div>
+			</div>
+
+			<p class="mt-8 text-amber-800 text-center max-w-2xl mx-auto">
+				Active participation is essential for a healthy community
+				association. When only a handful of residents attend out of
+				nearly 300 households, it places the burden of decision-making
+				on a very small group. We welcome and need your voice.
+			</p>
 		</div>
 
 		<!-- Summary Section -->
