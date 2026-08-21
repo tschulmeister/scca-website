@@ -92,7 +92,7 @@
 
     <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
         <h2 class="text-2xl font-bold text-slate-900 mb-4">Board email</h2>
-        <p class="text-slate-700">
+        <p class="text-slate-700 mb-4">
             The front door email for general requests to the SCCA board is <a
                 href="mailto:shipleyschoice.scca@gmail.com"
                 class="text-blue-600 hover:text-blue-700"
@@ -103,5 +103,18 @@
             If you have questions about covenants, by-laws, or architectural
             review, please contact the Board directly.
         </p>
+    </div>
+
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Share your voice</h2>
+        <p class="text-slate-700 mb-4">
+            Residents can openly discuss community matters with our board of
+            volunteers on Google Groups.
+        </p>
+        <a
+            href="https://groups.google.com/u/1/g/shipleys-choice-community-association"
+            class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
+            >Join today &rarr;</a
+        >
     </div>
 </section>
