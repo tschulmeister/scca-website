@@ -1,21 +1,26 @@
 <script>
 	import SparkChart from "$components/charts/SparkChart.svelte";
-	import financialStats from "$data/financialStats.json";
+	import financials from "$data/financials.json";
 	import { format } from "d3-format";
 
-	const duesRateData = financialStats.financial_records.map(r => ({
-		year: r.fiscal_year,
-		value: r.metrics.participation_rate
+	const duesRateData = financials.participation_trends.map(r => ({
+		year: r.year,
+		value: r.participation_rate_pct / 100
 	}));
 
-	const insuranceCostsData = financialStats.financial_records.map(r => ({
-		year: r.fiscal_year,
-		value: r.expenditures.insurance_premiums
-	}));
+	const insuranceExp = financials.annual_expenses_breakdown.find(e => e.category === "Insurance");
+	const insuranceCostsData = [
+		{ year: 2020, value: insuranceExp["2020_actual"] },
+		{ year: 2022, value: insuranceExp["2022_budget"] },
+		{ year: 2023, value: insuranceExp["2023_budget"] },
+		{ year: 2024, value: insuranceExp["2024_actual"] },
+		{ year: 2025, value: insuranceExp["2025_actual"] },
+		{ year: 2026, value: insuranceExp["2026_ytd_actual"] }
+	];
 
-	const cashReservesData = financialStats.financial_records.map(r => ({
-		label: r.fiscal_year.toString(),
-		value: r.balance_sheet.ending_checking_balance
+	const cashReservesData = financials.statements_of_financial_condition.map(r => ({
+		label: r.as_of_date.substring(0, 4),
+		value: r.balances.net_unencumbered_balance_usd ?? r.balances.ending_net_balance_usd
 	}));
 </script>
 
@@ -114,7 +119,7 @@
 					<li>
 						<strong>Loss of Paying Households:</strong>
 						Participation has steadily declined from
-						<strong>78%</strong> in 2020 down to
+						<strong>74%</strong> in 2020 down to
 						<strong>68%</strong> in 2026.
 					</li>
 					<li>
@@ -147,14 +152,14 @@
 				</div>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Insurance Costs Escalated 133%+:</strong>
-						Premiums more than doubled, jumping from $4,800 to
-						<strong>$11,200</strong> between 2020 and 2026.
+						<strong>Insurance Costs Escalated 131%+:</strong>
+						Premiums more than doubled, jumping from $1,851 to
+						<strong>$4,279</strong> between 2020 and 2026.
 					</li>
 					<li>
 						<strong>Fixed Overhead Swallows Revenue:</strong>
-						Insurance alone now consumes exactly
-						<strong>30% of total collected dues</strong>, severely limiting
+						Insurance alone now consumes roughly
+						<strong>29% of total collected dues</strong>, severely limiting
 						funds for physical improvements.
 					</li>
 					<li>
@@ -176,13 +181,12 @@
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
 						<strong>Exploding Tree Expenses:</strong> Tree care costs
-						escalated from $6,200 in 2020 to
-						<strong>$15,800 in 2026</strong>, consuming over
-						<strong>40% of collected dues</strong> alone.
+						escalated from $7,550 in 2020 to
+						<strong>$15,050 in 2025</strong>, consuming over
+						<strong>100% of collected dues</strong> for that year.
 					</li>
 					<li>
-						<strong>Physical risk to residents and property:</strong
-						> Dead trees can fall unexpectedly, causing severe or deadly
+						<strong>Physical risk to residents and property:</strong> Dead trees can fall unexpectedly, causing severe or deadly
 						harm when they do.
 					</li>
 					<li>
@@ -209,12 +213,13 @@
 				</div>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Operating Deficits:</strong> Net operating income fell from a $6,000 surplus in 2020 to a staggering
-						<strong>$21,200 deficit in 2026</strong>.
+						<strong>Operating Deficits:</strong> Recent years have seen significant deficits. In 2025, actual expenses ($20,896) exceeded collected dues ($14,700) by over
+						<strong>$6,100</strong>.
 					</li>
 					<li>
-						<strong>Depleting Cash:</strong> Community checking balances collapsed from
-						<strong>$21,500</strong> in 2020 to near-zero levels, proving the current model is unsustainable.
+						<strong>Depleting Cash:</strong> Community unencumbered balances collapsed from over
+						<strong>$13,100</strong> at the end of 2024 down to
+						<strong>$6,763</strong> by mid-2026, proving the current model is unsustainable.
 					</li>
 				</ul>
 			</div>

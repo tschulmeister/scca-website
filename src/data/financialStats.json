@@ -2,7 +2,7 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"metadata": {
 		"entity_name": "Shipley's Choice Community Association (Sections 1 & 2)",
-		"dataset_title": "Multi-Year Financial & Participation Time-Series",
+		"dataset_title": "Multi-Year Financial & Participation Time-Series (Audited)",
 		"time_frame": {
 			"start_year": 2020,
 			"end_year": 2026
@@ -32,7 +32,7 @@
 			},
 			"balance_sheet": {
 				"net_operating_income": 6000.00,
-				"ending_checking_balance": 21500.00
+				"ending_operating_cash": 21500.00
 			}
 		},
 		{
@@ -47,16 +47,16 @@
 				"total_revenue": 43100.00
 			},
 			"expenditures": {
-				"insurance_premiums": 5400.00,
+				"insurance_premiums": 4650.00,
 				"tree_removal_and_arbor_care": 7100.00,
 				"grounds_and_common_area_maintenance": 19000.00,
 				"administrative_and_legal": 3250.00,
 				"other_operating_expenses": 5000.00,
-				"total_expenditures": 39750.00
+				"total_expenditures": 39000.00
 			},
 			"balance_sheet": {
-				"net_operating_income": 3350.00,
-				"ending_checking_balance": 24850.00
+				"net_operating_income": 4100.00,
+				"ending_operating_cash": 25600.00
 			}
 		},
 		{
@@ -71,23 +71,23 @@
 				"total_revenue": 42750.00
 			},
 			"expenditures": {
-				"insurance_premiums": 6100.00,
+				"insurance_premiums": 4500.00,
 				"tree_removal_and_arbor_care": 8400.00,
 				"grounds_and_common_area_maintenance": 19800.00,
 				"administrative_and_legal": 3400.00,
 				"other_operating_expenses": 4900.00,
-				"total_expenditures": 42600.00
+				"total_expenditures": 41000.00
 			},
 			"balance_sheet": {
-				"net_operating_income": 150.00,
-				"ending_checking_balance": 25000.00
+				"net_operating_income": 1750.00,
+				"ending_operating_cash": 27350.00
 			}
 		},
 		{
 			"fiscal_year": 2023,
 			"metrics": {
-				"participating_units": 208,
-				"participation_rate": 0.7350
+				"participating_units": 209,
+				"participation_rate": 0.7385
 			},
 			"revenue": {
 				"dues_collected": 40400.00,
@@ -95,23 +95,23 @@
 				"total_revenue": 41250.00
 			},
 			"expenditures": {
-				"insurance_premiums": 7200.00,
+				"insurance_premiums": 4400.00,
 				"tree_removal_and_arbor_care": 10200.00,
 				"grounds_and_common_area_maintenance": 20500.00,
 				"administrative_and_legal": 3600.00,
 				"other_operating_expenses": 5100.00,
-				"total_expenditures": 46600.00
+				"total_expenditures": 43800.00
 			},
 			"balance_sheet": {
-				"net_operating_income": -5350.00,
-				"ending_checking_balance": 19650.00
+				"net_operating_income": -2550.00,
+				"ending_operating_cash": 24800.00
 			}
 		},
 		{
 			"fiscal_year": 2024,
 			"metrics": {
-				"participating_units": 201,
-				"participation_rate": 0.7102
+				"participating_units": 204,
+				"participation_rate": 0.7208
 			},
 			"revenue": {
 				"dues_collected": 39050.00,
@@ -119,23 +119,23 @@
 				"total_revenue": 39850.00
 			},
 			"expenditures": {
-				"insurance_premiums": 8900.00,
+				"insurance_premiums": 4350.00,
 				"tree_removal_and_arbor_care": 12500.00,
 				"grounds_and_common_area_maintenance": 21200.00,
 				"administrative_and_legal": 3800.00,
 				"other_operating_expenses": 5200.00,
-				"total_expenditures": 51600.00
+				"total_expenditures": 47050.00
 			},
 			"balance_sheet": {
-				"net_operating_income": -11750.00,
-				"ending_checking_balance": 7900.00
+				"net_operating_income": -7200.00,
+				"ending_operating_cash": 17600.00
 			}
 		},
 		{
 			"fiscal_year": 2025,
 			"metrics": {
-				"participating_units": 196,
-				"participation_rate": 0.6926
+				"participating_units": 198,
+				"participation_rate": 0.6996
 			},
 			"revenue": {
 				"dues_collected": 38100.00,
@@ -143,23 +143,23 @@
 				"total_revenue": 38800.00
 			},
 			"expenditures": {
-				"insurance_premiums": 10100.00,
-				"tree_removal_and_arbor_care": 14200.00,
+				"insurance_premiums": 4300.00,
+				"tree_removal_and_arbor_care": 15050.00,
 				"grounds_and_common_area_maintenance": 21800.00,
 				"administrative_and_legal": 4000.00,
 				"other_operating_expenses": 5300.00,
-				"total_expenditures": 55400.00
+				"total_expenditures": 50450.00
 			},
 			"balance_sheet": {
-				"net_operating_income": -16600.00,
-				"ending_checking_balance": -8700.00
+				"net_operating_income": -11650.00,
+				"ending_operating_cash": 5950.00
 			}
 		},
 		{
 			"fiscal_year": 2026,
 			"metrics": {
-				"participating_units": 193,
-				"participation_rate": 0.6820
+				"participating_units": 192,
+				"participation_rate": 0.6784
 			},
 			"revenue": {
 				"dues_collected": 37400.00,
@@ -167,16 +167,16 @@
 				"total_revenue": 38000.00
 			},
 			"expenditures": {
-				"insurance_premiums": 11200.00,
-				"tree_removal_and_arbor_care": 15800.00,
+				"insurance_premiums": 4279.00,
+				"tree_removal_and_arbor_care": 14000.00,
 				"grounds_and_common_area_maintenance": 22500.00,
 				"administrative_and_legal": 4200.00,
 				"other_operating_expenses": 5500.00,
-				"total_expenditures": 59200.00
+				"total_expenditures": 50479.00
 			},
 			"balance_sheet": {
-				"net_operating_income": -21200.00,
-				"ending_checking_balance": 8227.91
+				"net_operating_income": -12479.00,
+				"unencumbered_operating_cash_as_of_june": 6763.00
 			}
 		}
 	]
