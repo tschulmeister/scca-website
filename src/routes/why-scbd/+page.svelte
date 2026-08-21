@@ -1,5 +1,6 @@
 <script>
 	import SparkChart from "$components/charts/SparkChart.svelte";
+	import ComparisonBar from "$components/charts/ComparisonBar.svelte";
 	import financials from "$data/financials.json";
 	import { format } from "d3-format";
 
@@ -22,6 +23,26 @@
 		label: r.as_of_date.substring(0, 4),
 		value: r.balances.net_unencumbered_balance_usd ?? r.balances.ending_net_balance_usd
 	}));
+
+	const possibleRevenue = [
+		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" }
+	];
+
+	const gapRevenue = [
+		{ label: "SCCA (Current)", value: 14768, subtitle: "~$52 avg/home" },
+		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" }
+	];
+
+	const shoaComparison = [
+		{ label: "SCCA (Current)", value: 14768, subtitle: "~$52 avg/home" },
+		{ label: "SHOA", value: 177120, subtitle: "864 homes @ $205" }
+	];
+
+	const comparisonColors = {
+		"SCCA (Current)": "bg-slate-400",
+		"SCCA (SCBD)": "bg-blue-500",
+		"SHOA": "bg-emerald-500"
+	};
 </script>
 
 <svelte:head>
@@ -78,25 +99,64 @@
 	<div class="max-w-5xl mx-auto">
 		<!-- Proposed Perspective Callout Box -->
 		<div
-			class="mt-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white shadow-lg"
+			class="mt-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white shadow-lg overflow-hidden relative"
 		>
-			<h3 class="text-2xl font-bold text-blue-200">
-				Putting It Into Perspective: A $75 Investment
-			</h3>
-			<p class="mt-4 text-slate-300">
-				Currently, our voluntary collections average just <strong
-					>$52 per household</strong
-				>. By comparison, our neighbors in the larger SHOA (854 homes)
-				utilize a mandatory
-				<strong>$205 annual assessment</strong> with 100% participation.
-			</p>
-			<p class="mt-4 text-slate-300">
-				What does full funding achieve? It allows them to use
-				professional tree services, hire commercial landscapers, mow
-				more frequently, and replace aging playground equipment.
-				Transitioning to a modest $75 SCBD fee ensures SCCA can maintain
-				our standards without asking anyone to break the bank.
-			</p>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative z-10">
+				<div>
+					<h3 class="text-2xl font-bold text-blue-200">
+						Putting It Into Perspective: A $75 Investment
+					</h3>
+					<p class="mt-4 text-slate-300">
+						Currently, our voluntary collections average just <strong class="text-white"
+							>$52 per household</strong
+						> because not everyone pays. This results in our community only bringing in around <strong class="text-white">$14,768</strong> on average.
+					</p>
+					<p class="mt-4 text-slate-300">
+						If the SCCA transitioned to a modest <strong class="text-white">$75 SCBD assessment</strong> with 100% participation, our budget would stabilize at <strong class="text-white">$21,300</strong>.
+					</p>
+					<p class="mt-4 text-slate-300">
+						To put these numbers into perspective, our neighbors in the larger SHOA (864 homes) utilize a mandatory <strong class="text-white">$205 annual assessment</strong>.
+					</p>
+					<p class="mt-4 text-slate-300">
+						This fully-funded approach generates over <strong class="text-white">$177,000 annually</strong> for their community. What does this gap in funding achieve? It allows them to use professional tree services, hire commercial landscapers, mow more frequently, and replace aging playground equipment.
+					</p>
+					<p class="mt-4 text-slate-300">
+						Transitioning to a modest $75 SCBD fee ensures SCCA can maintain our basic standards without asking anyone to break the bank.
+					</p>
+				</div>
+				
+				<div class="flex flex-col space-y-6">
+					<!-- Graph 1: The Goal -->
+					<div class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20">
+						<ComparisonBar 
+							data={possibleRevenue} 
+							colorMap={comparisonColors}
+							valueFormat={format("$,.0f")}
+							title="The Goal: Fully Funded"
+						/>
+					</div>
+
+					<!-- Graph 2: The Gap -->
+					<div class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20">
+						<ComparisonBar 
+							data={gapRevenue} 
+							colorMap={comparisonColors}
+							valueFormat={format("$,.0f")}
+							title="The Gap: Current vs. SCBD"
+						/>
+					</div>
+
+					<!-- Graph 3: Neighbor Comparison -->
+					<div class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20">
+						<ComparisonBar 
+							data={shoaComparison} 
+							colorMap={comparisonColors}
+							valueFormat={format("$,.0f")}
+							title="The Context: SHOA Revenue"
+						/>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Key Arguments Grid -->
