@@ -1,47 +1,61 @@
 <script>
 	import SparkChart from "$components/charts/SparkChart.svelte";
 	import ComparisonBar from "$components/charts/ComparisonBar.svelte";
+	import ExpenseDonut from "$components/charts/ExpenseDonut.svelte";
 	import financials from "$data/financials.json";
 	import { format } from "d3-format";
 
-	const duesRateData = financials.participation_trends.map(r => ({
+	const duesRateData = financials.participation_trends.map((r) => ({
 		year: r.year,
-		value: r.participation_rate_pct / 100
+		value: r.participation_rate_pct / 100,
 	}));
 
-	const insuranceExp = financials.annual_expenses_breakdown.find(e => e.category === "Insurance");
+	const insuranceExp = financials.annual_expenses_breakdown.find(
+		(e) => e.category === "Insurance",
+	);
 	const insuranceCostsData = [
 		{ year: 2020, value: insuranceExp["2020_actual"] },
 		{ year: 2022, value: insuranceExp["2022_budget"] },
 		{ year: 2023, value: insuranceExp["2023_budget"] },
 		{ year: 2024, value: insuranceExp["2024_actual"] },
 		{ year: 2025, value: insuranceExp["2025_actual"] },
-		{ year: 2026, value: insuranceExp["2026_ytd_actual"] }
+		{ year: 2026, value: insuranceExp["2026_ytd_actual"] },
 	];
 
-	const cashReservesData = financials.statements_of_financial_condition.map(r => ({
-		label: r.as_of_date.substring(0, 4),
-		value: r.balances.net_unencumbered_balance_usd ?? r.balances.ending_net_balance_usd
-	}));
+	const cashReservesData = financials.statements_of_financial_condition.map(
+		(r) => ({
+			label: r.as_of_date.substring(0, 4),
+			value:
+				r.balances.net_unencumbered_balance_usd ??
+				r.balances.ending_net_balance_usd,
+		}),
+	);
+
+	const expenses2025 = financials.annual_expenses_breakdown
+		.map((e) => ({
+			label: e.category,
+			value: e["2025_actual"],
+		}))
+		.filter((e) => e.value > 0);
 
 	const possibleRevenue = [
-		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" }
+		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" },
 	];
 
 	const gapRevenue = [
 		{ label: "SCCA (Current)", value: 14768, subtitle: "~$52 avg/home" },
-		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" }
+		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" },
 	];
 
-	const shoaComparison = [
+	const schoaComparison = [
 		{ label: "SCCA (Current)", value: 14768, subtitle: "~$52 avg/home" },
-		{ label: "SHOA", value: 177120, subtitle: "864 homes @ $205" }
+		{ label: "SCHOA", value: 177120, subtitle: "864 homes @ $205" },
 	];
 
 	const comparisonColors = {
 		"SCCA (Current)": "bg-slate-400",
 		"SCCA (SCBD)": "bg-blue-500",
-		"SHOA": "bg-emerald-500"
+		SCHOA: "bg-emerald-500",
 	};
 </script>
 
@@ -69,6 +83,22 @@
 </section>
 
 <!-- Proposed addition right after the page header -->
+<div class="mt-8 mx-auto max-w-4xl px-4">
+	<div
+		class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white text-center shadow-lg transform transition-transform hover:scale-[1.01]"
+	>
+		<h2 class="text-2xl font-bold flex items-center justify-center gap-2">
+			<span class="text-3xl">🤝</span> Driven by Volunteers
+		</h2>
+		<p class="mt-4 text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+			The Shipley's Choice Community Association Board is comprised
+			entirely of <strong>volunteers</strong>—your friends and
+			neighbors—who generously contribute their own time to maintain and
+			protect our shared community assets.
+		</p>
+	</div>
+</div>
+
 <div
 	class="mt-8 bg-blue-50 py-8 px-4 rounded-xl border border-blue-100 max-w-4xl mx-auto text-center"
 >
@@ -101,35 +131,58 @@
 		<div
 			class="mt-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white shadow-lg overflow-hidden relative"
 		>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative z-10">
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start relative z-10"
+			>
 				<div>
 					<h3 class="text-2xl font-bold text-blue-200">
 						Putting It Into Perspective: A $75 Investment
 					</h3>
 					<p class="mt-4 text-slate-300">
-						Currently, our voluntary collections average just <strong class="text-white"
-							>$52 per household</strong
-						> because not everyone pays. This results in our community only bringing in around <strong class="text-white">$14,768</strong> on average.
+						Currently, our voluntary collections average just <strong
+							class="text-white">$52 per household</strong
+						>
+						because not everyone pays. This results in our community
+						only bringing in around
+						<strong class="text-white">$14,768</strong> on average.
 					</p>
 					<p class="mt-4 text-slate-300">
-						If the SCCA transitioned to a modest <strong class="text-white">$75 SCBD assessment</strong> with 100% participation, our budget would stabilize at <strong class="text-white">$21,300</strong>.
+						If the SCCA transitioned to a modest <strong
+							class="text-white">$75 SCBD assessment</strong
+						>
+						with 100% participation, our budget would stabilize at
+						<strong class="text-white">$21,300</strong>.
 					</p>
 					<p class="mt-4 text-slate-300">
-						To put these numbers into perspective, our neighbors in the larger SHOA (864 homes) utilize a mandatory <strong class="text-white">$205 annual assessment</strong>.
+						To put these numbers into perspective, our neighbors in
+						the larger SCHOA (864 homes) utilize a mandatory <strong
+							class="text-white">$205 annual assessment</strong
+						>.
 					</p>
 					<p class="mt-4 text-slate-300">
-						This fully-funded approach generates over <strong class="text-white">$177,000 annually</strong> for their community. What does this gap in funding achieve? It allows them to use professional tree services, hire commercial landscapers, mow more frequently, and replace aging playground equipment.
+						This fully-funded approach generates over <strong
+							class="text-white">$177,000 annually</strong
+						> for their community. What does this gap in funding achieve?
+						It allows them to use professional tree services, hire commercial
+						landscapers, mow more frequently, and replace aging playground
+						equipment.
 					</p>
 					<p class="mt-4 text-slate-300">
-						Transitioning to a modest $75 SCBD fee ensures SCCA can maintain our basic standards without asking anyone to break the bank.
+						SCCA residents have already been asked to make an <strong
+							>optional</strong
+						> $75 dues contribution for many years, but a decline in
+						participation has lead to a shrinking pool of funds that the
+						community can use for essential maintenance activities.
 					</p>
 				</div>
-				
+
 				<div class="flex flex-col space-y-6">
 					<!-- Graph 1: The Goal -->
-					<div class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20">
-						<ComparisonBar 
-							data={possibleRevenue} 
+					<div
+						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
+					>
+						<ComparisonBar
+							data={possibleRevenue}
 							colorMap={comparisonColors}
 							valueFormat={format("$,.0f")}
 							title="The Goal: Fully Funded"
@@ -137,9 +190,11 @@
 					</div>
 
 					<!-- Graph 2: The Gap -->
-					<div class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20">
-						<ComparisonBar 
-							data={gapRevenue} 
+					<div
+						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
+					>
+						<ComparisonBar
+							data={gapRevenue}
 							colorMap={comparisonColors}
 							valueFormat={format("$,.0f")}
 							title="The Gap: Current vs. SCBD"
@@ -147,16 +202,59 @@
 					</div>
 
 					<!-- Graph 3: Neighbor Comparison -->
-					<div class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20">
-						<ComparisonBar 
-							data={shoaComparison} 
+					<div
+						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
+					>
+						<ComparisonBar
+							data={schoaComparison}
 							colorMap={comparisonColors}
 							valueFormat={format("$,.0f")}
-							title="The Context: SHOA Revenue"
+							title="The Context: SCHOA Revenue"
 						/>
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<!-- Breakdown Section -->
+		<div
+			class="mt-16 rounded-xl bg-white p-8 border border-slate-200 shadow-sm"
+		>
+			<div class="text-center mb-8">
+				<h3 class="text-2xl font-bold text-slate-900">
+					Where Does the Money Go?
+				</h3>
+				<p class="mt-2 text-slate-600 max-w-2xl mx-auto">
+					A breakdown of SCCA's actual expenditures in 2025. It
+					illustrates how unavoidable costs (tree removal and
+					insurance) dominate the budget, leaving little room for
+					enhancements.
+				</p>
+			</div>
+
+			<div class="max-w-3xl mx-auto">
+				<ExpenseDonut
+					data={expenses2025}
+					valueFormat={format("$,.0f")}
+				/>
+			</div>
+		</div>
+
+		<div class="mt-16 rounded-xl bg-red-50 p-8 border border-red-100">
+			<h3 class="text-2xl font-bold text-center text-red-900">
+				The Problem: The Current Funding Model is Unsustainable
+			</h3>
+			<p
+				class="mt-4 text-red-800 text-lg max-w-3xl mx-auto text-center leading-relaxed"
+			>
+				The voluntary dues model we rely on today is fundamentally
+				broken. As household participation steadily declines, the SCCA
+				is forced to shoulder skyrocketing insurance premiums and
+				unpredictable emergency maintenance costs—like hazardous tree
+				removals—with a shrinking budget. This persistent funding gap
+				has depleted our cash reserves and left the community struggling
+				to maintain even the most basic neighborhood standards.
+			</p>
 		</div>
 
 		<!-- Key Arguments Grid -->
@@ -189,8 +287,9 @@
 						due to the friction of mailing a physical check).
 					</li>
 					<li>
-						<strong>Annual Revenue Shortfall:</strong> Annual
-						revenue collections have dropped while operating costs continue to outpace income by significant margins.
+						<strong>Annual Revenue Shortfall:</strong> Annual revenue
+						collections have dropped while operating costs continue to
+						outpace income by significant margins.
 					</li>
 				</ul>
 			</div>
@@ -219,8 +318,8 @@
 					<li>
 						<strong>Fixed Overhead Swallows Revenue:</strong>
 						Insurance alone now consumes roughly
-						<strong>29% of total collected dues</strong>, severely limiting
-						funds for physical improvements.
+						<strong>29% of total collected dues</strong>, severely
+						limiting funds for physical improvements.
 					</li>
 					<li>
 						<strong>Living Within Our Means:</strong> To balance the
@@ -240,13 +339,14 @@
 				</h3>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Exploding Tree Expenses:</strong> Tree care costs
-						escalated from $7,550 in 2020 to
+						<strong>Exploding Tree Expenses:</strong> Tree care
+						costs escalated from $7,550 in 2020 to
 						<strong>$15,050 in 2025</strong>, consuming over
 						<strong>100% of collected dues</strong> for that year.
 					</li>
 					<li>
-						<strong>Physical risk to residents and property:</strong> Dead trees can fall unexpectedly, causing severe or deadly
+						<strong>Physical risk to residents and property:</strong
+						> Dead trees can fall unexpectedly, causing severe or deadly
 						harm when they do.
 					</li>
 					<li>
@@ -273,13 +373,17 @@
 				</div>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Operating Deficits:</strong> Recent years have seen significant deficits. In 2025, actual expenses ($20,896) exceeded collected dues ($14,700) by over
+						<strong>Operating Deficits:</strong> Recent years have
+						seen significant deficits. In 2025, actual expenses
+						($20,896) exceeded collected dues ($14,700) by over
 						<strong>$6,100</strong>.
 					</li>
 					<li>
-						<strong>Depleting Cash:</strong> Community unencumbered balances collapsed from over
+						<strong>Depleting Cash:</strong> Community unencumbered
+						balances collapsed from over
 						<strong>$13,100</strong> at the end of 2024 down to
-						<strong>$6,763</strong> by mid-2026, proving the current model is unsustainable.
+						<strong>$6,763</strong> by mid-2026, proving the current
+						model is unsustainable.
 					</li>
 				</ul>
 			</div>
