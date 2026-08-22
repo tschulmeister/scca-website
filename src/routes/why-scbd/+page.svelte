@@ -14,7 +14,6 @@
 		(e) => e.category === "Insurance",
 	);
 	const insuranceCostsData = [
-		{ year: 2020, value: insuranceExp["2020_actual"] },
 		{ year: 2022, value: insuranceExp["2022_budget"] },
 		{ year: 2023, value: insuranceExp["2023_budget"] },
 		{ year: 2024, value: insuranceExp["2024_actual"] },
@@ -22,14 +21,14 @@
 		{ year: 2026, value: insuranceExp["2026_ytd_actual"] },
 	];
 
-	const cashReservesData = financials.statements_of_financial_condition.map(
-		(r) => ({
+	const cashReservesData = financials.statements_of_financial_condition
+		.filter((r) => !r.as_of_date.startsWith("2020"))
+		.map((r) => ({
 			label: r.as_of_date.substring(0, 4),
 			value:
 				r.balances.net_unencumbered_balance_usd ??
 				r.balances.ending_net_balance_usd,
-		}),
-	);
+		}));
 
 	const expenses2025 = financials.annual_expenses_breakdown
 		.map((e) => ({
@@ -108,6 +107,65 @@
 		</p>
 	</div>
 </div>
+
+<!-- High-Impact TL;DR Header Card -->
+<div class="mt-8 mx-auto max-w-4xl px-4">
+	<div
+		class="bg-slate-900 text-white rounded-xl border border-slate-700 p-8 shadow-xl"
+	>
+		<h2 class="text-2xl font-bold text-center text-blue-400">
+			⚡ SCBD in 30 Seconds: The Essential Math
+		</h2>
+		<div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+			<div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+				<div
+					class="text-sm uppercase tracking-wider text-slate-400 font-bold"
+				>
+					The Goal
+				</div>
+				<div class="mt-2 text-3xl font-black text-white">$21,300</div>
+				<div class="mt-1 text-xs text-slate-300">
+					To maintain common grounds, trees, and liability insurance
+					annually.
+				</div>
+			</div>
+			<div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+				<div
+					class="text-sm uppercase tracking-wider text-slate-400 font-bold"
+				>
+					Your Share
+				</div>
+				<div class="mt-2 text-3xl font-black text-emerald-400">
+					$75 / Year
+				</div>
+				<div class="mt-1 text-xs text-slate-300">
+					Equates to only <strong>$6.25 per month</strong> per household.
+				</div>
+			</div>
+			<div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+				<div
+					class="text-sm uppercase tracking-wider text-slate-400 font-bold"
+				>
+					The Reality
+				</div>
+				<div class="mt-2 text-3xl font-black text-red-400">
+					$110+ / Year
+				</div>
+				<div class="mt-1 text-xs text-slate-300">
+					Currently paid by donors to cover the 32% of households who
+					do not pay.
+				</div>
+			</div>
+		</div>
+		<div class="mt-6 text-center text-sm text-slate-300 leading-relaxed">
+			⚠️ <strong>Note:</strong> This is a 100% democratic process. The
+			SCBD requires a
+			<strong>2/3 (67%) resident supermajority vote</strong> to pass. The SCCA
+			Board cannot implement this unilaterally.
+		</div>
+	</div>
+</div>
+
 <div
 	class="mt-8 bg-blue-50 py-8 px-4 rounded-xl border border-blue-100 max-w-4xl mx-auto text-center"
 >
@@ -144,19 +202,23 @@
 			>
 				<div>
 					<h3 class="text-2xl font-bold text-blue-200">
-						Putting It Into Perspective: The True Cost of Participation
+						Putting It Into Perspective: The True Cost of
+						Participation
 					</h3>
 					<p class="mt-4 text-slate-300">
 						Currently, our voluntary collections average just <strong
 							class="text-white">$63 per household</strong
-						> because not everyone contributes. To sustain even minimal operations,
-						many households generously donate <strong>extra funds</strong>,
-						effectively subsidizing those who do not pay.
+						>
+						because not everyone contributes. To sustain even
+						minimal operations, many households generously donate
+						<strong>extra funds</strong>, effectively subsidizing
+						those who do not pay.
 					</p>
 					<p class="mt-4 text-slate-300">
-						This dynamic creates an inequitable burden: while the fair
-						annual share to run our community is <strong>$75</strong>,
-						those who do contribute are often forced to pay an
+						This dynamic creates an inequitable burden: while the
+						fair annual share to run our community is <strong
+							>$75</strong
+						>, those who do contribute are often forced to pay an
 						<strong>effective cost of $110</strong> or more to cover
 						the shortfall left by non-donating households.
 					</p>
@@ -164,9 +226,9 @@
 						If the SCCA transitioned to a mandatory <strong
 							class="text-white">$75 SCBD assessment</strong
 						>, the burden would be shared equally by all 284
-						households, ensuring sustainable funding of <strong
-							class="text-white">$21,300</strong
-						> without requiring anyone to over-contribute.
+						households, ensuring sustainable funding of
+						<strong class="text-white">$21,300</strong> without requiring
+						anyone to over-contribute.
 					</p>
 					<p class="mt-4 text-slate-300">
 						To put these numbers into perspective, our neighbors in
@@ -312,9 +374,9 @@
 				</div>
 				<ul class="mt-4 space-y-3 text-slate-700">
 					<li>
-						<strong>Insurance Costs Escalated 131%+:</strong>
-						Premiums more than doubled, jumping from $1,851 to
-						<strong>$4,279</strong> between 2020 and 2026.
+						<strong>Insurance Costs Escalated 151%+:</strong>
+						Premiums more than doubled, jumping from $1,700 to
+						<strong>$4,279</strong> between 2022 and 2026.
 					</li>
 					<li>
 						<strong>Fixed Overhead Swallows Revenue:</strong>
@@ -512,38 +574,335 @@
 			</div>
 		</div>
 
+		<!-- How SCBD Collections Work -->
+		<div
+			class="mt-16 rounded-xl bg-slate-900 border border-slate-700 p-8 text-white shadow-lg"
+		>
+			<h3 class="text-2xl font-bold text-center text-blue-400">
+				How SCBD Collection Actually Works: A Transparent Billing
+				Service
+			</h3>
+			<p
+				class="mt-3 text-center text-slate-300 max-w-2xl mx-auto text-sm leading-relaxed"
+			>
+				Some online rumors suggest the SCBD gives Anne Arundel County
+				power over SCCA. In reality, the County's role is strictly
+				administrative and fiduciary—acting as our billing department.
+			</p>
+			<div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+				<div
+					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
+				>
+					<div
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow"
+					>
+						1
+					</div>
+					<h4 class="font-bold text-base text-white">
+						Community Proposes Rate
+					</h4>
+					<p class="mt-2 text-slate-300 leading-relaxed text-xs">
+						Every year, the SCCA board (your volunteer neighbors)
+						proposes a budget and flat rate (e.g., $75) based
+						strictly on actual community maintenance needs.
+					</p>
+				</div>
+				<div
+					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
+				>
+					<div
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow shadow"
+					>
+						2
+					</div>
+					<h4 class="font-bold text-base text-white">
+						County Prints Bill
+					</h4>
+					<p class="mt-2 text-slate-300 leading-relaxed text-xs">
+						The county lists the proposed $75 fee as a flat
+						line-item on your existing annual property tax bill. No
+						separate checks or mailing required.
+					</p>
+				</div>
+				<div
+					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
+				>
+					<div
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow shadow"
+					>
+						3
+					</div>
+					<h4 class="font-bold text-base text-white">
+						100% Funds Returned
+					</h4>
+					<p class="mt-2 text-slate-300 leading-relaxed text-xs">
+						The county collects the payments and returns <strong
+							>100% of the funds</strong
+						>
+						directly to the SCCA bank account. The county keeps
+						<strong>$0</strong>.
+					</p>
+				</div>
+				<div
+					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
+				>
+					<div
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow shadow"
+					>
+						4
+					</div>
+					<h4 class="font-bold text-base text-white">
+						SCCA Board Allocates
+					</h4>
+					<p class="mt-2 text-slate-300 leading-relaxed text-xs">
+						The SCCA board spends the collected funds exclusively on
+						neighborhood grass, trees, signs, and insurance. The
+						county has <strong>zero say</strong> in how funds are allocated.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Fact vs. Myth Section -->
+		<div
+			class="mt-16 rounded-xl bg-white border border-slate-200 p-8 shadow-sm"
+		>
+			<h3 class="text-2xl font-bold text-slate-900 text-center">
+				Fact vs. Myth: Debunking the Rumors
+			</h3>
+			<p
+				class="mt-2 text-slate-600 text-center max-w-2xl mx-auto leading-relaxed text-sm"
+			>
+				Social media is a great tool for staying in touch, but it is
+				often a hotbed for unverified rumors and false claims. Here are
+				the facts regarding the proposed SCBD:
+			</p>
+
+			<div class="mt-8 space-y-6">
+				<!-- Row 1 -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-slate-100"
+				>
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"The SCCA Board is acting in secret and hiding
+							financial records."
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
+							Every penny of SCCA revenue and expenses is
+							documented, budgeted, and open for review. Annual
+							financial statements and tax documents are available
+							to any resident. The SCCA Board is comprised
+							entirely of <strong
+								>unpaid volunteer neighbors</strong
+							> who donate their time to keep the community running.
+						</p>
+					</div>
+				</div>
+
+				<!-- Row 2 -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-slate-100"
+				>
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"This is a sinister new tax imposed on us by the
+							County."
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
+							The SCBD is a 100% democratic process. The Board
+							cannot impose this unilaterally; it can only pass
+							with a <strong
+								>2/3 supermajority vote of the residents
+								themselves</strong
+							>. The county acts purely as an administrative
+							billing service, collecting the flat $75/year fee on
+							your tax bill and returning
+							<strong>100% of it</strong> back to the SCCA.
+						</p>
+					</div>
+				</div>
+
+				<!-- Row 3 -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-slate-100"
+				>
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"The SCCA can't hold or maintain land in Section 2
+							because the covenants expired."
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
+							The SCCA owns 25 acres of common area in Section 2.
+							The expiration of architectural restrictions in
+							Section 2 in 2012 does <strong>not</strong> change SCCA's
+							deeded ownership of this land, nor does it eliminate
+							SCCA's ongoing legal liability and maintenance duties
+							(mowing, hazardous tree removal, insurance) for it.
+						</p>
+					</div>
+				</div>
+
+				<!-- Row 4 -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"If we don't pay dues, the SCCA will just magically
+							keep finding money."
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
+							SCCA unencumbered reserves have been depleted from <strong
+								>$13,100 to just $1,017</strong
+							>. If dues continue to decline, the association
+							faces <strong>insolvency</strong>. This would mean
+							canceling landscaping services entirely and dropping
+							liability insurance, opening up individual
+							homeowners to personal litigation risks in the event
+							of an accident on unmaintained common ground.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Covenant Clarification Section -->
 		<div class="mt-16 rounded-xl bg-blue-50 p-8 border border-blue-100">
 			<h3 class="text-2xl font-bold text-slate-900 text-center">
-				Fact vs. Fiction: The Section 2 Covenants
+				Section 2 Covenants & Community Liability Risk
 			</h3>
-			<p class="mt-4 text-slate-700 max-w-3xl mx-auto text-center">
-				You may have seen recent discussions online regarding the
-				expiration of restrictive covenants in Section 2. We want to be
-				fully transparent and clarify how this relates to the SCBD
-				proposal.
+			<p
+				class="mt-4 text-slate-700 max-w-3xl mx-auto text-center leading-relaxed"
+			>
+				Some online discussions have confused the expiration of Section
+				2's individual architectural covenants with the SCCA's ongoing
+				physical property ownership. We want to be fully transparent
+				about the legal realities and why this impacts every single
+				homeowner.
 			</p>
-			<div class="mt-8 space-y-4 text-slate-700 max-w-4xl mx-auto">
-				<p>
-					<strong>The History:</strong> The Declaration of Covenants for
-					Section 2 (which allowed the SCCA to enforce building and land-use
-					restrictions on individual homes) expired in 2012. While this
-					means the SCCA can no longer enforce architectural restrictions
-					in Section 2, it does not change our property ownership.
-				</p>
-				<p>
-					<strong>What Hasn't Changed:</strong> The SCCA still owns the
-					25 acres of common area in Section 2 and is legally responsible
-					for maintaining them. The association must still cut the grass,
-					insure the property, maintain the community signs, and remove
-					dangerous dead trees across the entire community.
-				</p>
-				<p>
-					<strong>The Bottom Line:</strong> The expiration of these restrictive
-					covenants over a decade ago is unrelated to the SCBD proposal.
-					The SCBD is purely a funding mechanism to ensure our shared,
-					ongoing maintenance and insurance obligations can be met responsibly.
-				</p>
+			<div class="mt-8 space-y-6 text-slate-700 max-w-4xl mx-auto">
+				<div
+					class="p-4 bg-white rounded-lg border border-blue-100 shadow-sm"
+				>
+					<p class="font-bold text-slate-900">
+						1. Property Ownership vs. Architectural Control
+					</p>
+					<p class="mt-2 leading-relaxed text-sm">
+						The Declaration of Covenants for Section 2 (which
+						allowed SCCA to enforce building and aesthetic
+						guidelines on individual homes) expired in 2012. While
+						this means architectural restrictions are gone, it <strong
+							>did not change SCCA's deeded ownership</strong
+						> of the 25 acres of common areas inside Section 2.
+					</p>
+				</div>
+
+				<div
+					class="p-4 bg-white rounded-lg border border-blue-100 shadow-sm"
+				>
+					<p class="font-bold text-slate-900">
+						2. The Legal Obligation to Maintain and Insure
+					</p>
+					<p class="mt-2 leading-relaxed text-sm">
+						Because SCCA holds the deeds to these 25 acres, the
+						association is <strong
+							>legally responsible and strictly liable</strong
+						> for any injuries, falling trees, or accidents occurring
+						on that land. The association is legally required to carry
+						comprehensive general liability insurance and perform safety
+						maintenance (like cutting hazardous dead trees) across the
+						entire community.
+					</p>
+				</div>
+
+				<div
+					class="p-4 rounded-lg border border-red-100 bg-red-50/50 shadow-sm"
+				>
+					<p class="font-bold text-red-950 flex items-center gap-1.5">
+						⚠️ The Devastating Risk of Insolvency
+					</p>
+					<p class="mt-2 text-red-900 leading-relaxed text-sm">
+						If voluntary collections continue to collapse and we
+						cannot afford the rising $4,200+ annual liability
+						premiums, SCCA faces losing insurance coverage entirely.
+						In that scenario, any slip-and-fall, tree-related
+						injury, or property damage lawsuit on common ground
+						could result in a catastrophic legal judgment. Because
+						the association consists of its individual members, such
+						judgments could result in severe financial liens or
+						legal claims directly impacting SCCA property owners.
+					</p>
+				</div>
+
+				<div
+					class="p-4 bg-white rounded-lg border border-blue-100 shadow-sm"
+				>
+					<p class="font-bold text-slate-900 font-bold">
+						The Bottom Line
+					</p>
+					<p class="mt-2 leading-relaxed text-sm">
+						The expiration of restrictive covenants over a decade
+						ago is completely unrelated to the SCBD proposal. The
+						SCBD is a necessary, practical safety net to ensure SCCA
+						remains solvent, insured, and capable of protecting all
+						residents from legal and physical liability.
+					</p>
+				</div>
 			</div>
 		</div>
 
@@ -638,4 +997,3 @@
 		</div>
 	</div>
 </div>
-
