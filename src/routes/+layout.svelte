@@ -41,7 +41,13 @@
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "News & Records", path: "/news-records" },
-    { name: "SCBD", path: "/why-scbd" },
+    {
+      name: "SCBD",
+      children: [
+        { name: "SCBD Overview", path: "/why-scbd" },
+        { name: "SCBD FAQ", path: "/why-scbd-faq" }
+      ]
+    },
     {
       name: "Resources",
       children: [
