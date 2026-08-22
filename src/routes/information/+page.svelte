@@ -150,6 +150,19 @@
                 class="mt-6 shadow-sm"
             />
         </article>
+        
+        <article
+            class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm"
+        >
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">
+                Shipley's Choice common areas map
+            </h2>
+            <img
+                src="data/img/scca-commons.png"
+                alt="Common areas map"
+                class="mt-6 shadow-sm"
+            />
+        </article>
 
         <article
             class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm"
