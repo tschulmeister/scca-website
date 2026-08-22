@@ -209,8 +209,8 @@
 						Currently, our voluntary collections average just <strong
 							class="text-white">$63 per household</strong
 						>
-						because not everyone contributes. To sustain even
-						minimal operations, many households generously donate
+						because not everyone contributes. To sustain even minimal
+						operations, many households generously donate
 						<strong>extra funds</strong>, effectively subsidizing
 						those who do not pay.
 					</p>
@@ -703,13 +703,14 @@
 							>Fact</span
 						>
 						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
-							Every penny of SCCA revenue and expenses is
-							documented, budgeted, and open for review. Annual
-							financial statements and tax documents are available
-							to any resident. The SCCA Board is comprised
-							entirely of <strong
+							The SCCA Board is comprised entirely of <strong
 								>unpaid volunteer neighbors</strong
 							> who donate their time to keep the community running.
+							The board meets monthly (or more) to discuss community
+							matters, manage finances, and maintain records of board
+							activity. The volunteers on the board make every effort
+							possible to keep clean records and make them available
+							to residents upon request.
 						</p>
 					</div>
 				</div>
@@ -939,7 +940,7 @@
 					class="bg-white p-6 rounded-lg shadow-sm border border-amber-200 text-center flex-1 w-full"
 				>
 					<div class="text-4xl font-black text-amber-600 mb-2">
-						&le; 6
+						&le; 5
 					</div>
 					<div class="text-amber-900 font-medium">
 						Max Annual Attendees (Last 5 Yrs)
