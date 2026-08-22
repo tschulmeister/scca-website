@@ -135,6 +135,11 @@
     updateNav();
   }
 
+  // Reset active menu on home page
+  $: if ($page.url.pathname === '/') {
+    activeNavParent = null;
+  }
+
   onMount(() => {
     visibleLinks = navLinks;
     updateNav();
