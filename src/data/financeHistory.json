@@ -1,0 +1,93 @@
+[
+    {
+        "date": "07312026",
+        "checking": 7982.61,
+        "money_market": null,
+        "total_funds": null,
+        "file": "SoFC as of 07312026.xlsx"
+    },
+    {
+        "date": "073120",
+        "checking": 3103.19,
+        "money_market": 10233.82,
+        "total_funds": 13853.22,
+        "file": "SCCA_073120.xlsx"
+    },
+    {
+        "date": "110920",
+        "checking": 7537.24,
+        "money_market": 10233.82,
+        "total_funds": 17771.06,
+        "file": "SCCA_110920.xlsx"
+    },
+    {
+        "date": "022920",
+        "checking": 12461.17,
+        "money_market": 10233.82,
+        "total_funds": 22694.99,
+        "file": "SCCA_022920.xlsx"
+    },
+    {
+        "date": "10172023",
+        "checking": 11919.94,
+        "money_market": null,
+        "total_funds": null,
+        "file": "SCCA 10172023 SoFC.xlsb.xlsx"
+    },
+    {
+        "date": "121420",
+        "checking": 10162.27,
+        "money_market": 10233.82,
+        "total_funds": 20396.09,
+        "file": "SCCA_121420.xlsx"
+    },
+    {
+        "date": "062922",
+        "checking": 9082.51,
+        "money_market": null,
+        "total_funds": 9082.51,
+        "file": "SCCA_062922.xlsx"
+    },
+    {
+        "date": "081521",
+        "checking": 9883.88,
+        "money_market": null,
+        "total_funds": 9883.88,
+        "file": "SCCA_081521.xlsx"
+    },
+    {
+        "date": "091721",
+        "checking": 7619.32,
+        "money_market": null,
+        "total_funds": 7619.32,
+        "file": "SCCA_091721.xlsx"
+    },
+    {
+        "date": "091420",
+        "checking": 2862.1,
+        "money_market": 10233.82,
+        "total_funds": 13095.92,
+        "file": "SCCA_091420.xlsx"
+    },
+    {
+        "date": "06042026",
+        "checking": 8227.91,
+        "money_market": null,
+        "total_funds": null,
+        "file": "SCCA SoFC as of 06042026.xlsx"
+    },
+    {
+        "date": "03202023",
+        "checking": 11837.17,
+        "money_market": null,
+        "total_funds": null,
+        "file": "SCCA 03202023 SoFC.xlsb.xlsx"
+    },
+    {
+        "date": "12312022",
+        "checking": 14072.07,
+        "money_market": null,
+        "total_funds": null,
+        "file": "SCCA 12312022 SoFC.xlsb.xlsx"
+    }
+]
