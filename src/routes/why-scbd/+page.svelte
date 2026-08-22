@@ -39,22 +39,32 @@
 		.filter((e) => e.value > 0);
 
 	const possibleRevenue = [
-		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" },
+		{ label: "Required", value: 21300, subtitle: "Operational Baseline" },
+		{ label: "Surplus", value: 2800, subtitle: "Voluntary Donations" },
+	];
+
+	const householdBurden = [
+		{ label: "Standard", value: 75, subtitle: "Fair Share" },
+		{ label: "Effective", value: 110, subtitle: "Due to Non-Donors" },
 	];
 
 	const gapRevenue = [
-		{ label: "SCCA (Current)", value: 14768, subtitle: "~$52 avg/home" },
+		{ label: "SCCA (Current)", value: 17832, subtitle: "~$63 avg/home" },
 		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" },
 	];
 
 	const schoaComparison = [
-		{ label: "SCCA (Current)", value: 14768, subtitle: "~$52 avg/home" },
+		{ label: "SCCA (Current)", value: 17832, subtitle: "~$63 avg/home" },
 		{ label: "SCHOA", value: 177120, subtitle: "864 homes @ $205" },
 	];
 
 	const comparisonColors = {
 		"SCCA (Current)": "bg-slate-400",
 		"SCCA (SCBD)": "bg-blue-500",
+		Required: "bg-blue-500",
+		Surplus: "bg-emerald-500",
+		Standard: "bg-slate-400",
+		Effective: "bg-red-500",
 		SCHOA: "bg-emerald-500",
 	};
 </script>
@@ -98,7 +108,6 @@
 		</p>
 	</div>
 </div>
-
 <div
 	class="mt-8 bg-blue-50 py-8 px-4 rounded-xl border border-blue-100 max-w-4xl mx-auto text-center"
 >
@@ -127,7 +136,6 @@
 
 <div class="container mx-auto px-4">
 	<div class="max-w-5xl mx-auto">
-		<!-- Proposed Perspective Callout Box -->
 		<div
 			class="mt-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white shadow-lg overflow-hidden relative"
 		>
@@ -136,43 +144,36 @@
 			>
 				<div>
 					<h3 class="text-2xl font-bold text-blue-200">
-						Putting It Into Perspective: A $75 Investment
+						Putting It Into Perspective: The True Cost of Participation
 					</h3>
 					<p class="mt-4 text-slate-300">
 						Currently, our voluntary collections average just <strong
-							class="text-white">$52 per household</strong
-						>
-						because not everyone pays. This results in our community
-						only bringing in around
-						<strong class="text-white">$14,768</strong> on average.
+							class="text-white">$63 per household</strong
+						> because not everyone contributes. To sustain even minimal operations,
+						many households generously donate <strong>extra funds</strong>,
+						effectively subsidizing those who do not pay.
 					</p>
 					<p class="mt-4 text-slate-300">
-						If the SCCA transitioned to a modest <strong
+						This dynamic creates an inequitable burden: while the fair
+						annual share to run our community is <strong>$75</strong>,
+						those who do contribute are often forced to pay an
+						<strong>effective cost of $110</strong> or more to cover
+						the shortfall left by non-donating households.
+					</p>
+					<p class="mt-4 text-slate-300">
+						If the SCCA transitioned to a mandatory <strong
 							class="text-white">$75 SCBD assessment</strong
-						>
-						with 100% participation, our budget would stabilize at
-						<strong class="text-white">$21,300</strong>.
+						>, the burden would be shared equally by all 284
+						households, ensuring sustainable funding of <strong
+							class="text-white">$21,300</strong
+						> without requiring anyone to over-contribute.
 					</p>
 					<p class="mt-4 text-slate-300">
 						To put these numbers into perspective, our neighbors in
 						the larger SCHOA (864 homes) utilize a mandatory <strong
 							class="text-white">$205 annual assessment</strong
-						>.
-					</p>
-					<p class="mt-4 text-slate-300">
-						This fully-funded approach generates over <strong
-							class="text-white">$177,000 annually</strong
-						> for their community. What does this gap in funding achieve?
-						It allows them to use professional tree services, hire commercial
-						landscapers, mow more frequently, and replace aging playground
-						equipment.
-					</p>
-					<p class="mt-4 text-slate-300">
-						SCCA residents have already been asked to make an <strong
-							>optional</strong
-						> $75 dues contribution for many years, but a decline in
-						participation has lead to a shrinking pool of funds that
-						the community can use for essential maintenance activities.
+						>, generating over <strong>$177,000 annually</strong> to
+						fully fund professional maintenance services.
 					</p>
 				</div>
 
@@ -375,14 +376,14 @@
 					<li>
 						<strong>Operating Deficits:</strong> Recent years have
 						seen significant deficits. In 2025, actual expenses
-						($20,896) exceeded collected dues ($14,700) by over
-						<strong>$6,100</strong>.
+						($20,896) exceeded collected dues ($17,625) by over
+						<strong>$3,200</strong>.
 					</li>
 					<li>
 						<strong>Depleting Cash:</strong> Community unencumbered
 						balances collapsed from over
 						<strong>$13,100</strong> at the end of 2024 down to
-						<strong>$6,763</strong> by mid-2026, proving the current
+						<strong>$1,017</strong> by mid-2026, proving the current
 						model is unsustainable.
 					</li>
 				</ul>
@@ -637,3 +638,4 @@
 		</div>
 	</div>
 </div>
+

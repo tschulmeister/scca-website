@@ -33,7 +33,9 @@
             "unpaid_homes": 69,
             "participation_rate_pct": 75.7,
             "target_budget_paying_homes": 250,
-            "projected_dues_revenue_usd": 18750.0
+            "dues_revenue_collected_usd": 18365.0,
+            "regular_dues_collected_usd": 16125.0,
+            "extra_funds_collected_usd": 2240.0
         },
         {
             "year": 2023,
@@ -42,7 +44,9 @@
             "unpaid_homes": 74,
             "participation_rate_pct": 73.94,
             "target_budget_paying_homes": 250,
-            "projected_dues_revenue_usd": 18750.0
+            "dues_revenue_collected_usd": 18130.0,
+            "regular_dues_collected_usd": 16750.0,
+            "extra_funds_collected_usd": 1380.0
         },
         {
             "year": 2024,
@@ -50,7 +54,9 @@
             "paid_homes": 205,
             "unpaid_homes": 79,
             "participation_rate_pct": 72.18,
-            "dues_revenue_collected_usd": 17655.0
+            "dues_revenue_collected_usd": 17730.0,
+            "regular_dues_collected_usd": 15570.0,
+            "extra_funds_collected_usd": 2160.0
         },
         {
             "year": 2025,
@@ -58,7 +64,9 @@
             "paid_homes": 196,
             "unpaid_homes": 88,
             "participation_rate_pct": 69.01,
-            "dues_revenue_collected_usd": 14700.0
+            "dues_revenue_collected_usd": 17625.0,
+            "regular_dues_collected_usd": 14675.0,
+            "extra_funds_collected_usd": 2950.0
         },
         {
             "year": 2026,
@@ -67,7 +75,9 @@
             "paid_homes": 194,
             "unpaid_homes": 90,
             "participation_rate_pct": 68.31,
-            "dues_revenue_collected_usd": 14550.0
+            "dues_revenue_collected_usd": 17310.0,
+            "regular_dues_collected_usd": 14625.0,
+            "extra_funds_collected_usd": 2685.0
         }
     ],
     "dues_by_street_2020": [
@@ -227,8 +237,8 @@
             "balances": {
                 "checking_balance_usd": 8227.91,
                 "playground_funds_section2_usd": 1464.7,
-                "outstanding_checks_usd": 0.0,
-                "net_unencumbered_balance_usd": 6763.21
+                "outstanding_checks_usd": 5500.0,
+                "net_unencumbered_balance_usd": 1017.91
             }
         }
     ],
