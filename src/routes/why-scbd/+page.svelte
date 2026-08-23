@@ -157,12 +157,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-6 text-center text-sm text-slate-300 leading-relaxed">
-			⚠️ <strong>Note:</strong> This is a 100% democratic process. The
-			SCBD requires a
-			<strong>2/3 (67%) resident supermajority vote</strong> to pass. The SCCA
-			Board cannot implement this unilaterally.
-		</div>
 	</div>
 </div>
 
