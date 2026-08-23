@@ -1,5 +1,6 @@
 <script>
   import { onMount, onDestroy } from "svelte";
+  import { ShieldAlert, DollarSign, Lightbulb, Wrench, Megaphone, Sparkles } from "@lucide/svelte";
   import newsItems from "$data/newsItems.json";
 
   // The `newsItems` are now imported directly.
@@ -32,6 +33,81 @@
   onDestroy(() => {
     if (observer) observer.disconnect();
   });
+
+  function getItemCategory(item) {
+    const title = item.title.toLowerCase();
+    const id = item.id.toLowerCase();
+    const tags = (item.tags || []).map((t) => t.toLowerCase());
+
+    if (
+      tags.includes("idea") ||
+      title.includes("idea")
+    ) {
+      return "idea";
+    }
+    if (
+      tags.includes("safety") ||
+      tags.includes("community safety") ||
+      title.includes("safety")
+    ) {
+      return "safety";
+    }
+    if (
+      tags.includes("financials") ||
+      title.includes("dues") ||
+      title.includes("scbd") ||
+      id.includes("scbd") ||
+      title.includes("finance")
+    ) {
+      return "finance";
+    }
+    if (title.includes("light") || title.includes("upgrade")) {
+      return "improvement";
+    }
+    if (
+      title.includes("maintenance") ||
+      title.includes("ground") ||
+      title.includes("common")
+    ) {
+      return "maintenance";
+    }
+    return "announcement";
+  }
+
+  function getCategoryStyles(category) {
+    switch (category) {
+      case "idea":
+        return {
+          bg: "bg-white border-yellow-200 text-yellow-500",
+          hoverBg: "group-hover:bg-yellow-50 group-hover:border-yellow-300",
+        };
+      case "safety":
+        return {
+          bg: "bg-rose-50 border-rose-200 text-rose-600",
+          hoverBg: "group-hover:bg-rose-100 group-hover:border-rose-300",
+        };
+      case "finance":
+        return {
+          bg: "bg-emerald-50 border-emerald-200 text-emerald-600",
+          hoverBg: "group-hover:bg-emerald-100 group-hover:border-emerald-300",
+        };
+      case "improvement":
+        return {
+          bg: "bg-amber-50 border-amber-200 text-amber-600",
+          hoverBg: "group-hover:bg-amber-100 group-hover:border-amber-300",
+        };
+      case "maintenance":
+        return {
+          bg: "bg-green-50 border-green-200 text-green-600",
+          hoverBg: "group-hover:bg-green-100 group-hover:border-green-300",
+        };
+      default:
+        return {
+          bg: "bg-blue-50 border-blue-200 text-blue-600",
+          hoverBg: "group-hover:bg-blue-100 group-hover:border-blue-300",
+        };
+    }
+  }
 </script>
 
 <svelte:head>
@@ -102,44 +178,80 @@
           Community News & Announcements
         </h2>
 
-        <div class="divide-y divide-slate-100">
-          {#each newsItems as item}
+        <div class="mt-6 space-y-8">
+          {#each newsItems as item, i}
+            {@const category = getItemCategory(item)}
+            {@const styles = getCategoryStyles(category)}
             <div
               id={item.id}
-              class="py-6 first:pt-0 last:pb-0 group scroll-mt-20"
+              class="relative flex gap-4 sm:gap-6 group scroll-mt-24"
             >
-              <div
-                class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3"
-              >
-                <h3
-                  class="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors"
+              <!-- Timeline Left Column -->
+              <div class="flex flex-col items-center flex-shrink-0">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center border-2 shadow-sm {styles.bg} {styles.hoverBg} transition-all duration-300 transform group-hover:scale-105"
                 >
-                  {item.title}
-                </h3>
-                <time
-                  class="text-xs font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap sm:shrink-0"
-                >
-                  {item.date}
-                </time>
-              </div>
-
-              <div
-                class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed"
-              >
-                {@html item.content}
-              </div>
-
-              {#if item.tags.length}
-                <div class="mt-4 flex flex-wrap gap-2">
-                  {#each item.tags as tag}
-                    <span
-                      class="inline-flex items-center rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600"
-                    >
-                      {tag}
-                    </span>
-                  {/each}
+                  {#if category === 'safety'}
+                    <!-- Shield Alert Icon -->
+                    <ShieldAlert size={20} />
+                  {:else if category === 'finance'}
+                    <!-- Dollar / SCBD / Finance Icon -->
+                    <DollarSign size={20} />
+                  {:else if category === 'idea'}
+                    <!-- Idea Icon: Glowing Yellow Lightbulb -->
+                    <Lightbulb size={20} fill="currentColor" fill-opacity={0.2} />
+                  {:else if category === 'improvement'}
+                    <!-- Sparkles Icon -->
+                    <Sparkles size={20} />
+                  {:else if category === 'maintenance'}
+                    <!-- Wrench Icon -->
+                    <Wrench size={20} />
+                  {:else}
+                    <!-- Megaphone / Announcement Icon -->
+                    <Megaphone size={20} />
+                  {/if}
                 </div>
-              {/if}
+                <!-- Vertical timeline connector -->
+                {#if i < newsItems.length - 1}
+                  <div class="w-[2px] grow bg-slate-100 my-2"></div>
+                {/if}
+              </div>
+
+              <!-- Content Right Column -->
+              <div class="flex-1 pb-8 group-last:pb-2">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3"
+                >
+                  <h3
+                    class="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors"
+                  >
+                    {item.title}
+                  </h3>
+                  <time
+                    class="text-xs font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap sm:shrink-0"
+                  >
+                    {item.date}
+                  </time>
+                </div>
+
+                <div
+                  class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed"
+                >
+                  {@html item.content}
+                </div>
+
+                {#if item.tags.length}
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    {#each item.tags as tag}
+                      <span
+                        class="inline-flex items-center rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600"
+                      >
+                        {tag}
+                      </span>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
             </div>
           {/each}
         </div>

@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@google/gemini-cli": "^0.56.0",
+    "@lucide/svelte": "^1.33.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "d3": "^7.9.0",
