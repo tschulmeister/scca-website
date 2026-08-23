@@ -35,6 +35,6 @@ Here is a structured, data-backed synthesis of the multi-year financial trends f
 
 ## 5. Summary Arguments for SCBD Designation
 
-* **Fairness & Equity:** Spreads the financial responsibility evenly across all 284 properties so that a shrinking group of paying neighbors no longer subsidizes the entire community's common maintenance.
+* **Fairness & Equity:** Spreads the financial responsibility evenly across all 283 properties so that a shrinking group of paying neighbors no longer subsidizes the entire community's common maintenance.
 * **Financial Stability & Tax Efficiency:** Provides stable funding for recurring liabilities (insurance, tree care, lawn care) while placing oversight and billing administration under standard county mechanisms.
 * **Protecting Property Values:** Ensures common grounds, tree canopies, entrance signs, and neighborhood aesthetics are reliably maintained year-round without risking emergency assessments or degraded maintenance standards.

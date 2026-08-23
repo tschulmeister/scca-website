@@ -6,11 +6,11 @@ Based on an analysis of the provided financial spreadsheets spanning 2020 throug
 
 * **Declining Participation:** Community dues participation has seen a steady downward trend over recent years:
 * **2020:** 209 of 283 households paid (~73.9%).
-* **2022:** 215 of 284 households paid (75.7% / 76%).
-* **2023:** 210 of 284 households paid (73.9% / 74%).
-* **2024:** 205 of 284 households paid (72.2% / 72%).
-* **2025:** 196 of 284 households paid (69.0% / 69%).
-* **2026 (as of June 4, 2026):** 194 of 284 households paid (68.3% / 69%).
+* **2022:** 215 of 283 households paid (75.7% / 76%).
+* **2023:** 210 of 283 households paid (73.9% / 74%).
+* **2024:** 205 of 283 households paid (72.2% / 72%).
+* **2025:** 196 of 283 households paid (69.0% / 69%).
+* **2026 (as of June 4, 2026):** 194 of 283 households paid (68.3% / 69%).
 
 
 * **Budgeted vs. Actual Dues Revenue:**

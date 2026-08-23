@@ -38,7 +38,7 @@
 		.filter((e) => e.value > 0);
 
 	const possibleRevenue = [
-		{ label: "Required", value: 21300, subtitle: "Operational Baseline" },
+		{ label: "Required", value: 21225, subtitle: "Operational Baseline" },
 		{ label: "Surplus", value: 2800, subtitle: "Voluntary Donations" },
 	];
 
@@ -49,7 +49,7 @@
 
 	const gapRevenue = [
 		{ label: "SCCA (Current)", value: 17832, subtitle: "~$63 avg/home" },
-		{ label: "SCCA (SCBD)", value: 21300, subtitle: "284 homes @ $75" },
+		{ label: "SCCA (SCBD)", value: 21225, subtitle: "283 homes @ $75" },
 	];
 
 	const schoaComparison = [
@@ -123,7 +123,7 @@
 				>
 					The Goal
 				</div>
-				<div class="mt-2 text-3xl font-black text-white">$21,300</div>
+				<div class="mt-2 text-3xl font-black text-white">$21,225</div>
 				<div class="mt-1 text-xs text-slate-300">
 					To maintain common grounds, trees, and liability insurance
 					annually.
@@ -225,17 +225,10 @@
 					<p class="mt-4 text-slate-300">
 						If the SCCA transitioned to a mandatory <strong
 							class="text-white">$75 SCBD assessment</strong
-						>, the burden would be shared equally by all 284
+						>, the burden would be shared equally by all 283
 						households, ensuring sustainable funding of
-						<strong class="text-white">$21,300</strong> without requiring
+						<strong class="text-white">$21,225</strong> without requiring
 						anyone to over-contribute.
-					</p>
-					<p class="mt-4 text-slate-300">
-						To put these numbers into perspective, our neighbors in
-						the larger SCHOA (864 homes) utilize a mandatory <strong
-							class="text-white">$205 annual assessment</strong
-						>, generating over <strong>$177,000 annually</strong> to
-						fully fund professional maintenance services.
 					</p>
 				</div>
 
@@ -261,18 +254,6 @@
 							colorMap={comparisonColors}
 							valueFormat={format("$,.0f")}
 							title="The Gap: Current vs. SCBD"
-						/>
-					</div>
-
-					<!-- Graph 3: Neighbor Comparison -->
-					<div
-						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
-					>
-						<ComparisonBar
-							data={schoaComparison}
-							colorMap={comparisonColors}
-							valueFormat={format("$,.0f")}
-							title="The Context: SCHOA Revenue"
 						/>
 					</div>
 				</div>
@@ -502,26 +483,6 @@
 				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
 			>
 				<h3 class="text-xl font-bold text-slate-900">
-					About Special Taxing Districts
-				</h3>
-				<p class="mt-4 space-y-3 text-slate-700">
-					A community might consider forming a special taxing district
-					to finance a public benefit for the community that it does
-					not have the ability to finance in any other way.
-				</p>
-				<p class="mt-4 space-y-3 text-slate-700">
-					Once the taxing district is formed, the community each year
-					determines a tax rate to produce the revenue necessary to
-					fund the benefit for the following fiscal year. The property
-					owners are taxing themselves to fund the particular
-					benefits.
-				</p>
-			</div>
-
-			<div
-				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
-			>
-				<h3 class="text-xl font-bold text-slate-900">
 					Special Community Benefit Districts
 				</h3>
 				<p class="mt-4 mb-4 space-y-3 text-slate-700">
@@ -535,19 +496,6 @@
 					<li>Special security or special police protection</li>
 					<li>Improvements to community facilities</li>
 					<li>Insect and pest control</li>
-				</ul>
-			</div>
-
-			<div
-				class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
-			>
-				<h3 class="text-xl font-bold text-slate-900">What it is:</h3>
-				<ul class="mt-6 ml-8 list-disc">
-					<li>A taxing district</li>
-					<li>
-						A mechanism to collect taxes from persons that have a
-						common need
-					</li>
 				</ul>
 			</div>
 
@@ -633,14 +581,11 @@
 						3
 					</div>
 					<h4 class="font-bold text-base text-white">
-						100% Funds Returned
+						SCCA Receives Funds
 					</h4>
 					<p class="mt-2 text-slate-300 leading-relaxed text-xs">
-						The county collects the payments and returns <strong
-							>100% of the funds</strong
-						>
-						directly to the SCCA bank account. The county keeps
-						<strong>$0</strong>.
+						The county collects a 5% administrative fee and returns
+						the other 95% to the SCCA.
 					</p>
 				</div>
 				<div
@@ -739,15 +684,14 @@
 							>Fact</span
 						>
 						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
-							The SCBD is a 100% democratic process. The Board
-							cannot impose this unilaterally; it can only pass
-							with a <strong
-								>2/3 supermajority vote of the residents
-								themselves</strong
+							The Board cannot impose this unilaterally; it can
+							only pass with a <strong
+								>2/3 supermajority of households signing a
+								petition in favor</strong
 							>. The county acts purely as an administrative
-							billing service, collecting the flat $75/year fee on
-							your tax bill and returning
-							<strong>100% of it</strong> back to the SCCA.
+							billing service, collecting the flat $75/year
+							assessment on your tax bill and returning almost all
+							of it fback to the SCCA.
 						</p>
 					</div>
 				</div>
@@ -930,7 +874,7 @@
 					class="bg-white p-6 rounded-lg shadow-sm border border-amber-200 text-center flex-1 w-full"
 				>
 					<div class="text-4xl font-black text-amber-600 mb-2">
-						284
+						283
 					</div>
 					<div class="text-amber-900 font-medium">
 						Total Homes in SCCA

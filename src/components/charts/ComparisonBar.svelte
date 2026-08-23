@@ -3,7 +3,7 @@
 	import { max } from "d3-array";
 	import { fade } from "svelte/transition";
 
-	export let data = []; // e.g. [{ label: 'SCCA', value: 75, subtitle: '284 homes' }]
+	export let data = []; // e.g. [{ label: 'SCCA', value: 75, subtitle: '283 homes' }]
 	export let valueFormat = (d) => d;
 	export let labelFormat = (d) => d;
 	export let colorMap = {}; // e.g. { 'SCCA': 'bg-blue-500', 'SHOA': 'bg-emerald-500' }

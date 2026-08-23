@@ -2,7 +2,7 @@
     "metadata": {
         "community_name": "Shipley's Choice Community Association",
         "abbreviation": "SCCA",
-        "total_properties": 284,
+        "total_properties": 283,
         "annual_dues_rate_usd": 75.0,
         "as_of_date": "2026-06-04",
         "data_sources": [
@@ -28,7 +28,7 @@
         },
         {
             "year": 2022,
-            "total_homes": 284,
+            "total_homes": 283,
             "paid_homes": 215,
             "unpaid_homes": 69,
             "participation_rate_pct": 75.7,
@@ -39,7 +39,7 @@
         },
         {
             "year": 2023,
-            "total_homes": 284,
+            "total_homes": 283,
             "paid_homes": 210,
             "unpaid_homes": 74,
             "participation_rate_pct": 73.94,
@@ -50,7 +50,7 @@
         },
         {
             "year": 2024,
-            "total_homes": 284,
+            "total_homes": 283,
             "paid_homes": 205,
             "unpaid_homes": 79,
             "participation_rate_pct": 72.18,
@@ -60,7 +60,7 @@
         },
         {
             "year": 2025,
-            "total_homes": 284,
+            "total_homes": 283,
             "paid_homes": 196,
             "unpaid_homes": 88,
             "participation_rate_pct": 69.01,
@@ -71,7 +71,7 @@
         {
             "year": 2026,
             "as_of_date": "2026-06-04",
-            "total_homes": 284,
+            "total_homes": 283,
             "paid_homes": 194,
             "unpaid_homes": 90,
             "participation_rate_pct": 68.31,
@@ -309,7 +309,7 @@
             "2022_budget": 300.0,
             "2023_budget": 300.0,
             "2024_budget": 300.0,
-            "2024_actual": 284.44,
+            "2024_actual": 283.44,
             "2025_budget": 300.0,
             "2025_actual": 302.63,
             "2026_budget": 300.0,
