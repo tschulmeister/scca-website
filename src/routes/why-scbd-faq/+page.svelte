@@ -17,7 +17,8 @@
             answer: "The law concerning Special Community Benefit Districts is found in Article 4, Title 7 of the Anne Arundel County Code, available on the County’s website at www.aacounty.org. The Office of the Budget has also developed administrative guidelines for establishing and operating these districts.",
         },
         {
-            question: "Will the SCBD budget be made available to property owners?",
+            question:
+                "Will the SCBD budget be made available to property owners?",
             answer: "Yes. Unlike the SCCA, which operates on a calendar-year cycle, the SCBD operates on the County's fiscal year cycle (July 1 to June 30). Under Article 4, Title 7 of the Anne Arundel County Code, the SCCA (as the administering entity) must prepare the SCBD’s proposed annual budget and submit it to all property owners for their comments by December 31 of each year. The final budget request must be submitted to the County on or before January 31. This separate timeline ensures all owners have ample opportunity to comment on the SCBD budget before it goes to the County for inclusion in their spring budget process.",
         },
         {
@@ -25,8 +26,8 @@
             answer: "There is no set 'voting day.' Because establishing an SCBD requires the verified signatures of owners representing a two-thirds (2/3) supermajority of all properties, signatures are collected continuously until the threshold is met. Please note that under County guidelines, the official petition and ballot package must be distributed as a standalone mailing and cannot be combined with the regular SCCA annual newsletter. Please look out for this separate, official packet in your mail.",
         },
         {
-            question: "How will the tax be applied?",
-            answer: "The tax will be included as a separate line item on your annual property tax bill as a uniform assessment per tax account.",
+            question: "How will the assessment be applied?",
+            answer: "The assessment will be included as a separate line item on your annual property tax bill as a uniform assessment per tax account.",
         },
         {
             question: "Who is responsible for the SCBD?",
@@ -34,19 +35,25 @@
         },
         {
             question: "Where do I mail my signed petition?",
-            answer: "Please mail signed petitions to: Shipley’s Choice Community Association, 315 Arbor Oaks Ct, Millersville, MD 21108. All received petitions will be forwarded to the Anne Arundel County Budget Office for verification.",
+            answer: "Please mail signed petitions to: Shipley’s Choice Community Association, 315 Arbor Oaks Ct, Millersville, MD 21108. In addition to snail mail, residents can send a message to shipleyschoice.scca@gmail.com and a member of the Board will collect your petition in persion. They can also bring it to the October 20 meeting. All received petitions will be forwarded to the Anne Arundel County Budget Office for verification.",
         },
         {
-            question: "Who tallies and verifies the petition votes?",
-            answer: "The County’s Special Taxing District Coordinator reviews and verifies the legitimacy of all signed petitions.",
+            question: "Who tallies and verifies the petitions?",
+            answer: "The County’s SCBD Coordinator reviews and verifies the legitimacy of all signed petitions.",
         },
         {
-            question: "How are votes counted, and who must sign the petition?",
-            answer: "Each improved property gets one vote. Both owners (e.g., husband and wife) or all partners in a partnership must sign for the vote to count. Legal entities only require one signature from a representative. If the property is held in a trust, please submit a copy of the first and signature pages of the trust. If an owner is deceased, please provide a copy of the death certificate.",
+            question:
+                "How are petitions counted, and who must sign the petition?",
+            answer: "Each property gets one vote. Both owners (e.g., husband and wife) or all partners in a partnership must sign for the vote to count. Legal entities only require one signature from a representative. If the property is held in a trust, please submit a copy of the first and signature pages of the trust. If an owner is deceased, please provide a copy of the death certificate.",
         },
         {
             question: "What types of uses can the funds be used for?",
             answer: "Funds are strictly limited to the purposes listed in the petition: 1) Maintaining and improving community-owned real and personal property, including open space, recreation property, and entry signs; and 2) Paying administrative expenses (insurance, legal fees, utilities). They CANNOT be used for purposes not listed on the petition.",
+        },
+        {
+            question:
+                "Is SCCA subject to the Maryland Homeowners Association Act of 1987?",
+            answer: "No, SCCA was formed long before the Act and is not subject to its terms.",
         },
     ];
 </script>
@@ -62,7 +69,10 @@
         </h1>
         <p class="mt-4 max-w-2xl mx-auto text-slate-300">
             Answers to common questions regarding the Special Community Benefits
-            District proposal. <strong>Please note:</strong> A full standalone packet containing comprehensive details and official petition forms will be distributed separately to all households—by law, this cannot be combined with the regular SCCA annual newsletter.
+            District proposal. <strong>Please note:</strong> A full standalone packet
+            containing comprehensive details and official petition forms will be
+            distributed separately to all households—by law, this cannot be combined
+            with the regular SCCA annual newsletter.
         </p>
     </div>
 </section>
