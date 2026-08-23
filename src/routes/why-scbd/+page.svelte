@@ -39,7 +39,7 @@
 
 	const possibleRevenue = [
 		{ label: "Required", value: 21225, subtitle: "Operational Baseline" },
-		{ label: "Surplus", value: 2800, subtitle: "Voluntary Donations" },
+		{ label: "Extra", value: 2800, subtitle: "Voluntary Donations" },
 	];
 
 	const householdBurden = [
@@ -61,7 +61,7 @@
 		"SCCA (Current)": "bg-slate-400",
 		"SCCA (SCBD)": "bg-blue-500",
 		Required: "bg-blue-500",
-		Surplus: "bg-emerald-500",
+		Extra: "bg-emerald-500",
 		Standard: "bg-slate-400",
 		Effective: "bg-red-500",
 		SCHOA: "bg-emerald-500",
@@ -425,6 +425,26 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+
+		<div
+			class="mt-16 rounded-xl p-8 border"
+		>
+			<h3 class="text-2xl font-bold text-center">
+				A Search for Solutions
+			</h3>
+			<p class="mt-3 text-center max-w-2xl mx-auto">
+				Faced with these seemingly insurmountable problems, the board
+				recognized that defeatism is not the solution. Instead, it
+				launched an initiative to identify and explore <strong
+					>all</strong
+				> options for a new funding approach that will best meet the needs
+				of the community. After months of research, investigation, and due
+				diligence, we believe we have accomplished this objective. Work has
+				been underway to assemble the materials to present the facts to our
+				members in time for the October 2026 annual meeting with a strong
+				recommendation to proceed.
+			</p>
 		</div>
 
 		<!-- Updated Summary Section -->
