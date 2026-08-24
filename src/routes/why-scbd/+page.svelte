@@ -427,9 +427,7 @@
 			</div>
 		</div>
 
-		<div
-			class="mt-16 rounded-xl p-8 border"
-		>
+		<div class="mt-16 rounded-xl p-8 border">
 			<h3 class="text-2xl font-bold text-center">
 				A Search for Solutions
 			</h3>
@@ -674,7 +672,64 @@
 					</div>
 				</div>
 
-				<!-- Row 2 -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-slate-100"
+				>
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"The SCCA has already been approved by the County
+							without the knowledge or participation of property
+							owners."
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60 text-slate-700 text-sm leading-relaxed"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2">
+							The SCCA announced last year to our membership that
+							we will be exploring the formation of an SCBD during
+							2026. At this point all that has occurred is
+						</p>
+						<ol>
+							<li>1. the County has confirmed our eligibility</li>
+							<li>
+								2. it approved the wording of our proposed
+								petition.
+							</li>
+						</ol>
+						<p class="mt-2">
+							Approval of the SCBD will not happen until
+						</p>
+						<ol>
+							<li>
+								1. two-thirds of our homeowners sign the
+								petitions
+							</li>
+							<li>
+								2. the petitions are reviewed and approved by
+								County.
+							</li>
+						</ol>
+						<p class="mt-2">
+							The SCCA is currently at the point where a full
+							information packet is being prepared for
+							distribution to all property owners in advance of
+							the regular annual meeting at which point the
+							process of trying to obtain signatures will begin.
+						</p>
+					</div>
+				</div>
+
 				<div
 					class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-slate-100"
 				>
@@ -710,7 +765,6 @@
 					</div>
 				</div>
 
-				<!-- Row 3 -->
 				<div
 					class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-slate-100"
 				>
