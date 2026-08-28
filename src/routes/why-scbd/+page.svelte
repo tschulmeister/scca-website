@@ -831,6 +831,84 @@
 						</p>
 					</div>
 				</div>
+
+				<!-- Row 5 -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"The SCCA is subject to Maryland Real Property Law
+							Title 11B - Maryland Homeowners Association Act"
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
+							Under Maryland law, the SCCA is considered to be a
+							“Community Association” and not an HOA. Unlike HOAs
+							Community Associations do not have authority to
+							impose mandatory dues or assessments on property
+							owners. Note that HOAs are not permitted to form an
+							SCBD since they already have the ability to fund
+							their needs. During our research into eligibility
+							requirements, the Anne Arundel County Office of Law
+							reviewed our documents and confirmed we are not an
+							HOA. HOAs that fall under Title 11B have extensive
+							regulations regarding governance, record keeping,
+							replacement reserve funds and others. Under Title
+							11B, the State of Maryland can even step in and take
+							over if it feels the community is unable or
+							unwilling to properly comply exposing property
+							owners to large unexpected assessments. The SCCA
+							does NOT fall under Title 11B and, therefore, cannot
+							be in violations of any of its provisions.
+						</p>
+					</div>
+				</div>
+
+				<!-- Row 6 -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div
+						class="bg-red-50/60 p-4 rounded-lg border border-red-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 uppercase"
+							>Myth</span
+						>
+						<p class="mt-2 font-bold text-slate-900">
+							"The community should create an HOA and make
+							assessments mandatory."
+						</p>
+					</div>
+					<div
+						class="bg-emerald-50/60 p-4 rounded-lg border border-emerald-100/60"
+					>
+						<span
+							class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 uppercase"
+							>Fact</span
+						>
+						<p class="mt-2 text-slate-700 text-sm leading-relaxed">
+							The developer of Sections 1 and 2 opted not to
+							establish an HOA. Once a lot has been sold, there is
+							no legal avenue to impose an HOA retroactively
+							without approval of 100% of property owners. This
+							also means that it is impossible to merge the SCCA
+							with the Shipley's Choice HOA which has a mandatory
+							annual assessment of $205 per home at the current
+							time.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -935,6 +1013,7 @@
 				</p>
 			</div>
 
+			<!-- comparison of homes to residents at membership meetings -->
 			<div
 				class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto"
 			>
@@ -966,6 +1045,82 @@
 				nearly 300 households, it places the burden of decision-making
 				on a very small group. We welcome and need your voice.
 			</p>
+		</div>
+
+		<!-- Governance & Decision-Making Process Section -->
+		<div
+			class="mt-16 rounded-xl bg-slate-100 p-8 border border-slate-200 shadow-sm"
+		>
+			<h3 class="text-2xl font-bold text-slate-900 text-center">
+				Board Governance &amp; Community Decision-Making
+			</h3>
+			<p
+				class="mt-2 text-slate-600 text-center max-w-2xl mx-auto text-sm leading-relaxed"
+			>
+				Understanding how meeting notices, preliminary board actions,
+				and resident petitions work under our SCCA By-Laws.
+			</p>
+
+			<div class="mt-8 space-y-6 max-w-4xl mx-auto text-slate-700">
+				<div
+					class="p-5 bg-white rounded-lg border border-slate-200 shadow-sm"
+				>
+					<h4
+						class="font-bold text-slate-900 text-lg flex items-center gap-2"
+					>
+						<span>📩</span> Meeting Notices &amp; Annual Communication
+					</h4>
+					<p class="mt-2 text-sm leading-relaxed">
+						Under <strong>Article VII, Section 3</strong> of the SCCA
+						By-Laws, written notice for annual membership meetings must
+						be provided at least 7 days prior. The Board fulfills this
+						obligation by mailing the date, time, and location directly
+						to every household alongside the annual newsletter, ballots,
+						and dues notices.
+					</p>
+				</div>
+
+				<div
+					class="p-5 bg-white rounded-lg border border-slate-200 shadow-sm"
+				>
+					<h4
+						class="font-bold text-slate-900 text-lg flex items-center gap-2"
+					>
+						<span>🔍</span> Exploratory Due Diligence &amp; Administrative
+						Actions
+					</h4>
+					<p class="mt-2 text-sm leading-relaxed">
+						Under <strong>Article VIII, Section 1</strong>, the
+						Board of Directors is tasked with executive
+						administrative duties and operational due diligence.
+						Submitting an initial inquiry to Anne Arundel County to
+						verify SCBD eligibility was a standard, zero-cost
+						fact-finding action (not a binding vote or policy
+						change). It is the Board's duty to gather preliminary
+						facts and county guidelines first so verified data can
+						be presented to the neighborhood.
+					</p>
+				</div>
+
+				<div
+					class="p-5 bg-blue-50/70 rounded-lg border border-blue-200 shadow-sm"
+				>
+					<h4
+						class="font-bold text-blue-950 text-lg flex items-center gap-2"
+					>
+						<span>🗳️</span> The Choice Rests 100% with Homeowners
+					</h4>
+					<p class="mt-2 text-sm text-blue-900 leading-relaxed">
+						An SCBD cannot be established by the Board alone.
+						Verifying county eligibility simply opened the door for
+						a formal petition process. The final decision rests
+						entirely in the hands of the property owners: if a <strong
+							>2/3 majority of households</strong
+						> choose to sign the petition, it moves forward; if not,
+						it does not.
+					</p>
+				</div>
+			</div>
 		</div>
 
 		<!-- Summary Section -->
