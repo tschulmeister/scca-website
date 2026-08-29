@@ -3,20 +3,6 @@
 
   // The `newsItems` are now imported directly.
 
-  let showMessage = false;
-
-  function clickOutside(node) {
-    const handleClick = (event) => {
-      if (node && !node.contains(event.target) && !event.defaultPrevented) {
-        node.dispatchEvent(new CustomEvent("click_outside", node));
-      }
-    };
-    document.addEventListener("click", handleClick, true);
-    return {
-      destroy: () => document.removeEventListener("click", handleClick, true),
-    };
-  }
-
   $: latestNews = newsItems?.[0];
   $: latestThreeNews = newsItems?.slice(0, 3) ?? [];
 </script>
@@ -28,35 +14,74 @@
 <section class="page-header py-24 px-6 text-center">
   <div class="max-w-3xl mx-auto">
     <div
-      class="inline-flex flex-col items-center mb-4 relative"
-      use:clickOutside
-      on:click_outside={() => (showMessage = false)}
+      class="mb-10 p-6 sm:p-8 bg-slate-900/80 border border-blue-500/30 rounded-2xl shadow-2xl backdrop-blur-md max-w-2xl mx-auto text-center animate-fadeIn"
     >
-      <button
-        on:click={() => (showMessage = !showMessage)}
-        class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold rounded-full hover:bg-blue-500/30 transition-all"
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-400/20 text-xs font-semibold rounded-full mb-4"
       >
-        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-        Important: Declaring Shipley's Choice a Special Community Benefits District
-        • Click to read note
-      </button>
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
+          ></span>
+        </span>
+        SCBD Petition & Information Drive Active
+      </div>
 
-      {#if showMessage}
-        <div
-          class="absolute top-8 mt-2 w-72 bg-slate-900 text-left border border-slate-700 p-4 rounded-xl shadow-xl text-xs text-slate-300 z-10"
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">
+        Help Secure our Community's Future
+      </h2>
+
+      <p class="text-sm text-slate-300 mb-6 leading-relaxed max-w-lg mx-auto">
+        We are currently conducting an educational outreach and petition effort
+        to establish a Special Community Benefits District (SCBD) in Shipley's
+        Choice. Explore how this transition protects our community and find
+        answers to common questions.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a
+          href="/why-scbd"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-xl shadow-md hover:bg-blue-500 hover:shadow-lg transition-all text-sm"
         >
-          <p class="font-semibold text-white mb-1">
-            Hello Shipley's Choice neighbors
-          </p>
-          <p>
-            Please refer to the <a
-              class="app-link"
-              href="/news-records#scbd-update-aug-2026">news post</a
-            > regarding the initiative to declare Shipley's Choice a Special Community
-            Benefits District.
-          </p>
-        </div>
-      {/if}
+          Why SCBD?
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </a>
+        <a
+          href="/why-scbd-faq"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-slate-800 text-blue-300 border border-slate-700/80 font-semibold rounded-xl hover:bg-slate-700 hover:text-white transition-all text-sm"
+        >
+          SCBD FAQ
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </a>
+      </div>
     </div>
 
     <h1 class="text-5xl font-extrabold tracking-tight mb-4">
