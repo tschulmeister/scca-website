@@ -38,18 +38,31 @@
 		.filter((e) => e.value > 0);
 
 	const possibleRevenue = [
-		{ label: "Required", value: 21225, subtitle: "Operational Baseline" },
-		{ label: "Extra", value: 2800, subtitle: "Voluntary Donations" },
+		{ label: "Operational Baseline", value: 21225, subtitle: "Fully Funded" },
+		{ label: "100% Participation", value: 21225, subtitle: "All Homes Share Cost" },
 	];
 
-	const householdBurden = [
-		{ label: "Standard", value: 75, subtitle: "Fair Share" },
-		{ label: "Effective", value: 110, subtitle: "Due to Non-Donors" },
+	// New Data for Graph 1: Fair Share vs. Reality
+	const fairShareRealityData = [
+		{ label: "Target Fair Share", value: 75, subtitle: "Target" },
+		{ label: "Actual Paid by Contributors", value: 110, subtitle: "Burden" },
+	];
+
+	// New Data for Graph 2: Revenue & Coverage Gap
+	const revenueGapData = [
+		{ label: "Voluntary System", value: 17829, subtitle: "Current (~$63 avg)" },
+		{ label: "SCBD Mandatory", value: 21225, subtitle: "Target ($75/home)" },
+	];
+
+	// New Data for Graph 3: Participation (This will be used differently, perhaps a simple representation)
+	const participationData = [
+		{ label: "Contributing", value: 0.68, subtitle: "~192 homes" },
+		{ label: "Non-Contributing", value: 0.32, subtitle: "~91 homes" },
 	];
 
 	const gapRevenue = [
-		{ label: "SCCA (Current)", value: 17832, subtitle: "~$63 avg/home" },
-		{ label: "SCCA (SCBD)", value: 21225, subtitle: "283 homes @ $75" },
+		{ label: "Current Revenue", value: 17832, subtitle: "~$63 avg/home" },
+		{ label: "Shortfall", value: 3393, subtitle: "Needed to reach $21,225" },
 	];
 
 	const schoaComparison = [
@@ -58,13 +71,19 @@
 	];
 
 	const comparisonColors = {
-		"SCCA (Current)": "bg-slate-400",
-		"SCCA (SCBD)": "bg-blue-500",
-		Required: "bg-blue-500",
-		Extra: "bg-emerald-500",
-		Standard: "bg-slate-400",
-		Effective: "bg-red-500",
-		SCHOA: "bg-emerald-500",
+		"Current Revenue": "bg-slate-400",
+		"Shortfall": "bg-red-500",
+		"Operational Baseline": "bg-blue-500",
+		"100% Participation": "bg-emerald-500",
+		"Target Fair Share": "bg-slate-900",
+		"Actual Paid by Contributors": "bg-red-500",
+		"Voluntary System": "bg-slate-400",
+		"SCBD Mandatory": "bg-blue-500",
+		"Contributing": "bg-emerald-500",
+		"Non-Contributing": "bg-slate-400",
+		"Standard": "bg-slate-400",
+		"Effective": "bg-red-500",
+		"SCHOA": "bg-emerald-500",
 	};
 </script>
 
@@ -227,27 +246,39 @@
 				</div>
 
 				<div class="flex flex-col space-y-6">
-					<!-- Graph 1: The Goal -->
+					<!-- Graph 1: Fair Share vs. Reality -->
 					<div
 						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
 					>
 						<ComparisonBar
-							data={possibleRevenue}
+							data={fairShareRealityData}
 							colorMap={comparisonColors}
 							valueFormat={format("$,.0f")}
-							title="The Goal: Fully Funded"
+							title="Fair Share vs. Reality"
 						/>
 					</div>
 
-					<!-- Graph 2: The Gap -->
+					<!-- Graph 2: Revenue & Coverage Gap -->
 					<div
 						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
 					>
 						<ComparisonBar
-							data={gapRevenue}
+							data={revenueGapData}
 							colorMap={comparisonColors}
 							valueFormat={format("$,.0f")}
-							title="The Gap: Current vs. SCBD"
+							title="Total Revenue & Coverage Gap"
+						/>
+					</div>
+
+					<!-- Graph 3: Household Participation -->
+					<div
+						class="bg-white/10 rounded-xl p-4 h-[220px] flex items-center justify-center backdrop-blur-sm border border-white/20"
+					>
+						<ComparisonBar
+							data={participationData}
+							colorMap={comparisonColors}
+							valueFormat={format(".0%")}
+							title="Current Household Participation"
 						/>
 					</div>
 				</div>
