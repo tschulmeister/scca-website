@@ -55,6 +55,11 @@
                 "Is SCCA subject to the Maryland Homeowners Association Act of 1987?",
             answer: "No, SCCA was formed long before the Act and is not subject to its terms.",
         },
+        {
+            question:
+                "I've never heard of a Special Community Benefit District.  Is this an unconventional funding method?",
+            answer: "Not at all.  In 2026 there were 77 communities in Anne Arundel County sponsoring SCBDs.  An SCBD can be established for a wide variety of purposes but the most common is funding routine maintenance and improvements of property owned by older communities that don’t have an HOA.  Some nearby examples are Chartwell ($100), Severna Forrest ($99.07), Severndale ($125) and Carrolton Manor ($150).  There are additional local communities who are also supporting high-cost amenities such as community beaches, pavilions and boat docks.  Examples are Hollywood on the Severn ($400.60) and Kensington ($225).",
+        },
     ];
 </script>
 
