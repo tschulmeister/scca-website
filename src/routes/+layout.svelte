@@ -49,18 +49,12 @@
       ]
     },
     {
-      name: "Resources",
+      name: "Resources & Information",
       children: [
         { name: "Information", path: "/information" },
         { name: "Documents", path: "/documents" },
-        { name: "Architecture Requests", path: "/architecture-requests" }
-      ]
-    },
-    {
-      name: "FAQ & Guide",
-      children: [
-        { name: "Information", path: "/information" },
-        { name: "Documents", path: "/documents" },
+        { name: "Architecture Requests", path: "/architecture-requests" },
+        { name: "Maintenance Info", path: "/maintenance-info" },
         { name: "FAQ", path: "/faq" }
       ]
     },
