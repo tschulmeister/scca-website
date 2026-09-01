@@ -54,6 +54,7 @@
         { name: "Information", path: "/information" },
         { name: "Documents", path: "/documents" },
         { name: "Architecture Requests", path: "/architecture-requests" },
+        { name: "Common Area Trees", path: "/trees" },
         { name: "Maintenance Info", path: "/maintenance-info" },
         { name: "FAQ", path: "/faq" }
       ]

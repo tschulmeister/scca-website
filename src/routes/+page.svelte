@@ -140,11 +140,24 @@
       <p class="text-slate-200 mb-4 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
         Planning a home improvement? Find the ACR form and fence standards here.
       </p>
-      <a
-        href="/architecture-requests"
-        class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
-        >View requirements →</a
-      >
+      <div class="mb-4">
+        <a
+          href="/architecture-requests"
+          class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+          >View requirements →</a
+        >
+      </div>
+
+      <div class="border-t border-white/10 pt-4 mt-4">
+        <p class="text-slate-200 mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
+          Concerned about a dead or leaning tree in our common woodlands? Report it to the board for inspection.
+        </p>
+        <a
+          href="/trees"
+          class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+          >Common area trees & safety →</a
+        >
+      </div>
     </article>
 
     <article
@@ -159,11 +172,24 @@
         Residents can openly discuss community matters with our board of
         volunteers on Google Groups.
       </p>
-      <a
-        href="https://groups.google.com/u/1/g/shipleys-choice-community-association"
-        class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
-        >Join today →</a
-      >
+      <div class="mb-4">
+        <a
+          href="https://groups.google.com/u/1/g/shipleys-choice-community-association"
+          class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+          >Join today →</a
+        >
+      </div>
+
+      <div class="border-t border-white/10 pt-4 mt-4">
+        <p class="text-slate-200 mb-3 [text-shadow:0_1px_2px_rgb(0_0_0_/_0.5)]">
+          For official inquiries, direct board matters, or questions, you can reach the SCCA board directly via email.
+        </p>
+        <a
+          href="mailto:shipleyschoice.scca@gmail.com"
+          class="inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-blue-200"
+          >Contact SCCA Board →</a
+        >
+      </div>
     </article>
   </div>
 </section>
