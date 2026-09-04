@@ -24,7 +24,7 @@
       class="mb-10 p-6 sm:p-8 bg-slate-900/95 border border-blue-500/30 rounded-3xl shadow-2xl backdrop-blur-md max-w-2xl mx-auto text-center animate-fadeIn"
     >
       <div
-        class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-500/20 text-blue-300 border border-blue-400/20 text-xs font-bold rounded-full mb-4"
+        class="inline-flex items-center gap-2 px-5 py-1.5 bg-blue-500/20 text-blue-300 border border-blue-400/20 text-xs font-bold rounded-2xl mb-4"
       >
         <span class="relative flex h-2.5 w-2.5">
           <span
@@ -68,7 +68,7 @@
     <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-4 text-white">
       Welcome to Shipley's Choice
     </h1>
-    <p class="text-xs text-blue-200 tracking-widest uppercase font-bold bg-blue-500/10 w-fit mx-auto px-4 py-1.5 rounded-full border border-blue-400/20 mb-6">
+    <p class="text-xs text-blue-200 tracking-widest uppercase font-bold bg-blue-500/10 w-fit mx-auto px-5 py-1.5 rounded-2xl border border-blue-400/20 mb-6 leading-relaxed">
       Mailbox: 315 Arbor Oaks Ct, Millersville, MD 21108
     </p>
     <p class="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto font-medium">
@@ -92,7 +92,7 @@
             <h3 class="text-lg sm:text-xl font-black text-white leading-tight">Community News</h3>
           </div>
           {#if latestNews}
-            <div class="w-fit text-2xs font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 border border-blue-400/20 px-2.5 py-1 rounded-full">
+            <div class="w-fit text-2xs font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 border border-blue-400/20 px-4 py-1.5 rounded-2xl">
               Latest Bulletin: {latestNews.date}
             </div>
           {/if}

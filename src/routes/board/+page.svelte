@@ -308,7 +308,7 @@
                   <Users class="w-5 h-5 text-blue-600" />
                   Membership Committee
                 </h3>
-                <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">Chaired by Vice President</span>
+                <span class="px-4 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-xl whitespace-nowrap">Chaired by Vice President</span>
               </div>
               <p class="text-slate-700 text-sm leading-relaxed">
                 Promotes membership within the Association, maintains a current resident and member directory, assists the Treasurer in preparing dues statements, and coordinates community promotion with the Social Committee.
@@ -328,7 +328,7 @@
                   <Play class="w-5 h-5 text-emerald-600" />
                   Recreational Committee
                 </h3>
-                <span class="px-2.5 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full">Board Appointed</span>
+                <span class="px-4 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-xl whitespace-nowrap">Board Appointed</span>
               </div>
               <p class="text-slate-700 text-sm leading-relaxed">
                 Plans and executes the development and upkeep of all recreational areas. This committee prepares an annual budget of operating and construction expenditures, establishes Rules of Conduct, and sets appropriate user fees.
@@ -344,7 +344,7 @@
                   <Sparkles class="w-5 h-5 text-purple-600" />
                   Social Committee
                 </h3>
-                <span class="px-2.5 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full">Board Appointed</span>
+                <span class="px-4 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-xl whitespace-nowrap">Board Appointed</span>
               </div>
               <p class="text-slate-700 text-sm leading-relaxed">
                 Plans, schedules, and administers all official social functions and community celebrations in Shipley's Choice. Prepares an annual operating budget for presentation and approval by the Board of Directors.
@@ -360,7 +360,7 @@
                   <Flower class="w-5 h-5 text-teal-600" />
                   Beautification Committee
                 </h3>
-                <span class="px-2.5 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full">Board Appointed</span>
+                <span class="px-4 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-xl whitespace-nowrap">Board Appointed</span>
               </div>
               <p class="text-slate-700 text-sm leading-relaxed">
                 Promotes aesthetic standards across the neighborhood. Oversees the professional landscaping and maintenance of all entrance properties, schedules community cleanliness campaigns, and encourages residents to maintain high yard care standards.
@@ -376,7 +376,7 @@
                   <Shield class="w-5 h-5 text-red-600" />
                   Architectural & Safety Committee
                 </h3>
-                <span class="px-2.5 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full">Board Appointed</span>
+                <span class="px-4 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-xl whitespace-nowrap">Board Appointed</span>
               </div>
               <p class="text-slate-700 text-sm leading-relaxed">
                 Promotes resident and facility safety. Corrects identified unsafe activities, raises community awareness around potential neighborhood hazards, and manages architectural compliance reviews. Composed of officers and interested residents.
