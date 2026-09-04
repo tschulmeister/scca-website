@@ -7,6 +7,7 @@
   import ArrowRight from "@lucide/svelte/icons/arrow-right";
   import HelpCircle from "@lucide/svelte/icons/help-circle";
   import History from "@lucide/svelte/icons/history";
+  import Mail from "@lucide/svelte/icons/mail";
 
   // The `newsItems` are now imported directly.
   $: latestNews = newsItems?.[0];
@@ -158,19 +159,19 @@
       </a>
     </article>
 
-    <!-- Card 3: Voice / Contact -->
+    <!-- Card 3: Newsletter Sign-Up -->
     <article
       class="rounded-3xl bg-white/10 p-6 sm:p-8 shadow-xl border border-white/20 backdrop-blur-md flex flex-col justify-between min-w-0"
     >
       <div class="space-y-4">
         <div class="flex items-center gap-3">
           <div class="p-2.5 bg-blue-500/20 text-blue-300 border border-blue-400/20 rounded-2xl flex-shrink-0">
-            <Users class="w-5 h-5" />
+            <Mail class="w-5 h-5" />
           </div>
-          <h3 class="text-lg sm:text-xl font-black text-white leading-tight">Share Your Voice</h3>
+          <h3 class="text-lg sm:text-xl font-black text-white leading-tight">Stay Connected</h3>
         </div>
         <p class="text-slate-200 text-sm leading-relaxed font-medium">
-          Residents can openly discuss community matters and SCCA topics with our board of volunteers and neighbors on our official Google Group.
+          Register your email address to receive official SCCA newsletters, board notices, financial summaries, and critical neighborhood safety updates directly in your inbox.
         </p>
 
         <div class="border-t border-white/15 pt-4">
@@ -187,10 +188,10 @@
       </div>
 
       <a
-        href="https://groups.google.com/u/1/g/shipleys-choice-community-association"
+        href="/register"
         class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-blue-200 mt-6 group text-sm"
       >
-        Join Google Group Discussion
+        Register for SCCA Updates
         <ArrowRight class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
       </a>
     </article>
