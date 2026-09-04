@@ -92,7 +92,7 @@
             <h3 class="text-lg sm:text-xl font-black text-white leading-tight">Community News</h3>
           </div>
           {#if latestNews}
-            <div class="w-fit text-2xs font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 border border-blue-400/20 px-4 py-1.5 rounded-2xl">
+            <div class="w-fit text-[10px] font-bold uppercase tracking-wider text-blue-300 bg-blue-500/20 border border-blue-400/20 px-3.5 py-1 rounded-2xl">
               Latest Bulletin: {latestNews.date}
             </div>
           {/if}
