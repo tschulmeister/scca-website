@@ -27,9 +27,9 @@
             <ul class="list-disc list-inside space-y-3 text-slate-700">
                 <li>
                     <a
-                        href="https://www.facebook.com/groups/111198555610472?_rdr=p&refid=18&view=info"
+                        href="https://www.facebook.com/groups/111198555610472"
                         class="text-blue-600 hover:text-blue-700"
-                        >Shipley's Choice Community Facebook Site</a
+                        >Shipley's Choice Network (Facebook Group)</a
                     >
                 </li>
                 <li>
@@ -41,24 +41,17 @@
                 </li>
                 <li>
                     <a
-                        href="https://www.redfin.com/school/65862/MD/Millersville/Shipley-s-Choice-Elementary-School/real-estate#!v=8&sst=&region_id=65862&region_&market=dc"
+                        href="https://www.redfin.com/school/65862/MD/Millersville/Shipley-s-Choice-Elementary-School"
                         class="text-blue-600 hover:text-blue-700"
                         >Current real estate listings</a
                     > (Redfin)
                 </li>
                 <li>
                     <a
-                        href="http://www.zillow.com/homes/for_sale/36073503_zpid/39.106919,-76.586488,39.087702,-76.628373_rect/14_zm/1_fr/?view=map"
+                        href="https://www.zillow.com/homes/162607_rid/"
                         class="text-blue-600 hover:text-blue-700"
                         >Real estate values</a
                     > (Zillow)
-                </li>
-                <li>
-                    <a
-                        href="https://www.facebook.com/groups/571416536224533/"
-                        class="text-blue-600 hover:text-blue-700"
-                        >Shipley's Choice Virtual Yard Sale</a
-                    >
                 </li>
             </ul>
 
@@ -68,42 +61,42 @@
             <ul class="list-disc list-inside space-y-3 text-slate-700">
                 <li>
                     <a
-                        href="http://www.shipleyspta.wildapricot.org/"
+                        href="https://shipleyschoicepto.membershiptoolkit.com/"
                         class="text-blue-600 hover:text-blue-700"
-                        >Shipley's Choice Elementary PTA</a
+                        >Shipley's Choice Elementary PTO</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aacps.org/"
+                        href="https://www.aacps.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Public Schools</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aacps.org/aacps/shipches/index.asp"
+                        href="https://www.aacps.org/aacps/shipches/index.asp"
                         class="text-blue-600 hover:text-blue-700"
                         >Shipley’s Choice Elementary School</a
                     > — 410-222-3851
                 </li>
                 <li>
                     <a
-                        href="http://www.severnaparkmiddle.org/"
+                        href="https://www.aacps.org/spms"
                         class="text-blue-600 hover:text-blue-700"
                         >Severna Park Middle School</a
                     > — 410-647-7900
                 </li>
                 <li>
                     <a
-                        href="http://www.severnaparkhigh.org/"
+                        href="https://www.severnaparkhigh.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >Severna Park High School</a
                     > — 410-544-0900
                 </li>
                 <li>
                     <a
-                        href="http://www.publicschoolreview.com/shipley-s-choice-elementary-school-profile"
+                        href="https://www.publicschoolreview.com/shipley-s-choice-elementary-school-profile"
                         class="text-blue-600 hover:text-blue-700"
                         >Public School Review</a
                     >
@@ -116,21 +109,21 @@
             <ul class="list-disc list-inside space-y-3 text-slate-700">
                 <li>
                     <a
-                        href="http://www.aacounty.org/departments/inspections-and-permits/permit-center/IP_Projects/fence"
+                        href="https://www.aacounty.org/inspections-and-permits/permits/do-i-need-permit"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Fence Guidelines</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aahealth.org/programs/env-hlth/pools/residential-swimming-pools-requirements-permits-and-safety"
+                        href="https://www.aahealth.org/environmental-health/public-swimming-pools-and-spas/residential-swimming-pools-requirements-permits"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Pool Regulations</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/departments/inspections-and-permits/permit-center/building-codes/"
+                        href="https://www.aacounty.org/inspections-and-permits/building-codes"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Building Code Regulations</a
                     >
@@ -145,12 +138,12 @@
                 Shipley's Choice section map
             </h2>
             <img
-                src="data/revolving/7362973_orig.png"
+                src="/data/revolving/7362973_orig.png"
                 alt="Section map"
                 class="mt-6 shadow-sm"
             />
         </article>
-        
+
         <article
             class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm"
         >
@@ -158,7 +151,7 @@
                 Shipley's Choice common areas map
             </h2>
             <img
-                src="data/img/scca-commons.png"
+                src="/data/img/scca-commons.png"
                 alt="Common areas map"
                 class="mt-6 shadow-sm"
             />
@@ -173,28 +166,28 @@
             <ul class="list-disc list-inside space-y-3 text-slate-700">
                 <li>
                     <a
-                        href="http://www.aacounty.org/index.cfm"
+                        href="https://www.aacounty.org/recreation-parks"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Parks &amp; Recreation</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/dpw"
+                        href="https://www.aacounty.org/public-works"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Public Works</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/police/easterndist.cfm"
+                        href="https://www.aacounty.org/police-department/police-districts-divisions/eastern-district-police-station-pasadena"
                         class="text-blue-600 hover:text-blue-700"
                         >AA County Police – Eastern District</a
                     > — 410-222-6145 (non-emergency)
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/Police/index.cfm"
+                        href="https://www.aacounty.org/police-department"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Police Department</a
                     > — 410-222-8610 (non-emergency)
@@ -206,7 +199,7 @@
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/fire"
+                        href="https://www.aacounty.org/fire-department"
                         class="text-blue-600 hover:text-blue-700"
                         >Anne Arundel County Fire Department</a
                     > — 410-222-8200 (non-emergency)
@@ -218,14 +211,14 @@
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/DPW/WasteManagement/curbside.cfm"
+                        href="https://www.aacounty.org/public-works/waste-management/curbside-collection"
                         class="text-blue-600 hover:text-blue-700"
                         >Curbside Waste Collection Guidelines</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/DPW/WasteManagement/ML_Homepage.cfm"
+                        href="https://www.aacounty.org/public-works/waste-management/millersville-landfill"
                         class="text-blue-600 hover:text-blue-700"
                         >AA County Landfill</a
                     >
@@ -237,7 +230,7 @@
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/DPW/SnowInformation/Index.cfm"
+                        href="https://www.aacounty.org/snow"
                         class="text-blue-600 hover:text-blue-700"
                         >AA County Snow Information Page</a
                     >
@@ -250,7 +243,7 @@
                 </li>
                 <li>
                     <a
-                        href="http://www.aacounty.org/DPW/Highways/PotholeRepair.cfm"
+                        href="https://www.aacounty.org/report-a-concern"
                         class="text-blue-600 hover:text-blue-700"
                         >Pothole Report Hotline</a
                     >
@@ -287,35 +280,35 @@
                 </li>
                 <li>
                     <a
-                        href="http://www.missutility.net/maryland/"
+                        href="https://www.missutility.net/maryland/"
                         class="text-blue-600 hover:text-blue-700"
                         >Miss Utility Maryland</a
                     > — 800-257-7777
                 </li>
                 <li>
                     <a
-                        href="http://www.spcommunitycenter.org/"
+                        href="https://www.spcommunitycenter.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >Severna Park Community Center</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.gspcouncil.org/"
+                        href="https://sites.google.com/view/greatersevernaparkcouncil/home"
                         class="text-blue-600 hover:text-blue-700"
                         >Greater Severna Park Council</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.severnaparkchamber.com/"
+                        href="https://gspacc.com/"
                         class="text-blue-600 hover:text-blue-700"
                         >Greater Severna Park Chamber of Commerce</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.severnriverlions.org/"
+                        href="https://severnriverlions.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >Severn River Lions</a
                     >
@@ -349,35 +342,35 @@
             <ul class="list-disc list-inside space-y-3 text-slate-700">
                 <li>
                     <a
-                        href="http://www.leaguelineup.com/welcome.asp?url=elvatonrec"
+                        href="https://www.elvatonrec.org"
                         class="text-blue-600 hover:text-blue-700"
                         >Elvaton Recreation Council</a
                     > — 410-647-0966
                 </li>
                 <li>
                     <a
-                        href="http://www.greenhornets.org/"
+                        href="https://www.greenhornets.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >GSPAA (Green Hornets)</a
                     > — 410-544-6706
                 </li>
                 <li>
                     <a
-                        href="http://www.kinderfarmpark.org/"
+                        href="https://www.kinderfarmpark.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >Kinder Farm Park</a
                     > — 410-222-6115
                 </li>
                 <li>
                     <a
-                        href="http://www.gspmc.org/"
+                        href="https://gspmc.wildapricot.org/"
                         class="text-blue-600 hover:text-blue-700"
                         >Greater Severna Park Moms Club</a
                     >
                 </li>
                 <li>
                     <a
-                        href="http://www.shipleyschoiceswimteam.com/"
+                        href="https://shipleyschoicedolphins.swimtopia.com/"
                         class="text-blue-600 hover:text-blue-700"
                         >Shipley's Choice Swim Team</a
                     >
@@ -385,7 +378,7 @@
             </ul>
 
             <img
-                src="data/revolving/2586498_orig.jpg"
+                src="/data/revolving/2586498_orig.jpg"
                 alt="Street Signs"
                 class="mt-6 shadow-sm"
             />
@@ -462,23 +455,23 @@
             <div class="mt-6 space-y-3 text-slate-700">
                 <p>
                     <a
-                        href="https://www.facebook.com/AACOOEM/?ref=aymt_homepage_panel"
+                        href="https://www.facebook.com/AACOOEM"
                         class="text-blue-600 hover:text-blue-700"
-                        >Anne Arundel County OEM</a
+                        >Anne Arundel County OEM (Facebook)</a
                     >
                 </p>
                 <p>
                     <a
-                        href="https://www.facebook.com/Anne-Arundel-County-Police-Department-Daily-Advisory-150590361815665/"
+                        href="https://www.facebook.com/aacopd"
                         class="text-blue-600 hover:text-blue-700"
-                        >Anne Arundel County Police Daily Advisory</a
+                        >Anne Arundel County Police Department (Facebook)</a
                     >
                 </p>
                 <p>
                     <a
-                        href="https://twitter.com/aaco_oem"
+                        href="https://x.com/aaco_oem"
                         class="text-blue-600 hover:text-blue-700"
-                        >AACO Emergency Mgmt.</a
+                        >AACO Emergency Mgmt. (X / Twitter)</a
                     >
                 </p>
                 <p>
