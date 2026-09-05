@@ -1,5 +1,12 @@
 [
   {
+    "id": "brevo-signups-2026",
+    "title": "New signup service for SCCA emails",
+    "date": "5 September 2026",
+    "tags": ["Newsletter", "Communications"],
+    "content": "<p>We are pleased to announce that the Shipley's Choice Community Association (SCCA) website has integrated with <strong>Brevo</strong>, a secure platform for managing our community newsletter and official email list. This new integration ensures that important neighborhood updates, board announcements, and safety alerts are delivered safely and reliably to our residents' inboxes.</p><p>The current roster of active SCCA email registrations has already been pre-loaded into Brevo, and the first Brevo-powered newsletter will be sent to all currently-registered residents in the coming days. If you are already subscribed, no action is needed to remain on the list. For peace of mind, anyone can easily opt-out at any time by clicking the unsubscribe link included at the bottom of every email.</p><p>If you are not yet registered, or if you need to update your email details, please visit our <a href=\"/register\" class=\"app-link\">Registration page</a> to securely sign up today.</p>"
+  },
+  {
     "id": "get-involved-recruitment-2026",
     "title": "Get Involved with the Shipley’s Choice Community Association",
     "date": "3 September 2026",
