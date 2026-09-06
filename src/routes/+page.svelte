@@ -172,7 +172,7 @@
 
                 <div class="border-t border-white/15 pt-4">
                     <p
-                        class="text-slate-300 text-xs leading-relaxed mb-3 font-semibold flex items-center gap-1.5 text-amber-300"
+                        class="text-slate-300 text-xs leading-relaxed mb-3 font-semibold flex items-center gap-1.5"
                     >
                         <ShieldAlert class="w-4 h-4 flex-shrink-0" />
                         Woodland Tree Management

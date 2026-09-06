@@ -23,7 +23,7 @@
         },
         {
             question: "When will the vote take place?",
-            answer: "There is no set 'voting day.' Because establishing an SCBD requires the verified signatures of owners representing a two-thirds (2/3) supermajority of all properties, signatures are collected continuously until the threshold is met. Please note that under County guidelines, the official petition and ballot package must be distributed as a standalone mailing and cannot be combined with the regular SCCA annual newsletter. Please look out for this separate, official packet in your mail.",
+            answer: "There is no set 'voting day.' Because establishing an SCBD requires the verified signatures of owners representing a two-thirds (2/3) supermajority of all properties, signatures are collected continuously until the threshold is met.",
         },
         {
             question: "How will the assessment be applied?",
