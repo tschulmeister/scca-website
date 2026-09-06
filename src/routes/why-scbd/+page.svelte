@@ -602,7 +602,7 @@
 					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
 				>
 					<div
-						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow shadow"
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow"
 					>
 						2
 					</div>
@@ -619,7 +619,7 @@
 					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
 				>
 					<div
-						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow shadow"
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow"
 					>
 						3
 					</div>
@@ -635,7 +635,7 @@
 					class="p-4 bg-slate-800 rounded-lg border border-slate-700 relative pt-8"
 				>
 					<div
-						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow shadow"
+						class="absolute -top-4 left-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shadow"
 					>
 						4
 					</div>
@@ -1014,7 +1014,7 @@
 				<div
 					class="p-4 bg-white rounded-lg border border-blue-100 shadow-sm"
 				>
-					<p class="font-bold text-slate-900 font-bold">
+					<p class="font-bold text-slate-900">
 						The Bottom Line
 					</p>
 					<p class="mt-2 leading-relaxed text-sm">
