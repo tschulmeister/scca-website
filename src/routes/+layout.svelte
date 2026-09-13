@@ -64,10 +64,10 @@
       children: [
         { name: "Board Responsibilities", path: "/board" },
         { name: "Meeting Notes", path: "/meeting-notes" },
-        { name: "Register", path: "/register" },
         { name: "Contact", path: "/contact" }
       ]
-    }
+    },
+    { name: "Register", path: "/register" }
   ];
 
   function toggleDropdown(name, event) {
