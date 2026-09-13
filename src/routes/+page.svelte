@@ -8,9 +8,27 @@
     import History from "@lucide/svelte/icons/history";
     import Mail from "@lucide/svelte/icons/mail";
 
-    // The `newsItems` are now imported directly.
-    $: latestNews = newsItems?.[0];
-    $: latestThreeNews = newsItems?.slice(0, 3) ?? [];
+    // Eagerly import all .htm files under src/components/news as raw strings
+    const newsFiles = import.meta.glob("/src/components/news/**/*.htm", {
+        query: "?raw",
+        import: "default",
+        eager: true,
+    });
+
+    // Combine metadata and file contents
+    const processedNewsItems = newsItems.map((item) => {
+        if (item.contentPath) {
+            const fullPath = `/src/components/news/${item.contentPath}`;
+            return {
+                ...item,
+                content: newsFiles[fullPath] || "<p class='text-rose-500'>Content file not found.</p>"
+            };
+        }
+        return item;
+    });
+
+    $: latestNews = processedNewsItems?.[0];
+    $: latestThreeNews = processedNewsItems?.slice(0, 3) ?? [];
 </script>
 
 <svelte:head>
