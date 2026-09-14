@@ -25,7 +25,13 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "d3": "^7.9.0",
-    "d3-format": "^3.1.2"
+    "d3-array": "^3.2.4",
+    "d3-axis": "^3.0.0",
+    "d3-format": "^3.1.2",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-shape": "^3.2.0",
+    "pnpm": "^12.4.1"
   },
   "allowScripts": {
     "@github/keytar@7.10.6": true,
