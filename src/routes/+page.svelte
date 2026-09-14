@@ -21,7 +21,9 @@
             const fullPath = `/src/components/news/${item.contentPath}`;
             return {
                 ...item,
-                content: newsFiles[fullPath] || "<p class='text-rose-500'>Content file not found.</p>"
+                content:
+                    newsFiles[fullPath] ||
+                    "<p class='text-rose-500'>Content file not found.</p>",
             };
         }
         return item;
@@ -37,7 +39,6 @@
 
 <section class="page-header py-12 sm:py-24 px-4 sm:px-6 text-center">
     <div class="max-w-3xl mx-auto">
-        <!-- Active SCBD Banner with fine animations -->
         <div
             class="mb-10 p-6 sm:p-8 bg-slate-900/95 border border-blue-500/30 rounded-3xl shadow-2xl backdrop-blur-md max-w-2xl mx-auto text-center animate-fadeIn"
         >
@@ -52,22 +53,26 @@
                         class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"
                     ></span>
                 </span>
-                SCBD Petition & Information Drive Active
+                SCBD Information & Meeting Clarification
             </div>
 
             <h2
                 class="text-xl sm:text-2xl font-black text-white mb-3 tracking-tight"
             >
-                Help Secure our Community's Future
+                Upcoming Neighborhood Meetings & SCBD Discussion
             </h2>
 
             <p
                 class="text-sm text-slate-300 mb-6 leading-relaxed max-w-lg mx-auto font-medium"
             >
-                We are currently conducting an educational outreach and petition
-                effort to establish a Special Community Benefits District (SCBD)
-                in Shipley's Choice. Explore how this transition protects our
-                community and find answers to common questions.
+                The SCCA Board is aware of independent flyers circulating
+                regarding an SCBD discussion meeting on September 17th. Please
+                note this is a private discussion group meeting and not an
+                official SCCA Board event. For verified facts, official
+                timelines, and accurate documentation on the proposed Special
+                Community Benefit District, please visit our official SCBD
+                Information Hub. We invite all residents to join us for the
+                official SCCA Annual Membership Meeting on October 20th.
             </p>
 
             <div
