@@ -1,5 +1,6 @@
 allowBuilds:
   '@github/keytar': true
+  esbuild: true
   node-pty: true
   pnpm: true
   svelte-preprocess: true

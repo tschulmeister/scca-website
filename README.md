@@ -65,7 +65,7 @@ To optimize performance and simplify HTML writing, news post bodies are decouple
 Instead of manually editing files and risking malformed JSON, use the interactive generator:
 
 ```bash
-npm run prepare-news
+pnpm run prepare-news
 ```
 
 This CLI script will:
@@ -151,14 +151,14 @@ To run the application locally on your computer for updates and previewing:
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) (v18 or newer) and `npm` installed.
+Make sure you have [Node.js](https://nodejs.org/) (v18 or newer) and `pnpm` (v12 or newer) installed.
 
 ### Installation
 
 Clone the repository and install all node modules:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Run Dev Server
@@ -166,7 +166,7 @@ npm install
 Launch the local Vite development server with hot-module replacement (HMR):
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open your browser to `http://localhost:5173` to view the live app.
@@ -177,10 +177,10 @@ Before committing any changes to the main branch, always verify the production c
 
 ```bash
 # Build SvelteKit static and server pages
-npm run build
+pnpm run build
 
 # Preview the built production assets locally
-npm run preview
+pnpm run preview
 ```
 
 ---
