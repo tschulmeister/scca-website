@@ -43,7 +43,13 @@
 
     const navLinks = [
         { name: "Home", path: "/" },
-        { name: "News & Records", path: "/news-records" },
+        {
+            name: "News & Records",
+            children: [
+                { name: "News Items", path: "/news-records" },
+                { name: "Email Archive", path: "/emails" },
+            ],
+        },
         {
             name: "SCBD",
             children: [
