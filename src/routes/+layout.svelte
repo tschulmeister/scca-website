@@ -19,6 +19,7 @@
     let brandWrapper;
     let measureContainer;
     let moreButton;
+    let searchButtonRef;
     let measureRefs = {};
     let visibleLinks = [];
     let overflowLinks = [];
@@ -101,9 +102,10 @@
 
         const parentAvailable = parentRow.clientWidth;
         const brandWidth = brandWrapper ? brandWrapper.offsetWidth : 0;
+        const searchWidth = searchButtonRef ? searchButtonRef.offsetWidth : 0;
 
         // Remaining horizontal space for desktop layout
-        const available = parentAvailable - brandWidth - 64; // Increased safety margin for desktop spacing
+        const available = parentAvailable - brandWidth - searchWidth - 64; // Increased safety margin for desktop spacing
 
         const moreWidth = moreButton.offsetWidth;
         let used = 0;
@@ -205,33 +207,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Desktop Search Trigger -->
-                <button
-                    type="button"
-                    on:click={() => (searchOpen = true)}
-                    class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-slate-300 hover:text-white border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-slate-700 rounded-full transition-all shrink-0 cursor-pointer ml-auto"
-                    aria-label="Open search bar"
-                >
-                    <svg
-                        class="h-3.5 w-3.5 text-slate-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                    </svg>
-                    <span class="text-xs font-semibold">Search</span>
-                    <kbd
-                        class="text-[9px] bg-slate-800 text-slate-400 px-1 py-0.5 rounded border border-slate-700 font-sans font-semibold uppercase tracking-wider"
-                        >⌘K</kbd
-                    >
-                </button>
 
                 <!-- Mobile triggers (Search + Menu Burger) -->
                 <div class="flex items-center gap-2 md:hidden shrink-0 ml-auto">
@@ -422,6 +397,34 @@
                             {/if}
                         </div>
                     {/if}
+
+                    <!-- Desktop Search Trigger -->
+                    <button
+                        bind:this={searchButtonRef}
+                        type="button"
+                        on:click={() => (searchOpen = true)}
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-slate-300 hover:text-white border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-slate-700 rounded-full transition-all shrink-0 cursor-pointer ml-2"
+                        aria-label="Open search bar"
+                    >
+                        <svg
+                            class="h-3.5 w-3.5 text-slate-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            />
+                        </svg>
+                        <span class="text-xs font-semibold">Search</span>
+                        <kbd
+                            class="text-[9px] bg-slate-800 text-slate-400 px-1 py-0.5 rounded border border-slate-700 font-sans font-semibold uppercase tracking-wider"
+                            >⌘K</kbd
+                        >
+                    </button>
                 </nav>
             </div>
 
