@@ -12,7 +12,7 @@
         outstandingChecks: 0.00,
         netBalance: 6763.21,
         asOfDate: "June 4, 2026",
-        treasurer: "Rebecca Blaschak",
+        treasurer: "SCCA Treasurer",
         subject: "Statement of Financial Condition"
     };
 
@@ -108,7 +108,7 @@
 </svelte:head>
 
 <!-- Header Section -->
-<section class="page-header py-20" style="--page-header-bg: url('/data/img/community_overhead.png');">
+<section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
         <p class="text-sm uppercase tracking-[0.24em] text-blue-300">Financial Transparency</p>
         <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white">Statement of Financial Condition</h1>
@@ -141,7 +141,7 @@
                 </div>
                 <div>
                     <span class="text-slate-400 uppercase tracking-wider text-xs font-bold block">From:</span>
-                    <span class="font-semibold text-slate-800 text-base">{balances.treasurer}, Treasurer</span>
+                    <span class="font-semibold text-slate-800 text-base">{balances.treasurer}</span>
                 </div>
                 <div>
                     <span class="text-slate-400 uppercase tracking-wider text-xs font-bold block">Subject:</span>
