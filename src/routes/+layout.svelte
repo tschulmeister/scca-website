@@ -77,6 +77,7 @@
             children: [
                 { name: "Board Responsibilities", path: "/board" },
                 { name: "Meeting Notes", path: "/meeting-notes" },
+                { name: "Financial Condition", path: "/financials" },
                 { name: "Contact", path: "/contact" },
             ],
         },
