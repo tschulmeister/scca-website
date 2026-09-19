@@ -71,7 +71,7 @@
                     category: "Association Memberships",
                     actual: 100.0,
                     budget: 200.0,
-                    notes: "Dues for Maryland Homeowners Association registries and regional civic coalitions.",
+                    notes: "Dues for Maryland Community Association registries and regional civic coalitions.",
                 },
                 {
                     category: "Website renewal",
@@ -143,7 +143,7 @@
                     category: "Association Memberships",
                     actual: 100.0,
                     budget: 200.0,
-                    notes: "Dues for Maryland Homeowners Association registries and regional civic coalitions.",
+                    notes: "Dues for Maryland Community Association registries and regional civic coalitions.",
                 },
                 {
                     category: "Website renewal",
