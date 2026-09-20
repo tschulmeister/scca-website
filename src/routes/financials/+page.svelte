@@ -36,7 +36,7 @@
                     category: "Lawn Maintenance",
                     actual: 970.0,
                     budget: 3500.0,
-                    notes: "Ongoing contract for commons areas mowing, weed control, and edge-trimming.",
+                    notes: "Ongoing payments for commons areas mowing, weed control, and edge-trimming.",
                 },
                 {
                     category: "Garden Club",
@@ -108,7 +108,7 @@
                     category: "Lawn Maintenance",
                     actual: 845.0,
                     budget: 3500.0,
-                    notes: "Ongoing contract for commons areas mowing, weed control, and edge-trimming.",
+                    notes: "Ongoing payments for commons areas mowing, weed control, and edge-trimming.",
                 },
                 {
                     category: "Garden Club",
@@ -304,7 +304,7 @@
                         as of September 19, 2026. This depletion is primarily
                         due to the payment of the major
                         <strong
-                            >Access Tree Removal contract ({formatCurrency(
+                            >Access Tree Removal services ({formatCurrency(
                                 5500,
                             )})</strong
                         > and ongoing common grounds lawn care.
