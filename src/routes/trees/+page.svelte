@@ -6,55 +6,55 @@
   const images = [
     {
       src: "/data/img/trees/20260825_085720.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_091446.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_091612.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_092146.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_092216.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_094708.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_094709Z1.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_095210.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_103843.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_103859.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_104204.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_104549.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
     {
       src: "/data/img/trees/20260825_151319.jpg",
-      title: "Common Area Tree Photo",
+      title: "Common Area Tree Assessment",
     },
   ];
 
@@ -156,7 +156,7 @@
         >
           <img
             src={images[currentIndex].src}
-            alt="Common Area Tree Photo"
+            alt="Common Area Tree Assessment {currentIndex + 1}"
             class="w-full h-full object-contain transition-all duration-300"
           />
 

@@ -61,6 +61,7 @@
 			<svg {width} {height} class="overflow-visible">
 				<g transform="translate({width / 2}, {height / 2})">
 					{#each pieArcs as arcData, i}
+						<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
 						<path
 							d={hoveredIndex === i ? arcHoverGenerator(arcData) : arcGenerator(arcData)}
 							fill={colorScale(arcData.data.label)}
@@ -95,10 +96,13 @@
 	<!-- Legend -->
 	<div class="flex flex-col w-full max-w-[300px] space-y-1">
 		{#each sortedData as d, i}
-			<div 
-				class="flex items-center justify-between text-xs sm:text-sm p-1.5 rounded-md transition-colors cursor-pointer {hoveredIndex === i ? 'bg-slate-100' : ''}"
+			<button 
+				type="button"
+				class="flex items-center justify-between text-xs sm:text-sm p-1.5 rounded-md transition-colors w-full text-left {hoveredIndex === i ? 'bg-slate-100' : ''}"
 				on:mouseenter={() => (hoveredIndex = i)}
 				on:mouseleave={() => (hoveredIndex = null)}
+				on:focus={() => (hoveredIndex = i)}
+				on:blur={() => (hoveredIndex = null)}
 			>
 				<div class="flex items-center space-x-2 truncate">
 					<div 
@@ -108,7 +112,7 @@
 					<span class="text-slate-700 truncate" title={d.label}>{d.label}</span>
 				</div>
 				<span class="font-semibold text-slate-900 ml-2">{format("$,.0f")(d.value)}</span>
-			</div>
+			</button>
 		{/each}
 	</div>
 </div>
