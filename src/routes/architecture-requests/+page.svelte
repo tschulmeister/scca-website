@@ -1,6 +1,11 @@
-<svelte:head>
-    <title>Architecture Requests | Shipley's Choice</title>
-</svelte:head>
+<script>
+    import Seo from "$components/Seo.svelte";
+</script>
+
+<Seo
+    title="Architecture Requests"
+    description="Submit Architectural Change Requests (ACR) for Shipley's Choice home improvements, fences, paint colors, and exterior modifications."
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

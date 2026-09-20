@@ -1,4 +1,5 @@
 <script>
+    import Seo from "$components/Seo.svelte";
     import { Mail, Calendar, ChevronRight, ExternalLink } from "@lucide/svelte";
     import emailBlasts from "$data/emailBlasts.json";
 
@@ -52,9 +53,10 @@
     }
 </script>
 
-<svelte:head>
-    <title>Email Archive | Shipley's Choice</title>
-</svelte:head>
+<Seo
+    title="Email Archive"
+    description="Browse previous SCCA email blasts, neighborhood announcements, meeting invitations, and regular community newsletters."
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

@@ -1,6 +1,36 @@
-<svelte:head>
-    <title>Contact | Shipley's Choice</title>
-</svelte:head>
+<script>
+    import Seo from "$components/Seo.svelte";
+
+    const contactJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact the SCCA Board",
+        "description": "Get in touch with the SCCA Board of Directors. Send inquiries, reports, or suggestions to the Shipley's Choice Community Association team.",
+        "mainEntity": {
+            "@type": "NGO",
+            "name": "Shipley's Choice Community Association",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "315 Arbor Oaks Ct",
+                "addressLocality": "Millersville",
+                "addressRegion": "MD",
+                "postalCode": "21108",
+                "addressCountry": "US"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "shipleyschoice.scca@gmail.com",
+                "contactType": "customer service"
+            }
+        }
+    };
+</script>
+
+<Seo
+    title="Contact the Board"
+    description="Get in touch with the SCCA Board of Directors. Send inquiries, reports, or suggestions to the Shipley's Choice Community Association team."
+    jsonLd={contactJsonLd}
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

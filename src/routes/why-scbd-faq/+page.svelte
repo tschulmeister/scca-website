@@ -1,4 +1,5 @@
 <script>
+    import Seo from "$components/Seo.svelte";
     const faqs = [
         {
             question: "What financial safeguards are there?",
@@ -61,11 +62,26 @@
             answer: "Not at all.  In 2026 there were 77 communities in Anne Arundel County sponsoring SCBDs.  An SCBD can be established for a wide variety of purposes but the most common is funding routine maintenance and improvements of property owned by older communities that don’t have an HOA.  Some nearby examples are Chartwell ($100), Severna Forrest ($99.07), Severndale ($125) and Carrolton Manor ($150).  There are additional local communities who are also supporting high-cost amenities such as community beaches, pavilions and boat docks.  Examples are Hollywood on the Severn ($400.60) and Kensington ($225).",
         },
     ];
+
+    const scbdFaqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+            }
+        }))
+    };
 </script>
 
-<svelte:head>
-    <title>SCBD: Some Frequently Asked Questions | SCCA</title>
-</svelte:head>
+<Seo
+    title="SCBD FAQ"
+    description="Get answers to key questions about the Shipley's Choice Special Community Benefit District (SCBD) petition, voting, and tax adjustments."
+    jsonLd={scbdFaqJsonLd}
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

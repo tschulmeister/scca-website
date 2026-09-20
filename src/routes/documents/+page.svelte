@@ -1,4 +1,5 @@
 <script>
+    import Seo from "$components/Seo.svelte";
     import { page } from "$app/stores";
 
     // Data arrays mapping directly to your static folder structures
@@ -125,9 +126,10 @@
     $: fileExtension = selectedFile?.filename.split(".").pop().toLowerCase();
 </script>
 
-<svelte:head>
-    <title>Community Documents | Shipley's Choice</title>
-</svelte:head>
+<Seo
+    title="Documents & Covenants"
+    description="Download Shipley's Choice covenants, bylaws, articles of incorporation, and official fence standards for Sections 1 and 2."
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

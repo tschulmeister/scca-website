@@ -1,4 +1,6 @@
 <script>
+  import Seo from "$components/Seo.svelte";
+
   const faqItems = [
     {
       question: 'Are there design requirements as to what changes we can make to our house?',
@@ -45,11 +47,26 @@
       answer: 'Yes. All Section 1 residents are subject to the covenants whether or not they choose to join the association. Membership in the Shipley\'s Choice Community Association is not mandatory and does not change the fact that your property remains subject to covenant provisions.'
     }
   ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 </script>
 
-<svelte:head>
-  <title>FAQ | Shipley's Choice</title>
-</svelte:head>
+<Seo
+  title="Frequently Asked Questions"
+  description="Answers to frequently asked questions for Shipley's Choice residents regarding dues, services, schools, trash, and community guidelines."
+  jsonLd={faqJsonLd}
+/>
 
 <section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">

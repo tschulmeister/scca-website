@@ -1,11 +1,13 @@
 <script>
+  import Seo from "$components/Seo.svelte";
   // Svelte 5 state rune for tracking active tab
   let activeTab = $state('protection');
 </script>
 
-<svelte:head>
-  <title>Maintenance Information | Shipley's Choice</title>
-</svelte:head>
+<Seo
+  title="Maintenance Information"
+  description="Community guidelines for sidewalk repairs, road maintenance, snow removal, and public service responsibilities in Shipley's Choice."
+/>
 
 <section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">

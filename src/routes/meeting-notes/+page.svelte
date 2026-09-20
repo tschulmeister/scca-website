@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$components/Seo.svelte";
   import { onMount, onDestroy } from 'svelte';
   import meetingNotes from '$data/meetingNotes.json';
 
@@ -37,9 +38,10 @@
   });
 </script>
 
-<svelte:head>
-  <title>Meeting Notes | Shipley's Choice</title>
-</svelte:head>
+<Seo
+  title="Meeting Notes & Minutes"
+  description="Read official SCCA Board meeting minutes, summaries, and resident discussion notes sorted by year and session dates."
+/>
 
 <section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">
