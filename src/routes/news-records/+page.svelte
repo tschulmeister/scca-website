@@ -1,4 +1,5 @@
 <script>
+    import Seo from "$components/Seo.svelte";
     import { onMount, onDestroy } from "svelte";
     import {
         ShieldAlert,
@@ -141,9 +142,10 @@
     }
 </script>
 
-<svelte:head>
-    <title>News & Records | Shipley's Choice</title>
-</svelte:head>
+<Seo
+    title="News & Records"
+    description="Keep up with the latest community news, street safety updates, board announcements, and neighborhood initiatives in Shipley's Choice."
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

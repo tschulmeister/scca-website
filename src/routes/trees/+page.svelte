@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$components/Seo.svelte";
   import { onMount, onDestroy } from "svelte";
 
   // List of actual image files found in static/data/img/trees
@@ -113,9 +114,10 @@
   });
 </script>
 
-<svelte:head>
-  <title>Common Area Trees | Shipley's Choice</title>
-</svelte:head>
+<Seo
+  title="Common Area Trees"
+  description="Request inspections or view information regarding the maintenance, health, and conservation of common area trees in Shipley's Choice."
+/>
 
 <section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">

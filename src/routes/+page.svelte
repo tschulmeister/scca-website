@@ -1,4 +1,5 @@
 <script>
+    import Seo from "$components/Seo.svelte";
     import newsItems from "$data/newsItems.json";
     import Newspaper from "@lucide/svelte/icons/newspaper";
     import ClipboardList from "@lucide/svelte/icons/clipboard-list";
@@ -31,11 +32,39 @@
 
     $: latestNews = processedNewsItems?.[0];
     $: latestThreeNews = processedNewsItems?.slice(0, 3) ?? [];
+
+    const homeJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Shipley's Choice Community Association",
+        "alternateName": "SCCA",
+        "url": "https://www.shipleyschoice.org",
+        "logo": "https://www.shipleyschoice.org/shipleys-logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "315 Arbor Oaks Ct",
+            "addressLocality": "Millersville",
+            "addressRegion": "MD",
+            "postalCode": "21108",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "shipleyschoice.scca@gmail.com",
+            "contactType": "customer service"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Shipley's Choice, Millersville, MD"
+        }
+    };
 </script>
 
-<svelte:head>
-    <title>Shipley's Choice Community Association</title>
-</svelte:head>
+<Seo
+    title="Shipley's Choice Community Association"
+    description="Official SCCA portal for Shipley's Choice residents (Sections 1 & 2) in Millersville, Maryland. Access HOA documents, board news, and announcements."
+    jsonLd={homeJsonLd}
+/>
 
 <section class="page-header py-12 sm:py-24 px-4 sm:px-6 text-center">
     <div class="max-w-3xl mx-auto">

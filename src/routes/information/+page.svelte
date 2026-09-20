@@ -1,6 +1,11 @@
-<svelte:head>
-    <title>Information | Shipley's Choice</title>
-</svelte:head>
+<script>
+    import Seo from "$components/Seo.svelte";
+</script>
+
+<Seo
+    title="Community Information"
+    description="Neighborhood details for Shipley's Choice (Millersville, MD) including public utility links, school information, recycling schedules, and county services."
+/>
 
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">

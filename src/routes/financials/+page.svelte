@@ -1,4 +1,5 @@
 <script>
+    import Seo from "$components/Seo.svelte";
     import { format } from "d3-format";
 
     // Format helpers
@@ -217,13 +218,10 @@
     let simSubsidyPerPayer = $derived(simEffectiveCostPerPayer - duesPerHome);
 </script>
 
-<svelte:head>
-    <title>Statement of Financial Condition | SCCA</title>
-    <meta
-        name="description"
-        content="Official public financial reports, balance sheets, and annual budget tracking for the Shipley's Choice Community Association (SCCA)."
-    />
-</svelte:head>
+<Seo
+    title="Financial Condition"
+    description="Review SCCA financial statements, budget conditions, balance sheets, and active charts of community expenditures and revenues."
+/>
 
 <!-- Header Section -->
 <section class="page-header py-20">

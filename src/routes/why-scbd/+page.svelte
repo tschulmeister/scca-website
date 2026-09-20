@@ -1,4 +1,5 @@
 <script>
+	import Seo from "$components/Seo.svelte";
 	import SparkChart from "$components/charts/SparkChart.svelte";
 	import ComparisonBar from "$components/charts/ComparisonBar.svelte";
 	import ExpenseDonut from "$components/charts/ExpenseDonut.svelte";
@@ -87,13 +88,10 @@
 	};
 </script>
 
-<svelte:head>
-	<title>The Case for an SCBD | SCCA</title>
-	<meta
-		name="description"
-		content="A data-backed analysis of the financial trends driving the need for a Special Community Benefits District (SCBD) in Shipley's Choice."
-	/>
-</svelte:head>
+<Seo
+	title="Special Community Benefit District (SCBD)"
+	description="Learn about the petition to establish an SCBD for Sections 1 & 2. Find out how SCBD automates dues collections to protect community assets."
+/>
 
 <section class="page-header py-20">
 	<div class="max-w-7xl mx-auto px-4 text-center">

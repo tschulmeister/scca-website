@@ -1,6 +1,11 @@
-<svelte:head>
-  <title>Register | Shipley's Choice</title>
-</svelte:head>
+<script>
+  import Seo from "$components/Seo.svelte";
+</script>
+
+<Seo
+  title="Register as Resident"
+  description="SCCA resident registration form for new and existing homeowners in Sections 1 and 2 of Shipley's Choice."
+/>
 
 <section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">

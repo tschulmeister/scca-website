@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$components/Seo.svelte";
   // Svelte 5 state rune for tracking active tab
   let activeTab = $state('mission');
 
@@ -20,9 +21,10 @@
   import BookOpen from "@lucide/svelte/icons/book-open";
 </script>
 
-<svelte:head>
-  <title>Board | Shipley's Choice</title>
-</svelte:head>
+<Seo
+  title="Board Responsibilities"
+  description="Meet the SCCA Board of Directors. Learn about HOA roles, operational responsibilities, community leadership, and elections in Millersville, MD."
+/>
 
 <section class="page-header py-20">
   <div class="max-w-7xl mx-auto px-4 text-center">
