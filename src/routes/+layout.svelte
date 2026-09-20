@@ -77,6 +77,10 @@
             children: [
                 { name: "Board Responsibilities", path: "/board" },
                 { name: "Meeting Notes", path: "/meeting-notes" },
+                {
+                    name: "2026 Virtual Signup",
+                    path: "/annual-meeting-virtual-signup",
+                },
                 { name: "Financial Condition", path: "/financials" },
                 { name: "Contact", path: "/contact" },
             ],

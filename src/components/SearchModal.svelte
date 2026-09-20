@@ -56,6 +56,23 @@
             tags: ["scbd", "faq", "questions", "answers", "dues", "petition"],
         },
         {
+            title: "2026 SCCA Annual Membership Meeting Virtual Signup",
+            path: "/annual-meeting-virtual-signup",
+            description:
+                "Register to attend the 2026 SCCA Annual Membership Meeting virtually via Google Meet on October 20, 2026.",
+            tags: [
+                "annual",
+                "meeting",
+                "membership",
+                "virtual",
+                "signup",
+                "register",
+                "google meet",
+                "scbd",
+                "2026",
+            ],
+        },
+        {
             title: "Community Information",
             path: "/information",
             description:
