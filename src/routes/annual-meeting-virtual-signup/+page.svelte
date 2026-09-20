@@ -42,8 +42,8 @@
             </h2>
             <p class="text-slate-600 max-w-lg mx-auto leading-relaxed">
                 Please complete the secure verification form below. SCCA will
-                verify your registration and send the private meeting
-                credentials to your email prior to the meeting.
+                verify your registration and send the private Google Meet invite
+                link to your registered email <strong>24 to 48 hours prior to the meeting</strong>.
             </p>
         </div>
 
