@@ -25,6 +25,7 @@
     let overflowLinks = [];
 
     import SearchModal from "$components/SearchModal.svelte";
+    import FeedbackWidget from "$components/FeedbackWidget.svelte";
     let searchOpen = false;
 
     // Tracks the inner bounding container width reactively
@@ -538,3 +539,4 @@
 </div>
 
 <SearchModal bind:isOpen={searchOpen} />
+<FeedbackWidget />
