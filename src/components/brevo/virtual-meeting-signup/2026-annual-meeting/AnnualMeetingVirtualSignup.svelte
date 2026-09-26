@@ -35,6 +35,9 @@
         document.body.appendChild(script);
 
         return () => {
+            // Remove any Brevo country dropdowns appended to document.body
+            document.querySelectorAll(".sib-sms-select__list").forEach((el) => el.remove());
+
             // Clean up the script and window variables
             if (document.body.contains(script)) {
                 document.body.removeChild(script);

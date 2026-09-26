@@ -35,6 +35,9 @@
         document.body.appendChild(script);
 
         return () => {
+            // Remove any Brevo country dropdowns appended to document.body
+            document.querySelectorAll(".sib-sms-select__list").forEach((el) => el.remove());
+
             // Clean up the script and window variables
             if (document.body.contains(script)) {
                 document.body.removeChild(script);
@@ -93,23 +96,6 @@
     :global(#sib-container input[type="tel"]),
     :global(#sib-container textarea) {
         background-color: #ffffff !important;
-        color: #0f172a !important;
-    }
-
-    /* Specific style overrides for the custom Brevo SMS input flex wrapper */
-    :global(#sib-container .sib-sms-input) {
-        background-color: #ffffff !important;
-        color: #0f172a !important;
-        border: 1px solid #cbd5e1 !important;
-    }
-
-    /* Ensure dropdown option text and text fields within the SMS flex wrapper remain high-contrast and legible */
-    :global(#sib-container .sib-sms-input select) {
-        background-color: transparent !important;
-        color: #0f172a !important;
-    }
-    :global(#sib-container .sib-sms-input input) {
-        background-color: transparent !important;
         color: #0f172a !important;
     }
     :global(#sib-container select option) {

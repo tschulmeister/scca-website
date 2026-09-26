@@ -113,3 +113,8 @@
   aspect-ratio: 16 / 9;
   border: 0;
 }
+
+/* Safety guard: prevent any Brevo country dropdown from rendering unstyled at bottom of page */
+.sib-sms-select__list:not(.sib-is-open) {
+  display: none !important;
+}
