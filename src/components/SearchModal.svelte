@@ -212,6 +212,46 @@
                 "dues",
             ],
         },
+        {
+            title: "Financial Condition",
+            path: "/financials",
+            description:
+                "Review SCCA financial statements, budget conditions, balance sheets, and active charts of community expenditures and revenues.",
+            tags: [
+                "financial",
+                "financials",
+                "finance",
+                "budget",
+                "expenses",
+                "expenditures",
+                "revenue",
+                "revenues",
+                "treasurer",
+                "balance",
+                "statement",
+                "costs",
+                "spending",
+            ],
+        },
+        {
+            title: "Email Archive",
+            path: "/emails",
+            description:
+                "Browse previous SCCA email blasts, neighborhood announcements, meeting invitations, and regular community newsletters.",
+            tags: [
+                "email",
+                "emails",
+                "blasts",
+                "newsletter",
+                "newsletters",
+                "announcements",
+                "messages",
+                "archive",
+                "archives",
+                "brevo",
+                "mail",
+            ],
+        },
     ];
 
     // Prepare static index for PDF documents and Plats
@@ -297,6 +337,50 @@
             description:
                 "Assignment document transferring developers' rights to SCCA in 1980.",
             tags: ["assignment", "section 1", "history", "1980"],
+        },
+        {
+            title: "SCCA Articles of Incorporation (PDF Document)",
+            path: "/data/docs/ARTICLES_OF_INCORPORATION-60451.pdf",
+            description:
+                "Official articles of incorporation of the Shipley's Choice Community Association, filed in July 1980.",
+            tags: [
+                "articles",
+                "incorporation",
+                "charter",
+                "establishment",
+                "corporate",
+                "legal",
+                "filing",
+                "1980",
+            ],
+        },
+        {
+            title: "SCCA Covenants Renewal 2017 - Part 1 (PDF Document)",
+            path: "/data/docs/scca_covenants_renewal_2017_-_pt_1.pdf",
+            description:
+                "Official legal document for the 2017 renewal of SCCA protective covenants, Part 1.",
+            tags: [
+                "covenants",
+                "renewal",
+                "2017",
+                "restrictions",
+                "legal",
+                "filing",
+            ],
+        },
+        {
+            title: "SCCA Covenants Renewal 2017 - Part 2 (PDF Document)",
+            path: "/data/docs/scca_covenants_renewal_2017_pt.2.pdf",
+            description:
+                "Official legal document for the 2017 renewal of SCCA protective covenants, Part 2.",
+            tags: [
+                "covenants",
+                "renewal",
+                "2017",
+                "restrictions",
+                "legal",
+                "filing",
+            ],
         },
         {
             title: "Section 1 - Plat 1 (JPG Plats)",
