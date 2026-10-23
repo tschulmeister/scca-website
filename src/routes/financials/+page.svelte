@@ -50,6 +50,148 @@
     let percentSpent = $derived(
         totals.budgeted > 0 ? totals.actual / totals.budgeted : 0
     );
+
+    // CSV Export Helpers
+    const escapeCsv = (val) => {
+        if (val === null || val === undefined) return '""';
+        const str = String(val);
+        if (str.includes(",") || str.includes('"') || str.includes("\n") || str.includes("\r")) {
+            return `"${str.replace(/"/g, '""')}"`;
+        }
+        return `"${str}"`;
+    };
+
+    const triggerDownload = (content, filename) => {
+        const blob = new Blob(["\uFEFF" + content], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    const downloadActiveReportCsv = () => {
+        const r = activeReport;
+        if (!r) return;
+        const lines = [];
+
+        // Title & Metadata
+        lines.push(["Shipley's Choice Community Association (SCCA)"]);
+        lines.push([`Statement of Financial Condition - Fiscal Year ${r.year}`]);
+        lines.push(["Effective As Of Date", r.as_of_date]);
+        lines.push(["Treasurer", r.treasurer]);
+        lines.push(["Status", r.is_final === false ? "Interim / Not Finalized" : "Final / Closed"]);
+        if (r.notes) {
+            lines.push(["Disclosure Notes", r.notes]);
+        }
+        lines.push([]);
+
+        // Balance Summary
+        lines.push(["CASH POSITIONS & BALANCE SUMMARY", "AMOUNT (USD)"]);
+        lines.push(["Gross Operating Checking Balance", (r.balance_summary?.checking_balance ?? 0).toFixed(2)]);
+        lines.push(["Playground Deposits Held", (r.balance_summary?.playground_deposits ?? 0).toFixed(2)]);
+        lines.push(["Designated Playground Reserves", (r.balance_summary?.remaining_playground_funds ?? 0).toFixed(2)]);
+        lines.push(["Outstanding Vendor Checks", (r.balance_summary?.outstanding_checks ?? 0).toFixed(2)]);
+        lines.push(["Final Net Operating Balance", (r.balance_summary?.final_balance ?? 0).toFixed(2)]);
+        lines.push([]);
+
+        // Operating Expenses
+        lines.push([
+            "EXPENSE CATEGORY",
+            r.is_final === false ? "ACTUAL SPENT YTD (USD)" : "ACTUAL SPENT (USD)",
+            "APPROVED BUDGET (USD)",
+            "DIFFERENCE / VARIANCE (USD)"
+        ]);
+        (r.expenses || []).forEach((item) => {
+            lines.push([
+                item.category,
+                (item.actual ?? 0).toFixed(2),
+                (item.budgeted ?? 0).toFixed(2),
+                (item.difference ?? 0).toFixed(2)
+            ]);
+        });
+        lines.push([
+            "TOTAL OPERATING EXPENSES",
+            (r.total_expenses?.actual ?? 0).toFixed(2),
+            (r.total_expenses?.budgeted ?? 0).toFixed(2),
+            (r.total_expenses?.difference ?? 0).toFixed(2)
+        ]);
+        lines.push([]);
+
+        // Member Dues Participation
+        if (r.dues_statistics && r.dues_statistics.length > 0) {
+            lines.push(["MEMBER DUES COLLECTION HISTORY", "MEMBERS PAID", "TOTAL HOMES", "PARTICIPATION RATE"]);
+            r.dues_statistics.forEach((stat) => {
+                lines.push([
+                    `${stat.payment_year} Fiscal Year`,
+                    stat.members_paid,
+                    283,
+                    `${stat.percentage}%`
+                ]);
+            });
+        }
+
+        const csvContent = lines.map((row) => row.map(escapeCsv).join(",")).join("\r\n");
+        triggerDownload(csvContent, `scca-financial-condition-${r.year}.csv`);
+    };
+
+    const downloadAllYearsCsv = () => {
+        const lines = [];
+
+        // Title
+        lines.push(["Shipley's Choice Community Association (SCCA)"]);
+        lines.push(["Multi-Year Financial Condition Summary"]);
+        lines.push([]);
+
+        // Comparative Table
+        lines.push([
+            "Fiscal Year",
+            "Effective Date",
+            "Status",
+            "Budgeted Expenses (USD)",
+            "Actual Expenses (USD)",
+            "Net Variance (USD)",
+            "Ending Operating Balance (USD)",
+            "Dues Paid Households",
+            "Dues Participation Rate"
+        ]);
+
+        reports.forEach((r) => {
+            const latestDues = r.dues_statistics?.[r.dues_statistics.length - 1];
+            lines.push([
+                r.year,
+                r.as_of_date,
+                r.is_final === false ? "Interim / Not Finalized" : "Final",
+                (r.total_expenses?.budgeted ?? 0).toFixed(2),
+                (r.total_expenses?.actual ?? 0).toFixed(2),
+                (r.total_expenses?.difference ?? 0).toFixed(2),
+                (r.balance_summary?.final_balance ?? 0).toFixed(2),
+                latestDues ? latestDues.members_paid : "N/A",
+                latestDues ? `${latestDues.percentage}%` : "N/A"
+            ]);
+        });
+
+        lines.push([]);
+        lines.push(["ITEMIZED EXPENSES BY YEAR"]);
+        lines.push(["Fiscal Year", "Expense Category", "Actual Spent (USD)", "Budgeted (USD)", "Variance (USD)"]);
+        reports.forEach((r) => {
+            (r.expenses || []).forEach((item) => {
+                lines.push([
+                    r.year,
+                    item.category,
+                    (item.actual ?? 0).toFixed(2),
+                    (item.budgeted ?? 0).toFixed(2),
+                    (item.difference ?? 0).toFixed(2)
+                ]);
+            });
+        });
+
+        const csvContent = lines.map((row) => row.map(escapeCsv).join(",")).join("\r\n");
+        triggerDownload(csvContent, "scca-financials-multi-year.csv");
+    };
 </script>
 
 <Seo
@@ -786,7 +928,7 @@
         </div>
     </div>
 
-    <!-- Official Ledger & Open Data Download Callout -->
+    <!-- Official Ledger & Spreadsheet Download Callout -->
     <div
         class="bg-slate-900 rounded-2xl border border-slate-800 p-8 text-white relative overflow-hidden shadow-lg"
     >
@@ -810,19 +952,19 @@
         <div class="relative z-10 max-w-3xl space-y-4">
             <span
                 class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider inline-block"
-                >Open Financial Data</span
+                >Spreadsheet Export</span
             >
             <h3 class="text-2xl font-black tracking-tight text-white">
-                Official Data Downloads & Schema
+                Download Statement of Financial Condition
             </h3>
             <p class="text-slate-300 text-sm leading-relaxed">
-                The SCCA maintains verified Statements of Financial Condition in an open, structured JSON format conforming to Draft 2020-12 JSON Schema. We make raw financial datasets and schema definitions publicly accessible to ensure total transparency, reproducibility, and community oversight.
+                Download official SCCA financial condition disclosures formatted as CSV spreadsheets. CSV files open directly in Microsoft Excel, Apple Numbers, Google Sheets, or any spreadsheet software for offline review, calculations, and printing.
             </p>
             <div class="pt-2 flex flex-wrap gap-4">
-                <a
-                    href="/data/financials/scca-financials.json"
-                    download="scca-financials.json"
-                    class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-md transition-all text-sm group"
+                <button
+                    type="button"
+                    onclick={downloadActiveReportCsv}
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-md transition-all text-sm group cursor-pointer"
                 >
                     <svg
                         class="h-5 w-5 text-blue-200 group-hover:text-white"
@@ -837,13 +979,12 @@
                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                         />
                     </svg>
-                    Download Financials JSON
-                </a>
-                <a
-                    href="/data/financials/financials-schema.json"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all text-sm font-bold rounded-xl"
+                    Download {activeReport.year} Statement (CSV / Excel)
+                </button>
+                <button
+                    type="button"
+                    onclick={downloadAllYearsCsv}
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 transition-all text-sm font-bold rounded-xl cursor-pointer"
                 >
                     <svg
                         class="h-5 w-5 text-slate-400 group-hover:text-white"
@@ -855,11 +996,11 @@
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                         />
                     </svg>
-                    View JSON Schema
-                </a>
+                    Download Multi-Year Summary (CSV)
+                </button>
                 <a
                     href="/documents"
                     class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all text-sm font-bold rounded-xl"
