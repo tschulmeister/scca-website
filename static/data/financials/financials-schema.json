@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StatementOfFinancialConditionReport",
+  "description": "Schema for Shipley's Choice Community Association Statements of Financial Condition",
+  "type": "object",
+  "properties": {
+    "organization": {
+      "type": "string",
+      "description": "Name of the organization"
+    },
+    "reports": {
+      "type": "array",
+      "description": "List of annual financial reports",
+      "items": {
+        "$ref": "#/$defs/FinancialReport"
+      }
+    }
+  },
+  "required": [
+    "organization",
+    "reports"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "FinancialReport": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "integer",
+          "description": "Fiscal report year"
+        },
+        "as_of_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Effective date for the financial report (YYYY-MM-DD)"
+        },
+        "treasurer": {
+          "type": "string",
+          "description": "Name of the Treasurer"
+        },
+        "is_final": {
+          "type": "boolean",
+          "description": "Whether this financial report represents a finalized, closed fiscal year"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes or disclaimer concerning report status"
+        },
+        "balance_summary": {
+          "$ref": "#/$defs/BalanceSummary"
+        },
+        "expenses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExpenseItem"
+          }
+        },
+        "total_expenses": {
+          "$ref": "#/$defs/ExpenseTotal"
+        },
+        "dues_statistics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DuesStatistic"
+          }
+        }
+      },
+      "required": [
+        "year",
+        "as_of_date",
+        "treasurer",
+        "balance_summary",
+        "expenses",
+        "total_expenses",
+        "dues_statistics"
+      ],
+      "additionalProperties": false
+    },
+    "BalanceSummary": {
+      "type": "object",
+      "properties": {
+        "checking_balance": {
+          "type": "number",
+          "description": "Checking account balance at end of period"
+        },
+        "playground_deposits": {
+          "type": "number",
+          "description": "Playground deposits or escrow held"
+        },
+        "remaining_playground_funds": {
+          "type": "number",
+          "description": "Remaining designated playground funds"
+        },
+        "outstanding_checks": {
+          "type": "number",
+          "description": "Total value of outstanding checks"
+        },
+        "final_balance": {
+          "type": "number",
+          "description": "Adjusted balance after deposits and outstanding checks"
+        }
+      },
+      "required": [
+        "checking_balance",
+        "playground_deposits",
+        "remaining_playground_funds",
+        "outstanding_checks",
+        "final_balance"
+      ],
+      "additionalProperties": false
+    },
+    "ExpenseItem": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Name of expense line item/category"
+        },
+        "actual": {
+          "type": "number",
+          "description": "Actual amount spent"
+        },
+        "budgeted": {
+          "type": "number",
+          "description": "Budgeted amount for category"
+        },
+        "difference": {
+          "type": "number",
+          "description": "Variance/difference between budgeted and actual"
+        }
+      },
+      "required": [
+        "category",
+        "actual",
+        "budgeted",
+        "difference"
+      ],
+      "additionalProperties": false
+    },
+    "ExpenseTotal": {
+      "type": "object",
+      "properties": {
+        "actual": {
+          "type": "number",
+          "description": "Total actual expenses"
+        },
+        "budgeted": {
+          "type": "number",
+          "description": "Total budgeted expenses"
+        },
+        "difference": {
+          "type": "number",
+          "description": "Total variance/difference"
+        }
+      },
+      "required": [
+        "actual",
+        "budgeted",
+        "difference"
+      ],
+      "additionalProperties": false
+    },
+    "DuesStatistic": {
+      "type": "object",
+      "properties": {
+        "payment_year": {
+          "type": "integer",
+          "description": "Year of member dues collection"
+        },
+        "members_paid": {
+          "type": "integer",
+          "description": "Number of households/members who paid dues"
+        },
+        "percentage": {
+          "type": "integer",
+          "description": "Percentage participation rate of dues paid"
+        }
+      },
+      "required": [
+        "payment_year",
+        "members_paid",
+        "percentage"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

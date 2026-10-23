@@ -1,240 +1,74 @@
 <script>
     import Seo from "$components/Seo.svelte";
-    import { format } from "d3-format";
+    import financialsData from "../../../static/data/financials/scca-financials.json";
 
     // Format helpers
     const formatCurrency = (val) =>
         new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
-        }).format(val);
+        }).format(val ?? 0);
+
     const formatPercent = (val) =>
         new Intl.NumberFormat("en-US", {
             style: "percent",
             minimumFractionDigits: 1,
-        }).format(val);
+        }).format(val ?? 0);
 
-    // Official data from SCCA Treasurer's Excel spreadsheets
-    const reports = [
-        {
-            id: "2026-09-19",
-            label: "September 19, 2026",
-            fileName: "SCCA_SoFC_09192026.xlsx",
-            filePath: "/data/financials/SCCA_SoFC_09192026.xlsx",
-            asOfDate: "September 19, 2026",
-            balances: {
-                checking: 2499.57,
-                playgroundFunds: 1464.7,
-                outstandingChecks: 120.0,
-                netBalance: 914.87,
-                asOfDate: "September 19, 2026",
-                treasurer: "SCCA Treasurer",
-                subject: "Statement of Financial Condition",
-            },
-            expenses: [
-                {
-                    category: "Lawn Maintenance",
-                    actual: 970.0,
-                    budget: 3500.0,
-                    notes: "Ongoing invoices for commons areas mowing, weed control, and edge-trimming.",
-                },
-                {
-                    category: "Garden Club",
-                    actual: 69.96,
-                    budget: 400.0,
-                    notes: "Annual grant for community entry signs landscaping and flower beds.",
-                },
-                {
-                    category: "Real Property taxes",
-                    actual: 33.27,
-                    budget: 55.0,
-                    notes: "Required property taxes on SCCA-owned common land parcels.",
-                },
-                {
-                    category: "Access Tree Removal",
-                    actual: 5500.0,
-                    budget: 8000.0,
-                    notes: "Emergency tree cutting, safety trimming, and hazardous arbor care along common property.",
-                },
-                {
-                    category: "BGE",
-                    actual: 228.55,
-                    budget: 300.0,
-                    notes: "Electricity for lighting the main community entrances.",
-                },
-                {
-                    category: "Insurance",
-                    actual: 4279.0,
-                    budget: 3850.0,
-                    notes: "Comprehensive liability coverage. Exceeded budget due to industry-wide commercial rate hikes.",
-                },
-                {
-                    category: "Association Memberships",
-                    actual: 100.0,
-                    budget: 200.0,
-                    notes: "Dues for Maryland Community Association registries and regional civic coalitions.",
-                },
-                {
-                    category: "Website renewal",
-                    actual: 0.0,
-                    budget: 125.0,
-                    notes: "Annual hosting and domain licensing. In 2026, the SCCA Board's webmaster migrated the domain away from Weebly to Vercel and redesigned the website from the ground-up to offer a modern, highly-featured experience for the community at $0.00 ongoing operational cost.",
-                },
-                {
-                    category: "Misc (checks, paper statements, SCSTC)",
-                    actual: 64.64,
-                    budget: 120.0,
-                    notes: "Treasury printing, postage, billing stationery, state filings, and banking fees.",
-                },
-            ],
-        },
-        {
-            id: "2026-06-04",
-            label: "June 4, 2026",
-            fileName: "SCCA_SoFC_as_of_06042026.xlsx",
-            filePath: "/data/financials/SCCA_SoFC_as_of_06042026.xlsx",
-            asOfDate: "June 4, 2026",
-            balances: {
-                checking: 8227.91,
-                playgroundFunds: 1464.7,
-                outstandingChecks: 0.0,
-                netBalance: 6763.21,
-                asOfDate: "June 4, 2026",
-                treasurer: "SCCA Treasurer",
-                subject: "Statement of Financial Condition",
-            },
-            expenses: [
-                {
-                    category: "Lawn Maintenance",
-                    actual: 845.0,
-                    budget: 3500.0,
-                    notes: "Ongoing invoices for commons areas mowing, weed control, and edge-trimming.",
-                },
-                {
-                    category: "Garden Club",
-                    actual: 0.0,
-                    budget: 400.0,
-                    notes: "Annual grant for community entry signs landscaping and flower beds.",
-                },
-                {
-                    category: "Real Property taxes",
-                    actual: 0.0,
-                    budget: 55.0,
-                    notes: "Required property taxes on SCCA-owned common land parcels.",
-                },
-                {
-                    category: "Access Tree Removal",
-                    actual: 0.0,
-                    budget: 8000.0,
-                    notes: "Emergency tree cutting, safety trimming, and hazardous arbor care along common property.",
-                },
-                {
-                    category: "BGE",
-                    actual: 153.44,
-                    budget: 300.0,
-                    notes: "Electricity for lighting the main community entrances.",
-                },
-                {
-                    category: "Insurance",
-                    actual: 4279.0,
-                    budget: 3850.0,
-                    notes: "Comprehensive liability coverage. Exceeded budget due to industry-wide commercial rate hikes.",
-                },
-                {
-                    category: "Association Memberships",
-                    actual: 100.0,
-                    budget: 200.0,
-                    notes: "Dues for Maryland Community Association registries and regional civic coalitions.",
-                },
-                {
-                    category: "Website renewal",
-                    actual: 0.0,
-                    budget: 125.0,
-                    notes: "Annual hosting and domain licensing. In 2026, the SCCA Board's webmaster migrated the domain away from Weebly to Vercel and redesigned the website from the ground-up to offer a modern, highly-featured experience for the community at $0.00 ongoing operational cost.",
-                },
-                {
-                    category: "Misc (checks, paper statements, SCSTC)",
-                    actual: 64.64,
-                    budget: 120.0,
-                    notes: "Treasury printing, postage, billing stationery, state filings, and banking fees.",
-                },
-            ],
-        },
-    ];
+    const formatDate = (dateStr) => {
+        if (!dateStr) return "";
+        const [year, month, day] = dateStr.split("-").map(Number);
+        return new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        }).format(new Date(year, month - 1, day));
+    };
 
-    // Svelte 5 Runes for Report Selection
-    let selectedIndex = $state(0);
+    // Sort reports with the most recent year first
+    const reports = [...(financialsData.reports || [])].sort((a, b) => b.year - a.year);
 
-    // Derived values based on selection
-    let activeReport = $derived(reports[selectedIndex]);
-    let balancesData = $derived(activeReport.balances);
-    let expensesData = $derived(activeReport.expenses);
+    // Selected year state rune, default to latest report
+    let selectedYear = $state(reports[0]?.year ?? 2026);
 
-    // Totals calculations
-    let totalActual = $derived(
-        expensesData.reduce((sum, item) => sum + item.actual, 0),
+    // Derived active report rune
+    let activeReport = $derived(
+        reports.find((r) => r.year === selectedYear) ?? reports[0]
     );
-    let totalBudget = $derived(
-        expensesData.reduce((sum, item) => sum + item.budget, 0),
+
+    let balances = $derived(activeReport?.balance_summary ?? {});
+    let expenses = $derived(activeReport?.expenses ?? []);
+    let totals = $derived(activeReport?.total_expenses ?? {});
+    let duesStats = $derived(activeReport?.dues_statistics ?? []);
+
+    // Derived playground funds calculation
+    let playgroundTotal = $derived(
+        (balances.remaining_playground_funds ?? 0) + (balances.playground_deposits ?? 0)
     );
-    let totalDiff = $derived(totalBudget - totalActual); // Remaining budget
-    let totalPercentSpent = $derived(totalActual / totalBudget);
 
-    // Historical trends from spreadsheet notes
-    const participationHistory = [
-        {
-            year: 2026,
-            paid: 194,
-            rate: 0.69,
-            notes: "Current Fiscal Year (as of June 4)",
-        },
-        { year: 2025, paid: 196, rate: 0.69, notes: "Prior Fiscal Year Close" },
-        { year: 2024, paid: 205, rate: 0.72, notes: "Stable baseline period" },
-        {
-            year: 2023,
-            paid: 210,
-            rate: 0.74,
-            notes: "Post-pandemic transition",
-        },
-        {
-            year: 2022,
-            paid: 215,
-            rate: 0.76,
-            notes: "Peak voluntary participation",
-        },
-    ];
-
-    // Interactive simulator runes
-    let simRate = $state(0.69); // Default is current 69%
-    const totalHomes = 283;
-    const duesPerHome = 75.0;
-
-    // Derived simulator outputs
-    let simPaidHomes = $derived(Math.round(simRate * totalHomes));
-    let simUnpaidHomes = $derived(totalHomes - simPaidHomes);
-    let simRevenue = $derived(simPaidHomes * duesPerHome);
-    let simBudgetComparison = $derived(simRevenue - totalBudget);
-    let simEffectiveCostPerPayer = $derived(totalBudget / simPaidHomes);
-    let simSubsidyPerPayer = $derived(simEffectiveCostPerPayer - duesPerHome);
+    // Overall percent spent
+    let percentSpent = $derived(
+        totals.budgeted > 0 ? totals.actual / totals.budgeted : 0
+    );
 </script>
 
 <Seo
     title="Financial Condition"
-    description="Review SCCA financial statements, budget conditions, balance sheets, and active charts of community expenditures and revenues."
+    description="Official annual statements of financial condition, operating expenditures, balance sheets, and member dues metrics for Shipley's Choice Community Association."
 />
 
 <!-- Header Section -->
 <section class="page-header py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
         <p class="text-sm uppercase tracking-[0.24em] text-blue-300">
-            Financial Transparency
+            Official Disclosures & Transparency
         </p>
         <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white">
-            Statement of Financial Condition
+            Statements of Financial Condition
         </h1>
         <p class="mt-4 max-w-2xl mx-auto text-slate-300">
-            View verified accounts, current operational expenses, and historical
-            funding metrics for Shipley's Choice Community Association.
+            Review certified balance sheets, operational expenditures, and historical
+            member dues metrics for Shipley's Choice Community Association.
         </p>
     </div>
 </section>
@@ -246,39 +80,46 @@
     >
         <div>
             <h2 class="text-xl font-bold text-slate-900">
-                Archived Financial Condition Statements
+                Archived Statements of Financial Condition
             </h2>
             <p class="text-xs text-slate-500 mt-1">
-                Select a reporting period statement compiled by the Treasurer
-                below
+                Select an annual reporting period statement compiled by the SCCA Treasurer
             </p>
         </div>
         <div
-            class="inline-flex rounded-xl bg-slate-150 p-1 border border-slate-200 shadow-inner"
+            class="inline-flex flex-wrap rounded-xl bg-slate-100 p-1 border border-slate-200 shadow-inner"
         >
-            {#each reports as r, idx}
+            {#each reports as r}
                 <button
                     type="button"
-                    class="px-5 py-2.5 rounded-lg text-xs font-bold transition-all {selectedIndex ===
-                    idx
+                    class="px-5 py-2.5 rounded-lg text-xs font-bold transition-all {selectedYear ===
+                    r.year
                         ? 'bg-white text-blue-700 shadow-sm'
                         : 'text-slate-600 hover:text-slate-900'}"
-                    onclick={() => (selectedIndex = idx)}
+                    onclick={() => (selectedYear = r.year)}
                 >
-                    {r.label}
-                    {idx === 0 ? "★" : ""}
+                    {r.year} Statement
+                    {#if r.is_final === false}
+                        <span class="ml-1.5 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300">
+                            Interim (Not Final)
+                        </span>
+                    {:else if r.year === 2025}
+                        <span class="ml-1.5 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-100 text-blue-700">
+                            Latest Final
+                        </span>
+                    {/if}
                 </button>
             {/each}
         </div>
     </div>
 
-    <!-- Operational Shortfall Alert Callout (Specific to September 19 Statement) -->
-    {#if selectedIndex === 0}
+    <!-- Interim / Unfinalized Notice Banner -->
+    {#if activeReport.is_final === false}
         <div
-            class="bg-gradient-to-r from-red-50 to-orange-50/50 border-l-4 border-red-500 rounded-xl p-5 shadow-sm space-y-3"
+            class="bg-amber-50/90 border-l-4 border-amber-500 rounded-xl p-4 sm:p-5 shadow-sm space-y-2"
         >
             <div class="flex items-start gap-3">
-                <span class="p-1.5 bg-red-100 rounded-lg text-red-600 mt-0.5">
+                <span class="p-1.5 bg-amber-100 rounded-lg text-amber-700 mt-0.5 flex-shrink-0">
                     <svg
                         class="h-5 w-5"
                         fill="none"
@@ -293,47 +134,19 @@
                         />
                     </svg>
                 </span>
-                <div>
-                    <h3 class="text-sm font-bold text-red-850">
-                        Critical Account Shortfall Warning
-                    </h3>
-                    <p class="text-xs text-slate-600 leading-relaxed mt-1">
-                        SCCA's unencumbered operating balance has dropped to <strong
-                            >{formatCurrency(balancesData.netBalance)}</strong
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="text-sm font-bold text-amber-900">
+                            Interim Report Notice — Fiscal Year {activeReport.year} (Not Finalized)
+                        </h3>
+                        <span
+                            class="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full bg-amber-200/90 text-amber-900"
                         >
-                        as of September 19, 2026. This depletion is primarily
-                        due to the payment of the major
-                        <strong
-                            >Access Tree Removal invoices ({formatCurrency(
-                                5500,
-                            )})</strong
-                        > and ongoing common grounds lawn care.
-                    </p>
-                    <p class="text-xs text-slate-600 leading-relaxed mt-1.5">
-                        Because voluntary community dues participation capped at <strong
-                            >69% (194 properties out of 283)</strong
-                        >, SCCA's cash reserves are insufficient to cover
-                        operational needs through the end of the calendar year.
-                        Without the transition to a dedicated Special Community
-                        Benefits District (SCBD) taxing framework, essential
-                        neighborhood safety trims, landscaping, and public
-                        liability insurance face immediate underfunding or
-                        deferral.
-                    </p>
-                    <p
-                        class="text-xs text-rose-800 leading-relaxed mt-2 font-medium bg-rose-100/40 p-2.5 rounded-lg border border-rose-200"
-                    >
-                        <strong>⚠️ Budget Limitation Note:</strong> SCCA's
-                        annual operating budget (currently set at {formatCurrency(
-                            totalBudget,
-                        )}) is artificially constrained by necessity. The Board
-                        has historically set the budget to match expected dues
-                        revenue. In reality, a realistic and healthy budget to
-                        safely maintain our common properties is closer to
-                        <strong>$20,000</strong> or more. Between standard liability
-                        insurance and a single high-frequency "bad tree year" alone,
-                        SCCA routinely spends nearly $20,000—which is far higher than
-                        voluntary contributions can support.
+                            In Progress / Unfinalized
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-700 leading-relaxed">
+                        {activeReport.notes || `The financial condition figures for fiscal year ${activeReport.year} represent interim year-to-date accounts as of ${formatDate(activeReport.as_of_date)}. Because the fiscal year is actively underway, revenues, remaining vendor invoices, and reserve allocations are subject to ongoing reconciliation until annual fiscal year-end close.`}
                     </p>
                 </div>
             </div>
@@ -363,80 +176,68 @@
                 </span>
                 <span
                     class="text-white font-semibold text-sm uppercase tracking-wider"
-                    >Treasurer's Memoranda</span
+                    >Treasurer's Annual Statement</span
                 >
             </div>
             <span class="text-xs text-slate-400 font-medium"
-                >As of {activeReport.asOfDate}</span
+                >Effective Date: {formatDate(activeReport.as_of_date)}</span
             >
         </div>
         <div class="p-6 md:p-8 space-y-6">
             <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm border-b border-slate-100 pb-6"
+                class="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-4 text-sm border-b border-slate-100 pb-6"
             >
                 <div>
                     <span
                         class="text-slate-400 uppercase tracking-wider text-xs font-bold block"
-                        >To:</span
+                        >Organization:</span
                     >
                     <span class="font-semibold text-slate-800 text-base"
-                        >Shipley's Choice Community Assoc. Officers, Directors &
-                        Members</span
+                        >Shipley's Choice Community Association</span
                     >
                 </div>
                 <div>
                     <span
                         class="text-slate-400 uppercase tracking-wider text-xs font-bold block"
-                        >From:</span
+                        >Treasurer:</span
                     >
                     <span class="font-semibold text-slate-800 text-base"
-                        >{balancesData.treasurer}</span
+                        >{activeReport.treasurer}</span
                     >
                 </div>
                 <div>
                     <span
                         class="text-slate-400 uppercase tracking-wider text-xs font-bold block"
-                        >Subject:</span
+                        >Reporting Period:</span
                     >
                     <span class="font-semibold text-slate-800 text-base"
-                        >{balancesData.subject}</span
+                        >FY {activeReport.year} ({activeReport.is_final === false ? 'YTD as of ' : 'as of '}{formatDate(activeReport.as_of_date)})</span
                     >
                 </div>
                 <div>
                     <span
                         class="text-slate-400 uppercase tracking-wider text-xs font-bold block"
-                        >Verified Spreadsheet Reference:</span
+                        >Report Status:</span
                     >
-                    <a
-                        href={activeReport.filePath}
-                        class="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-semibold hover:underline group"
-                    >
-                        {activeReport.fileName}
-                        <svg
-                            class="h-4 w-4 transform transition-transform group-hover:translate-y-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            stroke-width="2.5"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                            />
-                        </svg>
-                    </a>
+                    {#if activeReport.is_final === false}
+                        <span class="inline-flex items-center gap-1.5 font-bold text-amber-700 text-xs bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 mt-1">
+                            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                            Interim / Not Final
+                        </span>
+                    {:else}
+                        <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-700 text-xs bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 mt-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            Final / Closed FY
+                        </span>
+                    {/if}
                 </div>
             </div>
             <p class="text-slate-600 leading-relaxed text-sm">
-                This statement offers an unvarnished window into the financial
-                position of the Shipley's Choice Community Association (SCCA) as
-                of {activeReport.asOfDate}. SCCA is entirely board-volunteer
-                driven, with funds deployed strictly to maintain community
-                safety, preserve common acreage woodlands, and manage liability
-                risks. The report provides checking accounts, restricted-use
-                reserves, outstanding balances, and line-item actual
-                expenditures relative to the approved annual budget.
+                {#if activeReport.is_final === false}
+                    This statement presents interim, year-to-date financial condition metrics for the Shipley's Choice Community Association (SCCA) during the {activeReport.year} fiscal year as of {formatDate(activeReport.as_of_date)}. These figures reflect current operating account balances, held reserves, and YTD expenditures against the approved annual operating budget. All accounts remain subject to final year-end reconciliation and closing.
+                {:else}
+                    This statement presents the official financial condition of the Shipley's Choice Community Association (SCCA) for the {activeReport.year} fiscal year. As an all-volunteer community association, funds are dedicated to neighborhood safety, common ground maintenance, entrance landscaping, utility lighting, and required liability insurance. Below is the full disclosure of operating accounts, designated reserves, and line-item actual expenditures relative to the approved budget.
+                {/if}
             </p>
         </div>
     </div>
@@ -457,7 +258,7 @@
                     d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
                 />
             </svg>
-            Summary of Cash Positions ({activeReport.asOfDate})
+            Summary of Cash Positions ({activeReport.is_final === false ? 'Interim as of ' : 'as of '}{formatDate(activeReport.as_of_date)})
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Checking Balance -->
@@ -486,15 +287,15 @@
                         Checking Balance
                     </p>
                     <p class="mt-2 text-3xl font-black text-slate-900">
-                        {formatCurrency(balancesData.checking)}
+                        {formatCurrency(balances.checking_balance)}
                     </p>
                     <p class="mt-1 text-xs text-slate-500">
-                        Gross funds in operating bank account
+                        {activeReport.is_final === false ? 'Interim operating account balance' : 'Gross funds in operating bank account'}
                     </p>
                 </div>
             </div>
 
-            <!-- Playground Funds -->
+            <!-- Playground Funds / Deposits -->
             <div
                 class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-sm relative overflow-hidden"
             >
@@ -517,13 +318,21 @@
                     <p
                         class="text-xs font-bold text-slate-400 uppercase tracking-wider"
                     >
-                        Restricted Playground Funds
+                        Playground Reserves / Escrow
                     </p>
                     <p class="mt-2 text-3xl font-black text-amber-600">
-                        {formatCurrency(balancesData.playgroundFunds)}
+                        {formatCurrency(playgroundTotal)}
                     </p>
                     <p class="mt-1 text-xs text-slate-500">
-                        Section 2 playground reserve (restricted)
+                        {#if (balances.remaining_playground_funds ?? 0) > 0 && (balances.playground_deposits ?? 0) > 0}
+                            Reserve: {formatCurrency(balances.remaining_playground_funds)} | Deposits: {formatCurrency(balances.playground_deposits)}
+                        {:else if (balances.remaining_playground_funds ?? 0) > 0}
+                            Section 2 playground reserve funds
+                        {:else if (balances.playground_deposits ?? 0) > 0}
+                            Section 2 playground escrow deposits
+                        {:else}
+                            No restricted playground funds held
+                        {/if}
                     </p>
                 </div>
             </div>
@@ -554,12 +363,11 @@
                         Outstanding Checks
                     </p>
                     <p
-                        class="mt-2 text-3xl font-black {balancesData.outstandingChecks >
-                        0
+                        class="mt-2 text-3xl font-black {(balances.outstanding_checks ?? 0) > 0
                             ? 'text-rose-600'
                             : 'text-slate-900'}"
                     >
-                        {formatCurrency(balancesData.outstandingChecks)}
+                        {formatCurrency(balances.outstanding_checks)}
                     </p>
                     <p class="mt-1 text-xs text-slate-500">
                         Issued but uncashed vendor payments
@@ -567,16 +375,14 @@
                 </div>
             </div>
 
-            <!-- Net Unencumbered Operating Balance -->
+            <!-- Final Balance -->
             <div
-                class="rounded-xl border p-5 shadow-sm relative overflow-hidden transition-colors {balancesData.netBalance <
-                1000
+                class="rounded-xl border p-5 shadow-sm relative overflow-hidden transition-colors {(balances.final_balance ?? 0) < 0
                     ? 'bg-rose-50/50 border-rose-200'
                     : 'bg-gradient-to-br from-blue-50 to-blue-100/50 border-blue-200/80'}"
             >
                 <div
-                    class="absolute right-3 top-3 {balancesData.netBalance <
-                    1000
+                    class="absolute right-3 top-3 {(balances.final_balance ?? 0) < 0
                         ? 'text-rose-200/40'
                         : 'text-blue-200/40'}"
                 >
@@ -596,29 +402,25 @@
                 </div>
                 <div class="relative z-10">
                     <p
-                        class="text-xs font-bold uppercase tracking-wider {balancesData.netBalance <
-                        1000
+                        class="text-xs font-bold uppercase tracking-wider {(balances.final_balance ?? 0) < 0
                             ? 'text-rose-600'
                             : 'text-blue-600'}"
                     >
-                        Unencumbered Balance
+                        {activeReport.is_final === false ? 'Interim Net Balance' : 'Final Net Balance'}
                     </p>
                     <p
-                        class="mt-2 text-3xl font-black {balancesData.netBalance <
-                        1000
-                            ? 'text-rose-850'
+                        class="mt-2 text-3xl font-black {(balances.final_balance ?? 0) < 0
+                            ? 'text-rose-800'
                             : 'text-blue-800'}"
                     >
-                        {formatCurrency(balancesData.netBalance)}
+                        {formatCurrency(balances.final_balance)}
                     </p>
                     <p
-                        class="mt-1 text-xs {balancesData.netBalance < 1000
+                        class="mt-1 text-xs {(balances.final_balance ?? 0) < 0
                             ? 'text-rose-600/80'
                             : 'text-blue-600/80'}"
                     >
-                        {balancesData.netBalance < 1000
-                            ? "Critically low operating reserves"
-                            : "Available cash for ongoing operations"}
+                        {activeReport.is_final === false ? 'Interim net cash (pending remainder of FY)' : 'Unencumbered cash after escrow & checks'}
                     </p>
                 </div>
             </div>
@@ -647,11 +449,12 @@
                             d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                     </svg>
-                    2026 Operating Budget vs. YTD Actual
+                    {activeReport.year} Operating Budget vs. {activeReport.is_final === false ? 'YTD Actual (Interim)' : 'Actual Expenditures'}
                 </h2>
                 <p class="text-sm text-slate-500 mt-1">
-                    Detailed expenditures tracking and remaining budget
-                    capacities (compiled as of {activeReport.asOfDate})
+                    {activeReport.is_final === false
+                        ? `Itemized year-to-date spending against approved annual budget (not finalized, as of ${formatDate(activeReport.as_of_date)})`
+                        : `Itemized expenses and variance relative to the approved annual budget (compiled as of ${formatDate(activeReport.as_of_date)})`}
                 </p>
             </div>
 
@@ -659,16 +462,14 @@
                 class="inline-flex items-center gap-2 bg-slate-100 rounded-lg p-1.5 text-xs font-semibold text-slate-700 border border-slate-200"
             >
                 <span
-                    class="inline-block w-2.5 h-2.5 rounded-full {totalDiff <
-                    6000
-                        ? 'bg-amber-500'
+                    class="inline-block w-2.5 h-2.5 rounded-full {(totals.difference ?? 0) < 0
+                        ? 'bg-rose-500'
                         : 'bg-emerald-500'}"
                 ></span>
-                <span
-                    >Remaining: {formatCurrency(totalDiff)} ({formatPercent(
-                        totalDiff / totalBudget,
-                    )})</span
-                >
+                <span>
+                    {(totals.difference ?? 0) < 0 ? 'Net Variance: ' : (activeReport.is_final === false ? 'Remaining Budget: ' : 'Net Surplus: ')}
+                    {(totals.difference ?? 0) >= 0 ? '+' : ''}{formatCurrency(totals.difference)}
+                </span>
             </div>
         </div>
 
@@ -679,59 +480,53 @@
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr
-                            class="bg-slate-55 border-b border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-500"
+                            class="bg-slate-50 border-b border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-500"
                         >
                             <th class="px-6 py-4">Expense Category</th>
-                            <th class="px-6 py-4 text-right">Actual YTD</th>
-                            <th class="px-6 py-4 text-right">Approved Budget</th
-                            >
-                            <th class="px-6 py-4 text-right"
-                                >Difference (Remaining)</th
-                            >
-                            <th class="px-6 py-4 text-center">Spent (%)</th>
+                            <th class="px-6 py-4 text-right">{activeReport.is_final === false ? 'Actual Spent (YTD)' : 'Actual Spent'}</th>
+                            <th class="px-6 py-4 text-right">Approved Budget</th>
+                            <th class="px-6 py-4 text-right">{activeReport.is_final === false ? 'Remaining Budget' : 'Difference (Variance)'}</th>
+                            <th class="px-6 py-4 text-center">Budget Spent</th>
                         </tr>
                     </thead>
                     <tbody
                         class="divide-y divide-slate-150 text-sm text-slate-700"
                     >
-                        {#each expensesData as item}
+                        {#each expenses as item}
+                            {@const budget = item.budgeted ?? 0}
+                            {@const actual = item.actual ?? 0}
+                            {@const diff = item.difference ?? (budget - actual)}
+                            {@const hasBudget = budget > 0}
+                            {@const pct = hasBudget ? actual / budget : (actual > 0 ? 1 : 0)}
+                            {@const isOver = hasBudget ? actual > budget : actual > 0}
                             <tr
                                 class="hover:bg-slate-50/50 transition-colors group"
                             >
-                                <td class="px-6 py-4">
-                                    <div class="font-semibold text-slate-900">
-                                        {item.category}
-                                    </div>
-                                    <div
-                                        class="text-xs text-slate-400 mt-1 max-w-sm font-normal leading-normal"
-                                    >
-                                        {item.notes}
-                                    </div>
+                                <td class="px-6 py-4 font-semibold text-slate-900">
+                                    {item.category}
                                 </td>
                                 <td
                                     class="px-6 py-4 text-right font-medium text-slate-800"
                                 >
-                                    {item.actual > 0
-                                        ? formatCurrency(item.actual)
-                                        : "$0.00"}
+                                    {actual > 0 ? formatCurrency(actual) : "$0.00"}
                                 </td>
                                 <td
                                     class="px-6 py-4 text-right font-medium text-slate-600"
                                 >
-                                    {formatCurrency(item.budget)}
+                                    {budget > 0 ? formatCurrency(budget) : "$0.00"}
                                 </td>
                                 <td class="px-6 py-4 text-right font-semibold">
-                                    {#if item.budget - item.actual < 0}
-                                        <span class="text-red-600">
-                                            {formatCurrency(
-                                                item.budget - item.actual,
-                                            )}
+                                    {#if diff < 0}
+                                        <span class="text-rose-600">
+                                            {formatCurrency(diff)}
+                                        </span>
+                                    {:else if diff > 0}
+                                        <span class="text-emerald-600">
+                                            +{formatCurrency(diff)}
                                         </span>
                                     {:else}
-                                        <span class="text-emerald-600">
-                                            {formatCurrency(
-                                                item.budget - item.actual,
-                                            )}
+                                        <span class="text-slate-500">
+                                            $0.00
                                         </span>
                                     {/if}
                                 </td>
@@ -743,29 +538,26 @@
                                             class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200/50"
                                         >
                                             <div
-                                                class="h-full rounded-full transition-all duration-500 {item.actual /
-                                                    item.budget >
-                                                1.0
-                                                    ? 'bg-red-500'
+                                                class="h-full rounded-full transition-all duration-500 {isOver
+                                                    ? 'bg-rose-500'
                                                     : 'bg-blue-600'}"
-                                                style="width: {Math.min(
-                                                    100,
-                                                    (item.actual /
-                                                        item.budget) *
-                                                        100,
-                                                )}%"
+                                                style="width: {hasBudget
+                                                    ? Math.min(100, Math.max(0, pct * 100))
+                                                    : (actual > 0 ? 100 : 0)}%"
                                             ></div>
                                         </div>
                                         <span
-                                            class="text-[11px] font-bold {item.actual /
-                                                item.budget >
-                                            1.0
-                                                ? 'text-red-600'
+                                            class="text-[11px] font-bold {isOver
+                                                ? 'text-rose-600'
                                                 : 'text-slate-500'}"
                                         >
-                                            {formatPercent(
-                                                item.actual / item.budget,
-                                            )}
+                                            {#if hasBudget}
+                                                {formatPercent(pct)}
+                                            {:else if actual > 0}
+                                                Unbudgeted
+                                            {:else}
+                                                —
+                                            {/if}
                                         </span>
                                     </div>
                                 </td>
@@ -776,30 +568,32 @@
                         <tr class="bg-slate-900 text-white font-bold text-sm">
                             <td class="px-6 py-5">
                                 <div class="text-base text-white">
-                                    Consolidated Operating Budget Totals
+                                    Consolidated Operating Totals
                                 </div>
                                 <div
                                     class="text-xs text-slate-400 font-normal mt-1 leading-normal"
                                 >
-                                    Operational ledger summaries. Unspent
-                                    balances roll over to the general capital
-                                    reserve.
+                                    {activeReport.is_final === false
+                                        ? 'Year-to-date spending vs. full-year operating budget (subject to final year-end closing).'
+                                        : 'Total verified actual expenses against the approved annual operating budget.'}
                                 </div>
                             </td>
                             <td
                                 class="px-6 py-5 text-right text-base text-blue-300"
                             >
-                                {formatCurrency(totalActual)}
+                                {formatCurrency(totals.actual)}
                             </td>
                             <td
                                 class="px-6 py-5 text-right text-base text-slate-300"
                             >
-                                {formatCurrency(totalBudget)}
+                                {formatCurrency(totals.budgeted)}
                             </td>
                             <td
-                                class="px-6 py-5 text-right text-base text-emerald-400"
+                                class="px-6 py-5 text-right text-base {(totals.difference ?? 0) < 0
+                                    ? 'text-rose-400'
+                                    : 'text-emerald-400'}"
                             >
-                                {formatCurrency(totalDiff)}
+                                {(totals.difference ?? 0) >= 0 ? '+' : ''}{formatCurrency(totals.difference)}
                             </td>
                             <td class="px-6 py-5">
                                 <div
@@ -809,15 +603,16 @@
                                         class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700"
                                     >
                                         <div
-                                            class="h-full rounded-full bg-blue-500 transition-all duration-500"
-                                            style="width: {totalPercentSpent *
-                                                100}%"
+                                            class="h-full rounded-full transition-all duration-500 {percentSpent > 1
+                                                ? 'bg-rose-500'
+                                                : 'bg-blue-500'}"
+                                            style="width: {Math.min(100, Math.max(0, percentSpent * 100))}%"
                                         ></div>
                                     </div>
                                     <span
-                                        class="text-xs font-black text-blue-300"
+                                        class="text-xs font-black {percentSpent > 1 ? 'text-rose-400' : 'text-blue-300'}"
                                     >
-                                        {formatPercent(totalPercentSpent)} spent
+                                        {formatPercent(percentSpent)} spent
                                     </span>
                                 </div>
                             </td>
@@ -826,368 +621,172 @@
                 </table>
             </div>
         </div>
+    </div>
 
-        <!-- Constrained Budget vs. Actual Need Callout -->
-        <div
-            class="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-5 md:p-6 shadow-sm flex flex-col md:flex-row items-start gap-4"
-        >
-            <span class="p-2.5 bg-amber-100 rounded-xl text-amber-700">
-                <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                </svg>
-            </span>
-            <div class="space-y-2">
-                <h3
-                    class="text-sm font-extrabold text-amber-900 tracking-tight"
-                >
-                    ⚠️ Structural Reality: Why SCCA's Operating Budget is
-                    Artificially Constrained
-                </h3>
-                <div
-                    class="text-xs text-slate-700 space-y-2 leading-relaxed font-medium"
-                >
-                    <p>
-                        It is critical for residents to understand that the SCCA
-                        approved budget of <strong
-                            >{formatCurrency(totalBudget)}</strong
+    <!-- Member Dues Collection Statistics -->
+    {#if duesStats && duesStats.length > 0}
+        <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <svg
+                            class="h-5 w-5 text-blue-600"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
                         >
-                        does not reflect the actual, unconstrained financial
-                        needs of our community. Instead,
-                        <strong
-                            >the annual budget is capped by necessity to match
-                            what SCCA expects to collect in voluntary dues.</strong
-                        >
-                    </p>
-                    <p>
-                        In reality, a healthy and adequate budget required to
-                        safely operate, maintain the entry signs, and keep
-                        common woodlands trimmed is closer to <strong
-                            >$20,000</strong
-                        > or more. Between standard public liability insurance premiums
-                        and a single "bad tree year" (where emergency dead tree removal
-                        is higher), SCCA routinely spends nearly $20,000 in a year.
-                    </p>
-                    <p>
-                        Under the current voluntary dues model, when these
-                        essential costs exceed collected revenues, the Board is
-                        forced to either defer critical tree trimming safety
-                        work (creating liability) or deplete general capital
-                        reserves. This structural limitation creates an unequal
-                        burden and deferred hazards, highlighting why the
-                        transition to a dedicated Special Community Benefits
-                        District (SCBD) is required to secure a stable and
-                        adequate funding baseline from 100% of community
-                        properties.
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                            />
+                        </svg>
+                        Member Dues Collection History
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-1">
+                        Annual voluntary dues collection metrics as recorded in the {activeReport.year} Statement of Financial Condition
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- Historical Trend Visual -->
-        <div class="lg:col-span-5 space-y-4">
-            <h2
-                class="text-xl font-bold text-slate-900 flex items-center gap-2"
-            >
-                <svg
-                    class="h-5 w-5 text-blue-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                </svg>
-                Multi-Year Participation Trend
-            </h2>
-            <div
-                class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm space-y-6"
-            >
-                <p class="text-xs text-slate-500 leading-normal">
-                    This table tracks the declining number of contributing
-                    households under the voluntary SCCA dues system. Only 194
-                    out of 283 properties contributed in 2026.
-                </p>
-
-                <div class="space-y-4">
-                    {#each participationHistory as p}
-                        <div class="space-y-1.5">
-                            <div
-                                class="flex items-center justify-between text-sm"
-                            >
-                                <span class="font-bold text-slate-900"
-                                    >{p.year} Fiscal Year
-                                    <span
-                                        class="text-xs font-normal text-slate-400"
-                                        >({p.paid} Paid)</span
-                                    ></span
-                                >
-                                <span class="font-black text-slate-700"
-                                    >{formatPercent(p.rate)}</span
-                                >
-                            </div>
-                            <div
-                                class="w-full bg-slate-100 rounded-full h-3.5 overflow-hidden border border-slate-200/50 relative"
-                            >
-                                <div
-                                    class="h-full rounded-full transition-all duration-500 {p.rate >=
-                                    0.75
-                                        ? 'bg-blue-600'
-                                        : p.rate >= 0.7
-                                          ? 'bg-indigo-500'
-                                          : 'bg-red-500'}"
-                                    style="width: {p.rate * 100}%"
-                                ></div>
-                                <span
-                                    class="absolute inset-0 flex items-center justify-center text-[10px] font-black text-slate-600"
-                                    >{p.notes}</span
-                                >
-                            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                {#each duesStats as stat}
+                    <div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-sm space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                {stat.payment_year} Fiscal Year
+                                {#if stat.payment_year === 2026}
+                                    <span class="text-[10px] font-semibold text-amber-700 bg-amber-100 px-1 py-0.2 rounded ml-1">YTD</span>
+                                {/if}
+                            </span>
+                            <span class="text-sm font-black text-slate-900">
+                                {stat.percentage}%
+                            </span>
                         </div>
-                    {/each}
-                </div>
+                        <div>
+                            <span class="text-2xl font-black text-slate-800">
+                                {stat.members_paid}
+                            </span>
+                            <span class="text-xs text-slate-500 ml-1">
+                                / 283 households
+                            </span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden border border-slate-200/50">
+                            <div
+                                class="h-full rounded-full transition-all duration-500 {stat.percentage >= 75
+                                    ? 'bg-blue-600'
+                                    : stat.percentage >= 70
+                                      ? 'bg-indigo-500'
+                                      : 'bg-amber-500'}"
+                                style="width: {stat.percentage}%"
+                            ></div>
+                        </div>
+                        <p class="text-[11px] text-slate-500 font-medium">
+                            Voluntary dues participation rate
+                        </p>
+                    </div>
+                {/each}
+            </div>
+        </div>
+    {/if}
 
-                <div
-                    class="bg-red-50 rounded-xl p-4 border border-red-100 text-xs text-red-800 leading-relaxed"
-                >
-                    <p class="font-bold">
-                        ⚠️ The Consequence of declining participation:
-                    </p>
-                    <p class="mt-1">
-                        With voluntary participation declining to 69%, the
-                        funding burden of maintaining essential community safety
-                        assets (common woodlands, entrance signs, and liability
-                        insurance) is borne unequally. This financial reality
-                        has driven the SCCA Board's decision to pursue
-                        designation as a Special Community Benefits District
-                        (SCBD) to secure fair and dedicated funding from 100% of
-                        community properties.
-                    </p>
-                </div>
+    <!-- Multi-Year Comparative Summary -->
+    <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <svg
+                        class="h-5 w-5 text-blue-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        />
+                    </svg>
+                    Multi-Year Comparative Summary
+                </h2>
+                <p class="text-xs text-slate-500 mt-1">
+                    Side-by-side annual comparison of approved budgets, actual operating expenses, and ending balances
+                </p>
             </div>
         </div>
 
-        <!-- Interactive Simulator -->
-        <div class="lg:col-span-7 space-y-4">
-            <h2
-                class="text-xl font-bold text-slate-900 flex items-center gap-2"
-            >
-                <svg
-                    class="h-5 w-5 text-blue-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                </svg>
-                Voluntary Dues & Burden Simulator
-            </h2>
-            <div
-                class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm space-y-6"
-            >
-                <p class="text-xs text-slate-500 leading-normal">
-                    Adjust the slider to simulate voluntary dues participation
-                    rates. See how declining participation forces active
-                    contributors to carry a higher effective "subsidy" to cover
-                    the fixed SCCA operating budget ({formatCurrency(
-                        totalBudget,
-                    )}).
-                </p>
-
-                <!-- Slider Control -->
-                <div
-                    class="bg-slate-50 rounded-xl p-5 border border-slate-200/80 space-y-3"
-                >
-                    <div class="flex justify-between items-center text-sm">
-                        <span class="font-bold text-slate-700"
-                            >Simulated Participation Rate</span
-                        >
-                        <span class="text-lg font-black text-blue-600"
-                            >{formatPercent(simRate)}</span
-                        >
-                    </div>
-                    <input
-                        type="range"
-                        min="0.50"
-                        max="1.00"
-                        step="0.01"
-                        bind:value={simRate}
-                        class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 border border-slate-300"
-                    />
-                    <div
-                        class="flex justify-between text-[11px] font-bold text-slate-400"
-                    >
-                        <span>50% (Extreme Shortfall)</span>
-                        <span>Current (~69%)</span>
-                        <span>100% (SCBD Baseline)</span>
-                    </div>
-                </div>
-
-                <!-- Simulator Outputs -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div
-                        class="bg-slate-50 p-4 rounded-xl border border-slate-200/60"
-                    >
-                        <span
-                            class="text-xs font-bold text-slate-400 uppercase tracking-wider block"
-                            >Contributing Homes</span
-                        >
-                        <span
-                            class="text-2xl font-black text-slate-800 block mt-1"
-                            >{simPaidHomes} homes</span
-                        >
-                        <span class="text-xs text-slate-500"
-                            >{simUnpaidHomes} homes non-contributing</span
-                        >
-                    </div>
-
-                    <div
-                        class="bg-slate-50 p-4 rounded-xl border border-slate-200/60"
-                    >
-                        <span
-                            class="text-xs font-bold text-slate-400 uppercase tracking-wider block"
-                            >Collected Dues Revenue</span
-                        >
-                        <span
-                            class="text-2xl font-black text-slate-800 block mt-1"
-                            >{formatCurrency(simRevenue)}</span
-                        >
-                        <span class="text-xs text-slate-500"
-                            >at standard rate of {formatCurrency(
-                                duesPerHome,
-                            )}/yr</span
-                        >
-                    </div>
-
-                    <div
-                        class="bg-slate-50 p-4 rounded-xl border border-slate-200/60"
-                    >
-                        <span
-                            class="text-xs font-bold text-slate-400 uppercase tracking-wider block"
-                            >Budget Surplus / Deficit</span
-                        >
-                        {#if simBudgetComparison >= 0}
-                            <span
-                                class="text-2xl font-black text-emerald-600 block mt-1"
-                                >+{formatCurrency(simBudgetComparison)}</span
-                            >
-                            <span class="text-xs text-slate-500"
-                                >Funds available for capital reserves</span
-                            >
-                        {:else}
-                            <span
-                                class="text-2xl font-black text-red-600 block mt-1"
-                                >{formatCurrency(simBudgetComparison)}</span
-                            >
-                            <span class="text-xs text-slate-500"
-                                >SCCA runs a deficit or defers tree removals</span
-                            >
-                        {/if}
-                    </div>
-
-                    <div
-                        class="bg-slate-50 p-4 rounded-xl border border-slate-200/60"
-                    >
-                        <span
-                            class="text-xs font-bold text-slate-400 uppercase tracking-wider block"
-                            >Effective Cost / Share</span
-                        >
-                        <span
-                            class="text-2xl font-black text-slate-800 block mt-1"
-                            >{formatCurrency(simEffectiveCostPerPayer)}</span
-                        >
-                        {#if simSubsidyPerPayer > 0}
-                            <span class="text-xs text-red-600 font-semibold"
-                                >Includes {formatCurrency(simSubsidyPerPayer)} "unpaid
-                                gap" subsidy</span
-                            >
-                        {:else}
-                            <span class="text-xs text-emerald-600 font-semibold"
-                                >Perfect fair-share allocation</span
-                            >
-                        {/if}
-                    </div>
-                </div>
-
-                <div
-                    class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 text-xs leading-relaxed text-slate-700 space-y-1.5"
-                >
-                    <p class="font-bold text-blue-800">
-                        💡 Simulator Takeaways:
-                    </p>
-                    <p>
-                        At <strong class="text-blue-800"
-                            >100% participation (the SCBD model)</strong
-                        >, every property pays exactly its fair share of
-                        <strong>{formatCurrency(duesPerHome)} per year</strong>,
-                        which generates
-                        <strong
-                            >{formatCurrency(totalHomes * duesPerHome)} ($21,225 total)</strong
-                        >. This fully funds not just the artificially
-                        constrained budget, but SCCA's
-                        <strong
-                            >actual operational needs of nearly $20,000</strong
-                        > (fully absorbing rising commercial insurance rates and high-impact
-                        tree emergency years) while still leaving a healthy annual
-                        surplus to build long-term reserves for playground restorations.
-                    </p>
-                    <p class="mt-2">
-                        Under the current <strong class="text-red-700"
-                            >voluntary system (~69% participation)</strong
-                        >, SCCA collected a total of
-                        <strong>{formatCurrency(17310)}</strong>
-                        in 2026. This includes 195 regular dues payments
-                        (consisting of 194 payments from the main period plus 1
-                        late dues payment since the last statement, generating
-                        <strong>{formatCurrency(14625)}</strong>) along with
-                        <strong>{formatCurrency(2685)}</strong> in voluntary extra
-                        funds generously donated by neighbors above and beyond the
-                        $75 baseline.
-                    </p>
-                    <p class="mt-2 text-rose-800 font-medium">
-                        While these extra donations and late payments allowed
-                        SCCA to barely clear the constricted operating budget of {formatCurrency(
-                            totalBudget,
-                        )}, this voluntary funding model is still
-                        <strong
-                            >highly inadequate and financially precarious</strong
-                        >
-                        compared to SCCA's actual unconstrained operational
-                        needs of nearly <strong>$20,000</strong>. SCCA remains
-                        heavily reliant on discretionary, unpredictable extra
-                        contributions from a small subset of generous families.
-                        This makes reliable multi-year forecasting and budgeting
-                        for major requirements (such as playground restoration
-                        or reforestation) impossible, highlighting why a stable,
-                        predictable funding baseline from 100% of properties via
-                        the SCBD is required.
-                    </p>
-                </div>
+        <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-500">
+                            <th class="px-6 py-4">Fiscal Year</th>
+                            <th class="px-6 py-4">Effective Date</th>
+                            <th class="px-6 py-4 text-right">Budgeted Expenses</th>
+                            <th class="px-6 py-4 text-right">Actual Expenses</th>
+                            <th class="px-6 py-4 text-right">Net Variance</th>
+                            <th class="px-6 py-4 text-right">Final Operating Balance</th>
+                            <th class="px-6 py-4 text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm text-slate-700">
+                        {#each reports as r}
+                            <tr class="hover:bg-slate-50/60 transition-colors {selectedYear === r.year ? 'bg-blue-50/40 font-semibold' : ''}">
+                                <td class="px-6 py-4">
+                                    <span class="font-bold text-slate-900">{r.year} Statement</span>
+                                    {#if r.is_final === false}
+                                        <span class="ml-2 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300">Interim (Not Final)</span>
+                                    {:else if r.year === 2025}
+                                        <span class="ml-2 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-100 text-blue-700">Latest Final</span>
+                                    {/if}
+                                </td>
+                                <td class="px-6 py-4 text-slate-600 text-xs font-medium">
+                                    {formatDate(r.as_of_date)}
+                                </td>
+                                <td class="px-6 py-4 text-right text-slate-600 font-medium">
+                                    {formatCurrency(r.total_expenses?.budgeted)}
+                                </td>
+                                <td class="px-6 py-4 text-right text-slate-900 font-semibold">
+                                    {formatCurrency(r.total_expenses?.actual)}
+                                    {#if r.is_final === false}
+                                        <span class="text-xs text-amber-600 font-bold ml-0.5" title="Interim year-to-date figure">*</span>
+                                    {/if}
+                                </td>
+                                <td class="px-6 py-4 text-right font-semibold">
+                                    {#if (r.total_expenses?.difference ?? 0) < 0}
+                                        <span class="text-rose-600">{formatCurrency(r.total_expenses?.difference)}</span>
+                                    {:else}
+                                        <span class="text-emerald-600">+{formatCurrency(r.total_expenses?.difference)}</span>
+                                    {/if}
+                                </td>
+                                <td class="px-6 py-4 text-right text-slate-900 font-bold">
+                                    {formatCurrency(r.balance_summary?.final_balance)}
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <button
+                                        type="button"
+                                        class="text-xs font-bold px-3 py-1.5 rounded-lg border transition-all {selectedYear === r.year
+                                            ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
+                                            : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'}"
+                                        onclick={() => (selectedYear = r.year)}
+                                    >
+                                        {selectedYear === r.year ? 'Selected' : 'View Report'}
+                                    </button>
+                                </td>
+                            </tr>
+                        {/each}
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500">
+                * Note: Fiscal Year 2026 data reflects interim year-to-date figures as of September 19, 2026 and has not been finalized.
             </div>
         </div>
     </div>
 
-    <!-- Spreadsheet Download Callout -->
+    <!-- Official Ledger & Open Data Download Callout -->
     <div
         class="bg-slate-900 rounded-2xl border border-slate-800 p-8 text-white relative overflow-hidden shadow-lg"
     >
@@ -1211,22 +810,18 @@
         <div class="relative z-10 max-w-3xl space-y-4">
             <span
                 class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider inline-block"
-                >Official Ledger</span
+                >Open Financial Data</span
             >
             <h3 class="text-2xl font-black tracking-tight text-white">
-                Download Statement of Financial Condition
+                Official Data Downloads & Schema
             </h3>
             <p class="text-slate-300 text-sm leading-relaxed">
-                Download the original, verified spreadsheet file prepared
-                directly by the SCCA Treasurer. This spreadsheet has been
-                archived and reviewed by the SCCA Audit Committee. We make all
-                official financial spreadsheets available in their raw format to
-                promote total transparency and community oversight.
+                The SCCA maintains verified Statements of Financial Condition in an open, structured JSON format conforming to Draft 2020-12 JSON Schema. We make raw financial datasets and schema definitions publicly accessible to ensure total transparency, reproducibility, and community oversight.
             </p>
-            <div class="pt-2 flex flex-col sm:flex-row gap-4">
+            <div class="pt-2 flex flex-wrap gap-4">
                 <a
-                    href={activeReport.filePath}
-                    download={activeReport.fileName}
+                    href="/data/financials/scca-financials.json"
+                    download="scca-financials.json"
                     class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-md transition-all text-sm group"
                 >
                     <svg
@@ -1242,7 +837,28 @@
                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                         />
                     </svg>
-                    Download {activeReport.fileName}
+                    Download Financials JSON
+                </a>
+                <a
+                    href="/data/financials/financials-schema.json"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all text-sm font-bold rounded-xl"
+                >
+                    <svg
+                        class="h-5 w-5 text-slate-400 group-hover:text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                    </svg>
+                    View JSON Schema
                 </a>
                 <a
                     href="/documents"

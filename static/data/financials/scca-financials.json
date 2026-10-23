@@ -1,0 +1,404 @@
+{
+  "organization": "Shipley's Choice Community Association (SCAA)",
+  "reports": [
+    {
+      "year": 2023,
+      "as_of_date": "2023-12-31",
+      "treasurer": "Rebecca Blaschak",
+      "is_final": true,
+      "balance_summary": {
+        "checking_balance": 12198.57,
+        "playground_deposits": 0.0,
+        "remaining_playground_funds": 0.0,
+        "outstanding_checks": 0.0,
+        "final_balance": 12198.57
+      },
+      "expenses": [
+        {
+          "category": "Lawn Maintenance",
+          "actual": 6290.99,
+          "budgeted": 1500.00,
+          "difference": -4790.99
+        },
+        {
+          "category": "Garden Club",
+          "actual": 404.53,
+          "budgeted": 425.00,
+          "difference": 20.47
+        },
+        {
+          "category": "Taxes",
+          "actual": 52.75,
+          "budgeted": 75.00,
+          "difference": 22.25
+        },
+        {
+          "category": "Access Tree Removal",
+          "actual": 10700.00,
+          "budgeted": 12000.00,
+          "difference": 1300.00
+        },
+        {
+          "category": "BGE",
+          "actual": 267.32,
+          "budgeted": 300.00,
+          "difference": 32.68
+        },
+        {
+          "category": "Insurance",
+          "actual": 1600.91,
+          "budgeted": 1700.00,
+          "difference": 99.09
+        },
+        {
+          "category": "Association Memberships",
+          "actual": 35.00,
+          "budgeted": 200.00,
+          "difference": 165.00
+        },
+        {
+          "category": "SCS+TC",
+          "actual": 25.00,
+          "budgeted": 200.00,
+          "difference": 175.00
+        },
+        {
+          "category": "Website renewal",
+          "actual": 120.00,
+          "budgeted": 150.00,
+          "difference": 30.00
+        },
+        {
+          "category": "Bank Fees",
+          "actual": 12.00,
+          "budgeted": 0.00,
+          "difference": -12.00
+        },
+        {
+          "category": "Section 2 Covenants",
+          "actual": 0.00,
+          "budgeted": 2000.00,
+          "difference": 2000.00
+        }
+      ],
+      "total_expenses": {
+        "actual": 19508.50,
+        "budgeted": 18550.00,
+        "difference": -958.50
+      },
+      "dues_statistics": [
+        {
+          "payment_year": 2022,
+          "members_paid": 215,
+          "percentage": 76
+        },
+        {
+          "payment_year": 2023,
+          "members_paid": 210,
+          "percentage": 74
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "as_of_date": "2024-12-31",
+      "treasurer": "Rebecca Blaschak",
+      "is_final": true,
+      "balance_summary": {
+        "checking_balance": 13321.16,
+        "playground_deposits": 155.00,
+        "remaining_playground_funds": 0.0,
+        "outstanding_checks": 0.0,
+        "final_balance": 13166.16
+      },
+      "expenses": [
+        {
+          "category": "Lawn Maintenance",
+          "actual": 4420.00,
+          "budgeted": 5000.00,
+          "difference": 580.00
+        },
+        {
+          "category": "Aspen Grove",
+          "actual": 150.00,
+          "budgeted": 0.00,
+          "difference": 150.00
+        },
+        {
+          "category": "Garden Club",
+          "actual": 117.34,
+          "budgeted": 400.00,
+          "difference": 282.66
+        },
+        {
+          "category": "Real Property taxes",
+          "actual": 33.26,
+          "budgeted": 75.00,
+          "difference": 41.74
+        },
+        {
+          "category": "Access Tree Removal",
+          "actual": 9150.00,
+          "budgeted": 10000.00,
+          "difference": 850.00
+        },
+        {
+          "category": "BGE",
+          "actual": 284.44,
+          "budgeted": 300.00,
+          "difference": 15.56
+        },
+        {
+          "category": "Insurance",
+          "actual": 1888.00,
+          "budgeted": 1750.00,
+          "difference": -138.00
+        },
+        {
+          "category": "Association Memberships",
+          "actual": 185.00,
+          "budgeted": 200.00,
+          "difference": 15.00
+        },
+        {
+          "category": "Website renewal",
+          "actual": 120.00,
+          "budgeted": 120.00,
+          "difference": 0.00
+        },
+        {
+          "category": "Misc (checks, paper statements, SCSTC)",
+          "actual": 477.37,
+          "budgeted": 0.00,
+          "difference": -477.37
+        }
+      ],
+      "total_expenses": {
+        "actual": 16675.41,
+        "budgeted": 17995.00,
+        "difference": 1319.59
+      },
+      "dues_statistics": [
+        {
+          "payment_year": 2022,
+          "members_paid": 215,
+          "percentage": 76
+        },
+        {
+          "payment_year": 2023,
+          "members_paid": 210,
+          "percentage": 74
+        },
+        {
+          "payment_year": 2024,
+          "members_paid": 205,
+          "percentage": 72
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "as_of_date": "2025-12-31",
+      "treasurer": "Rebecca Blaschak",
+      "is_final": true,
+      "balance_summary": {
+        "checking_balance": 11894.99,
+        "playground_deposits": 0.00,
+        "remaining_playground_funds": 1464.70,
+        "outstanding_checks": 0.00,
+        "final_balance": 10430.29
+      },
+      "expenses": [
+        {
+          "category": "Lawn Maintenance",
+          "actual": 1000.00,
+          "budgeted": 5000.00,
+          "difference": 4000.00
+        },
+        {
+          "category": "Aspen Grove",
+          "actual": 0.00,
+          "budgeted": 150.00,
+          "difference": 150.00
+        },
+        {
+          "category": "Garden Club",
+          "actual": 350.97,
+          "budgeted": 400.00,
+          "difference": 49.03
+        },
+        {
+          "category": "Real Property taxes",
+          "actual": 33.27,
+          "budgeted": 75.00,
+          "difference": 41.73
+        },
+        {
+          "category": "Access Tree Removal",
+          "actual": 15050.00,
+          "budgeted": 10000.00,
+          "difference": -5050.00
+        },
+        {
+          "category": "BGE",
+          "actual": 302.63,
+          "budgeted": 300.00,
+          "difference": -2.63
+        },
+        {
+          "category": "Insurance",
+          "actual": 3823.00,
+          "budgeted": 1750.00,
+          "difference": -2073.00
+        },
+        {
+          "category": "Association Memberships",
+          "actual": 100.00,
+          "budgeted": 200.00,
+          "difference": 100.00
+        },
+        {
+          "category": "Website renewal",
+          "actual": 120.00,
+          "budgeted": 120.00,
+          "difference": 0.00
+        },
+        {
+          "category": "Misc (checks, paper statements, SCSTC)",
+          "actual": 116.00,
+          "budgeted": 0.00,
+          "difference": -116.00
+        }
+      ],
+      "total_expenses": {
+        "actual": 20895.87,
+        "budgeted": 17995.00,
+        "difference": -2900.87
+      },
+      "dues_statistics": [
+        {
+          "payment_year": 2022,
+          "members_paid": 215,
+          "percentage": 76
+        },
+        {
+          "payment_year": 2023,
+          "members_paid": 210,
+          "percentage": 74
+        },
+        {
+          "payment_year": 2024,
+          "members_paid": 205,
+          "percentage": 72
+        },
+        {
+          "payment_year": 2025,
+          "members_paid": 196,
+          "percentage": 69
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "as_of_date": "2026-09-19",
+      "treasurer": "Rebecca Blaschak",
+      "is_final": false,
+      "notes": "Interim year-to-date statement as of September 19, 2026. Fiscal year 2026 is currently ongoing and figures are not yet finalized.",
+      "balance_summary": {
+        "checking_balance": 2499.57,
+        "playground_deposits": 0.0,
+        "remaining_playground_funds": 1464.70,
+        "outstanding_checks": 120.00,
+        "final_balance": 914.87
+      },
+      "expenses": [
+        {
+          "category": "Lawn Maintenance",
+          "actual": 970.00,
+          "budgeted": 3500.00,
+          "difference": 2530.00
+        },
+        {
+          "category": "Garden Club",
+          "actual": 69.96,
+          "budgeted": 400.00,
+          "difference": 330.04
+        },
+        {
+          "category": "Real Property taxes",
+          "actual": 33.27,
+          "budgeted": 55.00,
+          "difference": 21.73
+        },
+        {
+          "category": "Access Tree Removal",
+          "actual": 5500.00,
+          "budgeted": 8000.00,
+          "difference": 2500.00
+        },
+        {
+          "category": "BGE",
+          "actual": 228.55,
+          "budgeted": 300.00,
+          "difference": 71.45
+        },
+        {
+          "category": "Insurance",
+          "actual": 4279.00,
+          "budgeted": 3850.00,
+          "difference": -429.00
+        },
+        {
+          "category": "Association Memberships",
+          "actual": 100.00,
+          "budgeted": 200.00,
+          "difference": 100.00
+        },
+        {
+          "category": "Website renewal",
+          "actual": 0.00,
+          "budgeted": 125.00,
+          "difference": 125.00
+        },
+        {
+          "category": "Misc (checks, paper statements, SCSTC)",
+          "actual": 64.64,
+          "budgeted": 120.00,
+          "difference": 55.36
+        }
+      ],
+      "total_expenses": {
+        "actual": 11245.42,
+        "budgeted": 16550.00,
+        "difference": 5304.58
+      },
+      "dues_statistics": [
+        {
+          "payment_year": 2022,
+          "members_paid": 215,
+          "percentage": 76
+        },
+        {
+          "payment_year": 2023,
+          "members_paid": 210,
+          "percentage": 74
+        },
+        {
+          "payment_year": 2024,
+          "members_paid": 205,
+          "percentage": 72
+        },
+        {
+          "payment_year": 2025,
+          "members_paid": 196,
+          "percentage": 69
+        },
+        {
+          "payment_year": 2026,
+          "members_paid": 194,
+          "percentage": 69
+        }
+      ]
+    }
+  ]
+}
