@@ -1,6 +1,6 @@
 <script>
     import Seo from "$components/Seo.svelte";
-    import financialsData from "../../../static/data/financials/scca-financials.json";
+    import financialsData from "$data/financials/scca-financials.json";
 
     // Format helpers
     const formatCurrency = (val) =>
