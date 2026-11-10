@@ -57,6 +57,7 @@
             children: [
                 { name: "SCBD Overview", path: "/why-scbd" },
                 { name: "SCBD FAQ", path: "/why-scbd-faq" },
+                { name: "Petition Status", path: "/scbd-petition-status" },
             ],
         },
         {
