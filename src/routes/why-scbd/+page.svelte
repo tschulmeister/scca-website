@@ -108,7 +108,30 @@
 	</div>
 </section>
 
-<!-- Proposed addition right after the page header -->
+	<!-- Live Petition Status Callout -->
+	<div class="mt-6 mx-auto max-w-4xl px-4">
+		<a
+			href="/scbd-petition-status"
+			class="flex items-center justify-between p-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-all group shadow-sm"
+		>
+			<div class="flex items-center gap-3">
+				<span class="p-2 rounded-lg bg-emerald-500 text-white font-bold">📊</span>
+				<div>
+					<div class="text-sm font-bold text-emerald-950 group-hover:text-emerald-900">
+						Current SCBD Petition Status &amp; Signature Tally
+					</div>
+					<div class="text-xs text-emerald-700">
+						Track current Yes, No, Split, and pending response counts toward the 2/3 threshold.
+					</div>
+				</div>
+			</div>
+			<span class="text-xs font-bold text-emerald-800 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+				View Tally &rarr;
+			</span>
+		</a>
+	</div>
+
+	<!-- Proposed addition right after the page header -->
 <div class="mt-8 mx-auto max-w-4xl px-4">
 	<div
 		class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white text-center shadow-lg transform transition-transform hover:scale-[1.01]"

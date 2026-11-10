@@ -100,6 +100,27 @@
 
 <div class="container mx-auto px-4 py-16">
     <div class="max-w-3xl mx-auto space-y-8">
+        <!-- Live Petition Status Callout -->
+        <a
+            href="/scbd-petition-status"
+            class="flex items-center justify-between p-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-all group shadow-sm"
+        >
+            <div class="flex items-center gap-3">
+                <span class="p-2 rounded-lg bg-emerald-500 text-white font-bold">📊</span>
+                <div>
+                    <div class="text-sm font-bold text-emerald-950 group-hover:text-emerald-900">
+                        View Live SCBD Petition Status &amp; Tally
+                    </div>
+                    <div class="text-xs text-emerald-700">
+                        Check current affirmative signatures, opposition counts, and progress toward the 2/3 threshold.
+                    </div>
+                </div>
+            </div>
+            <span class="text-xs font-bold text-emerald-800 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                View Status &rarr;
+            </span>
+        </a>
+
         {#each faqs as faq}
             <div
                 class="bg-white p-6 rounded-xl shadow-sm border border-slate-200"

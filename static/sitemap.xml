@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.shipleyschoice.org/scbd-petition-status</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.shipleyschoice.org/annual-meeting-virtual-signup</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

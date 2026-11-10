@@ -56,6 +56,13 @@
             tags: ["scbd", "faq", "questions", "answers", "dues", "petition"],
         },
         {
+            title: "SCBD Petition Status",
+            path: "/scbd-petition-status",
+            description:
+                "Current tally and status of the SCBD petition signatures across all 283 community households.",
+            tags: ["scbd", "petition", "status", "vote", "signature", "tally", "results", "ballot", "count"],
+        },
+        {
             title: "2026 SCCA Annual Membership Meeting Virtual Signup",
             path: "/annual-meeting-virtual-signup",
             description:
