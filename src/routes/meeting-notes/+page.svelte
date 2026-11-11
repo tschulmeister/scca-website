@@ -3,16 +3,41 @@
   import { onMount, onDestroy } from 'svelte';
   import meetingNotes from '$data/meetingNotes.json';
 
+  // Eagerly import all .htm files under src/components/meetings as raw strings
+  const meetingFiles = import.meta.glob("/src/components/meetings/**/*.htm", {
+      query: "?raw",
+      import: "default",
+      eager: true,
+  });
+
+  // Combine metadata and file contents
+  const processedMeetingNotes = meetingNotes.map((item) => {
+      if (item.contentPath) {
+          const fullPath = `/src/components/meetings/${item.contentPath}`;
+          return {
+              ...item,
+              content:
+                  meetingFiles[fullPath] ||
+                  "<p class='text-rose-500'>Content file not found.</p>",
+              isHtml: true,
+          };
+      }
+      return {
+          ...item,
+          isHtml: false,
+      };
+  });
+
   let activeId = '';
   let observer;
 
   onMount(() => {
     // Set the first item as active on initial load
-    if (meetingNotes.length > 0) {
-      activeId = meetingNotes[0].id;
+    if (processedMeetingNotes.length > 0) {
+      activeId = processedMeetingNotes[0].id;
     }
 
-    const sections = meetingNotes.map((item) => document.getElementById(item.id));
+    const sections = processedMeetingNotes.map((item) => document.getElementById(item.id));
 
     const observerOptions = {
       root: null,
@@ -57,7 +82,7 @@
       <nav class="sticky top-24">
         <h3 class="font-semibold text-slate-900">Meeting Dates</h3>
         <ul class="mt-4 space-y-1 border-l-2 border-slate-100">
-          {#each meetingNotes as item}
+          {#each processedMeetingNotes as item}
             <li>
               <a
                 href="#{item.id}"
@@ -81,7 +106,7 @@
     <div class="lg:col-span-9">
       <article class="rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8 shadow-sm">
         <div class="divide-y divide-slate-100">
-          {#each meetingNotes as meeting}
+          {#each processedMeetingNotes as meeting}
             <div id={meeting.id} class="py-8 first:pt-0 last:pb-0 group scroll-mt-20">
               <div class="space-y-5">
                 <div>
@@ -90,9 +115,13 @@
                 </div>
 
                 <div class="space-y-6 text-slate-700 leading-7">
-                  {#each meeting.content.split('\n\n') as paragraph}
-                    <p>{paragraph}</p>
-                  {/each}
+                  {#if meeting.isHtml}
+                    {@html meeting.content}
+                  {:else}
+                    {#each meeting.content.split('\n\n') as paragraph}
+                      <p>{paragraph}</p>
+                    {/each}
+                  {/if}
                 </div>
               </div>
             </div>

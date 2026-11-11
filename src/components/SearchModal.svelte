@@ -17,6 +17,13 @@
         eager: true,
     });
 
+    // Eagerly import all .htm files under src/components/meetings as raw strings for full-text search
+    const meetingFiles = import.meta.glob("/src/components/meetings/**/*.htm", {
+        query: "?raw",
+        import: "default",
+        eager: true,
+    });
+
     // Prepare static index for high-fidelity pages
     const staticPages = [
         {
@@ -483,11 +490,22 @@
 
     // Prepare searchable board meeting notes
     const meetingNotesSearchItems = meetingNotes.map((note) => {
+        let rawText = "";
+        if (note.contentPath) {
+            const fullPath = `/src/components/meetings/${note.contentPath}`;
+            const rawHtml = meetingFiles[fullPath] || "";
+            rawText = rawHtml
+                .replace(/<[^>]*>/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+        } else {
+            rawText = note.content || "";
+        }
         return {
             id: note.id,
             dateLabel: note.dateLabel,
             participants: note.participants,
-            content: note.content,
+            content: rawText,
             path: `/meeting-notes#${note.id}`,
         };
     });
